@@ -1,0 +1,3125 @@
+{
+  "meta": {
+    "app": "Command Code Desktop",
+    "note": "中英对照词典。from 为代码中的英文字符串原文(整串匹配,不处理模板占位符 $)。to 为中文译文。安全规则: 只翻译明确为 UI 文案的词条; 模型名/语言/主题名/SVG path/库错误不收录。",
+    "updated": "2026-09-03"
+  },
+  "terms": [
+    {
+      "from": "Assert zero-data-retention and no prompt-training on every request, and let the gateway refuse rather than route to an upstream that honors neither. Some models have no qualifying upstream and are replaced by one that does, which can cost more \\u2014 the config screen lists what changes.",
+      "to": "在每次请求中断言零数据保留且不进行提示词训练；若上游服务两者皆不满足，网关将拒绝而非转发。部分模型没有符合要求的上游，会被替换为符合的模型（费用可能更高）——配置页会列出具体变化。"
+    },
+    {
+      "from": "Explain shell commands on permission prompts only when you press ctrl+e (default). Turn off to generate every explanation upfront.",
+      "to": "仅在按下 ctrl+e 时于权限提示中解释 shell 命令（默认）。关闭后则每次提前生成解释。"
+    },
+    {
+      "from": "Format a bare /share gist (no format argument) posts \\u2014 an explicit /share gist html|jsonl|md always overrides.",
+      "to": "不带格式参数的 /share gist 的默认发布格式——显式指定 /share gist html|jsonl|md 时始终覆盖。"
+    },
+    {
+      "from": "Format a bare /export (no format or path) writes \\u2014 an explicit /export html|jsonl|md|<path> always overrides.",
+      "to": "不带格式或路径的 /export 的默认写入格式——显式指定 /export html|jsonl|md|<路径> 时始终覆盖。"
+    },
+    {
+      "from": "Learn your coding style from your sessions, user-wide (same setting as /taste).",
+      "to": "从你的会话中学习编码风格（用户级，与 /taste 设置相同）。"
+    },
+    {
+      "from": "Never ask about summarizing when switching branches in /tree.",
+      "to": "在 /tree 中切换分支时从不询问是否总结。"
+    },
+    {
+      "from": "Search open chats, project files, and application commands.",
+      "to": "搜索打开的会话、项目文件与应用命令。"
+    },
+    {
+      "from": "This action accesses a path outside the current project.",
+      "to": "此操作将访问当前项目之外的路径。"
+    },
+    {
+      "from": "Finish the current response before changing Claude mode.",
+      "to": "请先完成当前回复再切换 Claude 模式。"
+    },
+    {
+      "from": "Open the selected project before running this command.",
+      "to": "请先打开选中的项目再运行此命令。"
+    },
+    {
+      "from": "Controls how the CLI handles edits and shell commands.",
+      "to": "控制 CLI 如何处理文件编辑和终端命令。"
+    },
+    {
+      "from": "This install session expired. Discover the repo again.",
+      "to": "此安装会话已过期，请重新发现仓库。"
+    },
+    {
+      "from": "Command Code could not restart to install the update.",
+      "to": "Command Code 无法重启以安装更新。"
+    },
+    {
+      "from": "Require OAuth login and block API-key authentication.",
+      "to": "要求 OAuth 登录并阻止 API 密钥认证。"
+    },
+    {
+      "from": "This command may delete or overwrite important data.",
+      "to": "此命令可能删除或覆盖重要数据。"
+    },
+    {
+      "from": "That worktree does not belong to the source project.",
+      "to": "该工作树不属于源项目。"
+    },
+    {
+      "from": "A configured permission rule requires confirmation.",
+      "to": "已有权限规则需要确认。"
+    },
+    {
+      "from": "Let the agent learn your preferences from sessions.",
+      "to": "让智能体从会话中学习你的偏好。"
+    },
+    {
+      "from": "Sign in to Anthropic before turning on Claude mode.",
+      "to": "请先登录 Anthropic 再开启 Claude 模式。"
+    },
+    {
+      "from": "Complete sign-in in your browser, then return here.",
+      "to": "请在浏览器中完成登录，然后返回此处。"
+    },
+    {
+      "from": "Answer the question before editing queued messages",
+      "to": "先回答问题再编辑排队消息"
+    },
+    {
+      "from": "The window closed before the terminal could start.",
+      "to": "终端启动前窗口已关闭。"
+    },
+    {
+      "from": "Select this project with the folder picker first.",
+      "to": "请先用文件夹选择器选中此项目。"
+    },
+    {
+      "from": "No project open. Installs go to your user skills.",
+      "to": "未打开项目，将安装到你的用户技能。"
+    },
+    {
+      "from": "Not part of this discovery. Fetch the repo again.",
+      "to": "不在本次发现范围内，请重新获取仓库。"
+    },
+    {
+      "from": "That line changed on disk. Refresh and try again.",
+      "to": "该行在磁盘上已变更，请刷新后重试。"
+    },
+    {
+      "from": "Share open-file context when an IDE is connected.",
+      "to": "连接 IDE 时共享已打开文件的上下文。"
+    },
+    {
+      "from": "Display compact context usage above the composer.",
+      "to": "在输入框上方显示紧凑的上下文用量。"
+    },
+    {
+      "from": "Choose the visual shown before the first message.",
+      "to": "选择首条消息前展示的画面。"
+    },
+    {
+      "from": "Runs edits and commands without asking each time",
+      "to": "直接执行编辑与命令，不再逐一询问"
+    },
+    {
+      "from": "Click any line below to leave a precise comment.",
+      "to": "点击下方任意一行留下精确定位评论。"
+    },
+    {
+      "from": "Already installed. Remove it first to reinstall.",
+      "to": "已安装，请先移除再重装。"
+    },
+    {
+      "from": "This build does not support Claude mode sign-in.",
+      "to": "此版本不支持 Claude 模式登录。"
+    },
+    {
+      "from": "Your session expired. Sign in again to continue.",
+      "to": "你的会话已过期，请重新登录以继续。"
+    },
+    {
+      "from": "Could not apply document change for partial diff",
+      "to": "无法应用部分差异的文档变更"
+    },
+    {
+      "from": "Session import failed without an error message.",
+      "to": "会话导入失败，但未返回错误信息。"
+    },
+    {
+      "from": "Terminal session id is in use by another window",
+      "to": "终端会话 ID 正被另一个窗口使用"
+    },
+    {
+      "from": "The agent took too long to respond. Try again.",
+      "to": "智能体响应超时，请重试。"
+    },
+    {
+      "from": "Could not update render cache for partial diff",
+      "to": "无法更新部分差异的渲染缓存"
+    },
+    {
+      "from": "Could not find the selected folder to rename.",
+      "to": "找不到要重命名的文件夹。"
+    },
+    {
+      "from": "Project path is not selected in this window.",
+      "to": "当前窗口未选择项目路径。"
+    },
+    {
+      "from": "Plans first, edits nothing until you approve",
+      "to": "先制定计划，批准前不进行任何编辑"
+    },
+    {
+      "from": "Sign in with your Claude Pro or Max account.",
+      "to": "使用你的 Claude Pro 或 Max 账户登录。"
+    },
+    {
+      "from": "Check your plan and billing on your account.",
+      "to": "请到你的账户中查看套餐与计费。"
+    },
+    {
+      "from": "useToast must be used within a ToastProvider",
+      "to": "useToast 必须在 ToastProvider 内使用"
+    },
+    {
+      "from": "Switch this chat to auto-accept, then build",
+      "to": "切换本会话为自动接受模式，然后执行"
+    },
+    {
+      "from": "Skill names cannot contain path separators.",
+      "to": "技能名不能包含路径分隔符。"
+    },
+    {
+      "from": "Anthropic sign-in did not start. Try again.",
+      "to": "Anthropic 登录未能启动，请重试。"
+    },
+    {
+      "from": "The run was interrupted before it finished.",
+      "to": "运行在完成前被中断。"
+    },
+    {
+      "from": "Could not find the selected file to rename.",
+      "to": "找不到要重命名的文件。"
+    },
+    {
+      "from": "Higher effort is more thorough but slower.",
+      "to": "更高强度更全面，但速度更慢。"
+    },
+    {
+      "from": "Try All plans, or create one in Plan mode.",
+      "to": "试试“全部计划”，或在计划模式中创建一个。"
+    },
+    {
+      "from": "Connect to each server and list its tools.",
+      "to": "连接到每台服务器并列出其工具。"
+    },
+    {
+      "from": "Anthropic returned an invalid sign-in URL.",
+      "to": "Anthropic 返回了无效的登录链接。"
+    },
+    {
+      "from": "Write a comment or remove this line note.",
+      "to": "写评论或移除此行备注。"
+    },
+    {
+      "from": "That authorization code was not accepted.",
+      "to": "该授权码未被接受。"
+    },
+    {
+      "from": "No configuration settings are available.",
+      "to": "没有可用的配置项。"
+    },
+    {
+      "from": "A fresh chat resets the context window.",
+      "to": "新开会话可重置上下文窗口。"
+    },
+    {
+      "from": "More unchanged context may be available",
+      "to": "可能有更多未变更的上下文"
+    },
+    {
+      "from": "Used for new messages in the composer.",
+      "to": "用于在输入框发送的新消息。"
+    },
+    {
+      "from": "This action accesses a sensitive file.",
+      "to": "此操作将访问敏感文件。"
+    },
+    {
+      "from": "Cycle Ask, Auto-accept edits, and Plan",
+      "to": "循环切换 询问 / 自动接受 / 计划 模式"
+    },
+    {
+      "from": "No preview available for this change.",
+      "to": "此变更没有可用的预览。"
+    },
+    {
+      "from": "Runs tools without asking each time.",
+      "to": "每次直接运行工具，不再询问。"
+    },
+    {
+      "from": "Add skills from a GitHub repository.",
+      "to": "从 GitHub 仓库添加技能。"
+    },
+    {
+      "from": "Dismiss until the files change again",
+      "to": "在文件再次变更前不再显示"
+    },
+    {
+      "from": "No skills found in this repository.",
+      "to": "此仓库中未找到技能。"
+    },
+    {
+      "from": "This skill cannot be enabled here.",
+      "to": "此技能无法在此启用。"
+    },
+    {
+      "from": "Could not read Claude mode status.",
+      "to": "无法读取 Claude 模式状态。"
+    },
+    {
+      "from": "Default filter when opening /tree.",
+      "to": "打开 /tree 时默认应用的筛选条件。"
+    },
+    {
+      "from": "Show panel, plan ready for review",
+      "to": "显示面板，计划待评审"
+    },
+    {
+      "from": "Could not forget this preference.",
+      "to": "无法忘记此偏好。"
+    },
+    {
+      "from": "Editors, diffs, and the terminal.",
+      "to": "编辑器、差异与终端。"
+    },
+    {
+      "from": "Attach a project to search files",
+      "to": "附加项目以搜索文件"
+    },
+    {
+      "from": "A learn pass is already running.",
+      "to": "一轮学习已在运行中。"
+    },
+    {
+      "from": "Select a project to browse files",
+      "to": "选择项目以浏览文件"
+    },
+    {
+      "from": "Context window usage unavailable",
+      "to": "上下文窗口用量不可用"
+    },
+    {
+      "from": "Could not stop background agent.",
+      "to": "无法停止后台智能体。"
+    },
+    {
+      "from": "Open the full plan in a preview",
+      "to": "在预览中打开完整计划"
+    },
+    {
+      "from": "Could not test MCP connections.",
+      "to": "无法测试 MCP 连接。"
+    },
+    {
+      "from": "No new learnings from sessions.",
+      "to": "会话中没有新的偏好可学习。"
+    },
+    {
+      "from": "Reading account and usage data…",
+      "to": "正在读取账户与用量数据…"
+    },
+    {
+      "from": "Runs without blocking this chat",
+      "to": "运行时不阻塞当前会话"
+    },
+    {
+      "from": "Superseded by a newer terminal.",
+      "to": "已被更新的终端取代。"
+    },
+    {
+      "from": "Search chats, files, commands…",
+      "to": "搜索会话、文件、命令…"
+    },
+    {
+      "from": "Asks before edits and commands",
+      "to": "编辑与命令前先询问"
+    },
+    {
+      "from": "No matching skills to install.",
+      "to": "没有匹配的技能可安装。"
+    },
+    {
+      "from": "Terminal, Changes, Source tabs",
+      "to": "终端 / 变更 / 源码 标签页"
+    },
+    {
+      "from": "That file is not a taste file.",
+      "to": "该文件不是偏好文件。"
+    },
+    {
+      "from": "Could not read the taste file.",
+      "to": "无法读取偏好文件。"
+    },
+    {
+      "from": "On-demand command explanations",
+      "to": "按需命令解释"
+    },
+    {
+      "from": "No chats match these filters.",
+      "to": "没有符合筛选条件的会话。"
+    },
+    {
+      "from": "Installing into this project.",
+      "to": "正在安装到当前项目。"
+    },
+    {
+      "from": "Expand or collapse all traces",
+      "to": "展开或折叠全部记录"
+    },
+    {
+      "from": "Invalid skill toggle request.",
+      "to": "无效的技能开关请求。"
+    },
+    {
+      "from": "Applied across the whole app.",
+      "to": "应用于整个应用。"
+    },
+    {
+      "from": "Claude mode is not available.",
+      "to": "Claude 模式不可用。"
+    },
+    {
+      "from": "Could not update Claude mode.",
+      "to": "无法更新 Claude 模式。"
+    },
+    {
+      "from": "Sign in to load your account.",
+      "to": "登录以加载你的账户。"
+    },
+    {
+      "from": "Image preview is unavailable.",
+      "to": "图片预览不可用。"
+    },
+    {
+      "from": "Terminal must be opened first",
+      "to": "请先打开终端"
+    },
+    {
+      "from": "Taste learning (this project)",
+      "to": "偏好学习（当前项目）"
+    },
+    {
+      "from": "Invalid source project path.",
+      "to": "无效的源项目路径。"
+    },
+    {
+      "from": "Dismiss plan mode suggestion",
+      "to": "关闭计划模式提示"
+    },
+    {
+      "from": "Describe what should change…",
+      "to": "描述应如何修改…"
+    },
+    {
+      "from": "No skills match this search.",
+      "to": "没有符合搜索条件的技能。"
+    },
+    {
+      "from": "This model can't read images",
+      "to": "此模型无法读取图片"
+    },
+    {
+      "from": "Not available in your region",
+      "to": "你所在地区不可用"
+    },
+    {
+      "from": "Answer the agent's question",
+      "to": "回答智能体的问题"
+    },
+    {
+      "from": "Invalid CLI launch request.",
+      "to": "无效的 CLI 启动请求。"
+    },
+    {
+      "from": "Commit message (blank uses ",
+      "to": "提交信息（留空将使用 "
+    },
+    {
+      "from": "Could not read this folder.",
+      "to": "无法读取此文件夹。"
+    },
+    {
+      "from": "Failed to read agent output",
+      "to": "读取智能体输出失败"
+    },
+    {
+      "from": "Failed to check diagnostics",
+      "to": "检查诊断失败"
+    },
+    {
+      "from": "Approve the agent's action",
+      "to": "批准智能体的操作"
+    },
+    {
+      "from": "Failed to load MCP servers",
+      "to": "加载 MCP 服务器失败"
+    },
+    {
+      "from": "Failed to update the skill",
+      "to": "更新技能失败"
+    },
+    {
+      "from": "Failed to remove the skill",
+      "to": "移除技能失败"
+    },
+    {
+      "from": "A new sign-in was started.",
+      "to": "已开始新的登录。"
+    },
+    {
+      "from": "No sign-in is in progress.",
+      "to": "当前没有进行中的登录。"
+    },
+    {
+      "from": "Continue with Command Code",
+      "to": "继续使用 Command Code"
+    },
+    {
+      "from": "Could not verify this file",
+      "to": "无法验证此文件"
+    },
+    {
+      "from": "Failed to read task output",
+      "to": "读取任务输出失败"
+    },
+    {
+      "from": "Skip branch summary prompt",
+      "to": "跳过分支摘要询问"
+    },
+    {
+      "from": "Match any selected status",
+      "to": "匹配任一选中状态"
+    },
+    {
+      "from": "Not included in your plan",
+      "to": "不在你的套餐内"
+    },
+    {
+      "from": "Importing agent sessions…",
+      "to": "正在导入智能体会话…"
+    },
+    {
+      "from": "Anthropic sign-in failed.",
+      "to": "Anthropic 登录失败。"
+    },
+    {
+      "from": "Blocked by content policy",
+      "to": "被内容策略拦截"
+    },
+    {
+      "from": "Gateway pricing not found",
+      "to": "未找到网关定价"
+    },
+    {
+      "from": "No newline at end of file",
+      "to": "文件末尾没有换行"
+    },
+    {
+      "from": "Could not discard changes",
+      "to": "无法放弃变更"
+    },
+    {
+      "from": "Contains git status items",
+      "to": "包含 Git 状态项"
+    },
+    {
+      "from": "No files in this project.",
+      "to": "此项目中没有文件。"
+    },
+    {
+      "from": "Failed to delete schedule",
+      "to": "删除定时任务失败"
+    },
+    {
+      "from": "Failed to update settings",
+      "to": "更新设置失败"
+    },
+    {
+      "from": "Failed to check knowledge",
+      "to": "检查知识失败"
+    },
+    {
+      "from": "Invalid terminal request.",
+      "to": "无效的终端请求。"
+    },
+    {
+      "from": "Default share gist format",
+      "to": "默认分享 Gist 格式"
+    },
+    {
+      "from": "Reasoning effort options",
+      "to": "推理强度选项"
+    },
+    {
+      "from": "Search or create branch…",
+      "to": "搜索或新建分支…"
+    },
+    {
+      "from": "Try another search term.",
+      "to": "试试其他搜索词。"
+    },
+    {
+      "from": "Plan accepted. Building…",
+      "to": "计划已接受，正在执行…"
+    },
+    {
+      "from": "Failed to fetch the repo",
+      "to": "获取仓库失败"
+    },
+    {
+      "from": "Failed to install skills",
+      "to": "安装技能失败"
+    },
+    {
+      "from": "Use --force to overwrite",
+      "to": "使用 --force 覆盖"
+    },
+    {
+      "from": "Invalid install request.",
+      "to": "无效的安装请求。"
+    },
+    {
+      "from": "Session cost in composer",
+      "to": "在输入框显示会话费用"
+    },
+    {
+      "from": "Open workbench on launch",
+      "to": "启动时打开工作台"
+    },
+    {
+      "from": "Sign-in start timed out.",
+      "to": "启动登录超时。"
+    },
+    {
+      "from": "Refreshing account data…",
+      "to": "正在刷新账户数据…"
+    },
+    {
+      "from": "File index is not ready.",
+      "to": "文件索引尚未就绪。"
+    },
+    {
+      "from": "Failed to list schedules",
+      "to": "列出定时任务失败"
+    },
+    {
+      "from": "Failed to enter worktree",
+      "to": "进入工作树失败"
+    },
+    {
+      "from": "Create isolated worktree",
+      "to": "创建隔离工作树"
+    },
+    {
+      "from": "Failed to start planning",
+      "to": "开始规划失败"
+    },
+    {
+      "from": "Sidecar medium not found",
+      "to": "未找到 Sidecar 媒体"
+    },
+    {
+      "from": "Open a project to begin",
+      "to": "打开项目以开始"
+    },
+    {
+      "from": "Search or enter address",
+      "to": "搜索或输入地址"
+    },
+    {
+      "from": "Send queued message now",
+      "to": "立即发送排队消息"
+    },
+    {
+      "from": "Write a custom response",
+      "to": "编写自定义回复"
+    },
+    {
+      "from": "Remove selected element",
+      "to": "移除选中元素"
+    },
+    {
+      "from": "Failed to remove server",
+      "to": "移除服务器失败"
+    },
+    {
+      "from": "Settings → MCP servers.",
+      "to": "设置 → MCP 服务器。"
+    },
+    {
+      "from": "Invalid remove request.",
+      "to": "无效的移除请求。"
+    },
+    {
+      "from": "Claude sign-in required",
+      "to": "需要登录 Claude"
+    },
+    {
+      "from": "Dismiss changes summary",
+      "to": "关闭变更摘要"
+    },
+    {
+      "from": "Could not switch branch",
+      "to": "无法切换分支"
+    },
+    {
+      "from": "Could not create branch",
+      "to": "无法新建分支"
+    },
+    {
+      "from": "Failed to exit worktree",
+      "to": "退出工作树失败"
+    },
+    {
+      "from": "Using isolated worktree",
+      "to": "使用隔离工作树"
+    },
+    {
+      "from": "Failed to inspect image",
+      "to": "检查图片失败"
+    },
+    {
+      "from": "Background task stopped",
+      "to": "后台任务已停止"
+    },
+    {
+      "from": "Default permission mode",
+      "to": "默认权限模式"
+    },
+    {
+      "from": "Copy working directory",
+      "to": "复制工作目录"
+    },
+    {
+      "from": "Click again to turn on",
+      "to": "再次点击以开启"
+    },
+    {
+      "from": "Allow for this session",
+      "to": "本次会话允许"
+    },
+    {
+      "from": "Allow for this project",
+      "to": "此项目允许"
+    },
+    {
+      "from": "Waiting for your input",
+      "to": "等待你的输入"
+    },
+    {
+      "from": "No servers configured.",
+      "to": "未配置服务器。"
+    },
+    {
+      "from": "Forget this preference",
+      "to": "忘记此偏好"
+    },
+    {
+      "from": "From the active theme.",
+      "to": "跟随当前主题。"
+    },
+    {
+      "from": "Failed to update todos",
+      "to": "更新待办失败"
+    },
+    {
+      "from": "Failed to look up docs",
+      "to": "查阅文档失败"
+    },
+    {
+      "from": "Failed to present plan",
+      "to": "展示计划失败"
+    },
+    {
+      "from": "Background task failed",
+      "to": "后台任务失败"
+    },
+    {
+      "from": "Update download failed",
+      "to": "更新下载失败"
+    },
+    {
+      "from": "Describe. Review. Ship",
+      "to": "描述 · 评审 · 交付"
+    },
+    {
+      "from": "Invalid project path.",
+      "to": "无效的项目路径。"
+    },
+    {
+      "from": "Delete queued message",
+      "to": "删除排队消息"
+    },
+    {
+      "from": "Choose any that apply",
+      "to": "选择所有适用的项"
+    },
+    {
+      "from": "Collapse all projects",
+      "to": "折叠所有项目"
+    },
+    {
+      "from": "Failed to load skills",
+      "to": "加载技能失败"
+    },
+    {
+      "from": "Sign in with this key",
+      "to": "使用此密钥登录"
+    },
+    {
+      "from": "Try the browser again",
+      "to": "重试浏览器登录"
+    },
+    {
+      "from": "Conversation too long",
+      "to": "会话过长"
+    },
+    {
+      "from": "File no longer exists",
+      "to": "文件已不存在"
+    },
+    {
+      "from": "Check your connection",
+      "to": "检查你的网络连接"
+    },
+    {
+      "from": "Failed to read output",
+      "to": "读取输出失败"
+    },
+    {
+      "from": "Collapse edit details",
+      "to": "折叠编辑详情"
+    },
+    {
+      "from": "Name cannot be empty.",
+      "to": "名称不能为空。"
+    },
+    {
+      "from": "Full-size preview of ",
+      "to": "以下内容的完整预览："
+    },
+    {
+      "from": "Failed to create task",
+      "to": "创建任务失败"
+    },
+    {
+      "from": "Failed to update task",
+      "to": "更新任务失败"
+    },
+    {
+      "from": "Failed to review plan",
+      "to": "评审计划失败"
+    },
+    {
+      "from": "Running in background",
+      "to": "正在后台运行"
+    },
+    {
+      "from": "No preview available.",
+      "to": "没有可用的预览。"
+    },
+    {
+      "from": "Close style inspector",
+      "to": "关闭样式检查器"
+    },
+    {
+      "from": "Default export format",
+      "to": "默认导出格式"
+    },
+    {
+      "from": "Taste learning (user)",
+      "to": "偏好学习（用户级）"
+    },
+    {
+      "from": "Build without asking",
+      "to": "直接执行，无需询问"
+    },
+    {
+      "from": "Stop the current run",
+      "to": "停止当前运行"
+    },
+    {
+      "from": "Type your own answer",
+      "to": "输入你自己的回答"
+    },
+    {
+      "from": "One queued image was",
+      "to": "一张排队中的图片被"
+    },
+    {
+      "from": "Failed to add server",
+      "to": "添加服务器失败"
+    },
+    {
+      "from": "No skills installed.",
+      "to": "未安装任何技能。"
+    },
+    {
+      "from": "Message Command Code",
+      "to": "给 Command Code 发消息"
+    },
+    {
+      "from": "Notifications are on",
+      "to": "通知已开启"
+    },
+    {
+      "from": "A tool server failed",
+      "to": "工具服务器出错"
+    },
+    {
+      "from": "Can't write the file",
+      "to": "无法写入文件"
+    },
+    {
+      "from": "Settings → CLI path.",
+      "to": "设置 → CLI 路径。"
+    },
+    {
+      "from": "Something went wrong",
+      "to": "出错了"
+    },
+    {
+      "from": "Could not read image",
+      "to": "无法读取图片"
+    },
+    {
+      "from": "Failed to list tasks",
+      "to": "列出任务失败"
+    },
+    {
+      "from": "Type to search files",
+      "to": "输入以搜索文件"
+    },
+    {
+      "from": "Reading agent output",
+      "to": "正在读取智能体输出"
+    },
+    {
+      "from": "Skill failed to load",
+      "to": "技能加载失败"
+    },
+    {
+      "from": "Checking diagnostics",
+      "to": "正在检查诊断"
+    },
+    {
+      "from": "Review, then commit.",
+      "to": "先评审，再提交。"
+    },
+    {
+      "from": "Command explanations",
+      "to": "命令解释"
+    },
+    {
+      "from": "Search and commands",
+      "to": "搜索与命令"
+    },
+    {
+      "from": "Edit queued message",
+      "to": "编辑排队消息"
+    },
+    {
+      "from": "Checking your plan…",
+      "to": "正在检查你的计划…"
+    },
+    {
+      "from": "Close quick preview",
+      "to": "关闭快速预览"
+    },
+    {
+      "from": "Invalid repository.",
+      "to": "无效的仓库。"
+    },
+    {
+      "from": "Learn from sessions",
+      "to": "从会话中学习"
+    },
+    {
+      "from": "Nothing learned yet",
+      "to": "尚未学习到任何内容"
+    },
+    {
+      "from": "Geist Mono Variable",
+      "to": "Geist Mono 可变字体"
+    },
+    {
+      "from": "Output flow control",
+      "to": "输出流控制"
+    },
+    {
+      "from": "Could not sign out.",
+      "to": "无法退出登录。"
+    },
+    {
+      "from": "Agent CLI not found",
+      "to": "未找到 Agent CLI"
+    },
+    {
+      "from": "Could not save file",
+      "to": "无法保存文件"
+    },
+    {
+      "from": "Expand edit details",
+      "to": "展开编辑详情"
+    },
+    {
+      "from": "Could not read file",
+      "to": "无法读取文件"
+    },
+    {
+      "from": "Close image preview",
+      "to": "关闭图片预览"
+    },
+    {
+      "from": "Failed to read task",
+      "to": "读取任务失败"
+    },
+    {
+      "from": "Failed to stop task",
+      "to": "停止任务失败"
+    },
+    {
+      "from": "Reading task output",
+      "to": "正在读取任务输出"
+    },
+    {
+      "from": "Searching MCP tools",
+      "to": "正在搜索 MCP 工具"
+    },
+    {
+      "from": "No pull request yet",
+      "to": "还没有拉取请求"
+    },
+    {
+      "from": "Merged pull request",
+      "to": "已合并的拉取请求"
+    },
+    {
+      "from": "Closed pull request",
+      "to": "已关闭的拉取请求"
+    },
+    {
+      "from": "Zero data retention",
+      "to": "零数据保留"
+    },
+    {
+      "from": "Tree default filter",
+      "to": "目录树默认筛选"
+    },
+    {
+      "from": "Chats and projects",
+      "to": "会话与项目"
+    },
+    {
+      "from": "Open in new window",
+      "to": "在新窗口中打开"
+    },
+    {
+      "from": "Keyboard shortcuts",
+      "to": "键盘快捷键"
+    },
+    {
+      "from": "Select chat 1 to 9",
+      "to": "选择第 1 至 9 个会话"
+    },
+    {
+      "from": "Show context usage",
+      "to": "显示上下文用量"
+    },
+    {
+      "from": "Account data ready",
+      "to": "账户数据就绪"
+    },
+    {
+      "from": "Paste your API key",
+      "to": "粘贴你的 API 密钥"
+    },
+    {
+      "from": "Open browser again",
+      "to": "重新打开浏览器"
+    },
+    {
+      "from": "Rate limit reached",
+      "to": "已达速率限制"
+    },
+    {
+      "from": "Git command failed",
+      "to": "Git 命令失败"
+    },
+    {
+      "from": "Discard and switch",
+      "to": "放弃并切换"
+    },
+    {
+      "from": "Failed to schedule",
+      "to": "创建定时任务失败"
+    },
+    {
+      "from": "Checking knowledge",
+      "to": "正在检查知识"
+    },
+    {
+      "from": "Downloading update",
+      "to": "正在下载更新"
+    },
+    {
+      "from": "Ready when you are",
+      "to": "随时可以开始"
+    },
+    {
+      "from": "Organize projects",
+      "to": "整理项目"
+    },
+    {
+      "from": "Agent permissions",
+      "to": "智能体权限"
+    },
+    {
+      "from": "Auto-accept edits",
+      "to": "自动接受编辑"
+    },
+    {
+      "from": "Scoped allow menu",
+      "to": "范围授权菜单"
+    },
+    {
+      "from": "No matching plans",
+      "to": "没有匹配的计划"
+    },
+    {
+      "from": "No branches match",
+      "to": "没有匹配的分支"
+    },
+    {
+      "from": "No plans here yet",
+      "to": "这里还没有计划"
+    },
+    {
+      "from": "Review and revise",
+      "to": "评审并修改"
+    },
+    {
+      "from": "Connection failed",
+      "to": "连接失败"
+    },
+    {
+      "from": "GitHub repository",
+      "to": "GitHub 仓库"
+    },
+    {
+      "from": "Medium confidence",
+      "to": "中置信度"
+    },
+    {
+      "from": "Could not remove.",
+      "to": "无法移除。"
+    },
+    {
+      "from": "Turn cost in chat",
+      "to": "在会话中显示单轮费用"
+    },
+    {
+      "from": "Anthropic account",
+      "to": "Anthropic 账户"
+    },
+    {
+      "from": "None on this plan",
+      "to": "当前套餐无限制"
+    },
+    {
+      "from": "The model is busy",
+      "to": "模型繁忙"
+    },
+    {
+      "from": "Request timed out",
+      "to": "请求超时"
+    },
+    {
+      "from": "Model unavailable",
+      "to": "模型不可用"
+    },
+    {
+      "from": "Out of disk space",
+      "to": "磁盘空间不足"
+    },
+    {
+      "from": "Workspace context",
+      "to": "工作区上下文"
+    },
+    {
+      "from": "Open changed file",
+      "to": "打开变更文件"
+    },
+    {
+      "from": "Loading branches…",
+      "to": "正在加载分支…"
+    },
+    {
+      "from": "Clear file search",
+      "to": "清除文件搜索"
+    },
+    {
+      "from": "Image unavailable",
+      "to": "图片不可用"
+    },
+    {
+      "from": "Read agent output",
+      "to": "读取智能体输出"
+    },
+    {
+      "from": "Listing schedules",
+      "to": "正在列出定时任务"
+    },
+    {
+      "from": "Deleting schedule",
+      "to": "正在删除定时任务"
+    },
+    {
+      "from": "Entering worktree",
+      "to": "正在进入工作树"
+    },
+    {
+      "from": "Searching the web",
+      "to": "正在搜索网络"
+    },
+    {
+      "from": "Check diagnostics",
+      "to": "检查诊断"
+    },
+    {
+      "from": "MCP search failed",
+      "to": "MCP 搜索失败"
+    },
+    {
+      "from": "Updating settings",
+      "to": "正在更新设置"
+    },
+    {
+      "from": "Restart to update",
+      "to": "重启以更新"
+    },
+    {
+      "from": "Open pull request",
+      "to": "打开拉取请求"
+    },
+    {
+      "from": "Untitled session",
+      "to": "未命名会话"
+    },
+    {
+      "from": "Settings failed.",
+      "to": "设置失败。"
+    },
+    {
+      "from": "Provider default",
+      "to": "跟随服务商默认"
+    },
+    {
+      "from": "Reasoning effort",
+      "to": "推理强度"
+    },
+    {
+      "from": "Ask for approval",
+      "to": "请求批准"
+    },
+    {
+      "from": "No models match “",
+      "to": "没有匹配 “"
+    },
+    {
+      "from": "Type your answer",
+      "to": "输入你的回答"
+    },
+    {
+      "from": "Image attachment",
+      "to": "图片附件"
+    },
+    {
+      "from": "Toggle workbench",
+      "to": "切换工作台"
+    },
+    {
+      "from": "Recently updated",
+      "to": "最近更新"
+    },
+    {
+      "from": "Ready for review",
+      "to": "待评审"
+    },
+    {
+      "from": "Previous 30 days",
+      "to": "最近 30 天"
+    },
+    {
+      "from": "Organize sidebar",
+      "to": "整理侧边栏"
+    },
+    {
+      "from": "Mark all as read",
+      "to": "全部标为已读"
+    },
+    {
+      "from": "Accept and build",
+      "to": "接受并执行"
+    },
+    {
+      "from": "Overall feedback",
+      "to": "总体反馈"
+    },
+    {
+      "from": "Copy current URL",
+      "to": "复制当前网址"
+    },
+    {
+      "from": "Test connections",
+      "to": "测试连接"
+    },
+    {
+      "from": "Learning failed.",
+      "to": "学习失败。"
+    },
+    {
+      "from": "GPU acceleration",
+      "to": "GPU 加速"
+    },
+    {
+      "from": "Personal account",
+      "to": "个人账户"
+    },
+    {
+      "from": "Sign-out failed.",
+      "to": "退出登录失败。"
+    },
+    {
+      "from": "Opening sign-in…",
+      "to": "正在打开登录…"
+    },
+    {
+      "from": "Loading account…",
+      "to": "正在加载账户…"
+    },
+    {
+      "from": "Sign-in required",
+      "to": "需要登录"
+    },
+    {
+      "from": "Stopped creating",
+      "to": "已停止创建"
+    },
+    {
+      "from": "Failed to create",
+      "to": "创建失败"
+    },
+    {
+      "from": "Background tasks",
+      "to": "后台任务"
+    },
+    {
+      "from": "Read task output",
+      "to": "读取任务输出"
+    },
+    {
+      "from": "Exiting worktree",
+      "to": "正在退出工作树"
+    },
+    {
+      "from": "Inspecting image",
+      "to": "正在检查图片"
+    },
+    {
+      "from": "Search MCP tools",
+      "to": "搜索 MCP 工具"
+    },
+    {
+      "from": "Reveal in Finder",
+      "to": "在 Finder 中显示"
+    },
+    {
+      "from": "Show in Explorer",
+      "to": "在资源管理器中显示"
+    },
+    {
+      "from": "Failed to remove",
+      "to": "移除失败"
+    },
+    {
+      "from": "Ask on first use",
+      "to": "首次使用时询问"
+    },
+    {
+      "from": "No results for “",
+      "to": "没有 “"
+    },
+    {
+      "from": "No files match.",
+      "to": "没有匹配的文件。"
+    },
+    {
+      "from": "Queued messages",
+      "to": "排队中的消息"
+    },
+    {
+      "from": "Command palette",
+      "to": "命令面板"
+    },
+    {
+      "from": "Needs attention",
+      "to": "需要关注"
+    },
+    {
+      "from": "Previous 7 days",
+      "to": "最近 7 天"
+    },
+    {
+      "from": "Workbench views",
+      "to": "工作台视图"
+    },
+    {
+      "from": "Back to preview",
+      "to": "返回预览"
+    },
+    {
+      "from": "Toggle terminal",
+      "to": "切换终端"
+    },
+    {
+      "from": "Copy Session ID",
+      "to": "复制会话 ID"
+    },
+    {
+      "from": "Install 1 skill",
+      "to": "安装 1 个技能"
+    },
+    {
+      "from": "No skills found",
+      "to": "未找到技能"
+    },
+    {
+      "from": "High confidence",
+      "to": "高置信度"
+    },
+    {
+      "from": "Invalid request",
+      "to": "无效的请求"
+    },
+    {
+      "from": "Stopped editing",
+      "to": "已停止编辑"
+    },
+    {
+      "from": "Failed to watch",
+      "to": "监听失败"
+    },
+    {
+      "from": "Attempted patch",
+      "to": "尝试应用的补丁"
+    },
+    {
+      "from": "Delete schedule",
+      "to": "删除定时任务"
+    },
+    {
+      "from": "Looking up docs",
+      "to": "正在查阅文档"
+    },
+    {
+      "from": "Presenting plan",
+      "to": "正在展示计划"
+    },
+    {
+      "from": "Update settings",
+      "to": "更新设置"
+    },
+    {
+      "from": "Failed to learn",
+      "to": "学习失败"
+    },
+    {
+      "from": "Check knowledge",
+      "to": "检查知识"
+    },
+    {
+      "from": "Background task",
+      "to": "后台任务"
+    },
+    {
+      "from": "Style inspector",
+      "to": "样式检查器"
+    },
+    {
+      "from": "No upstream set",
+      "to": "未设置上游分支"
+    },
+    {
+      "from": "Unarchive chat",
+      "to": "取消归档"
+    },
+    {
+      "from": "Mark as unread",
+      "to": "标为未读"
+    },
+    {
+      "from": "No other chats",
+      "to": "没有其他会话"
+    },
+    {
+      "from": "Open a project",
+      "to": "打开项目"
+    },
+    {
+      "from": "Remove project",
+      "to": "移除项目"
+    },
+    {
+      "from": "Open a folder…",
+      "to": "打开文件夹…"
+    },
+    {
+      "from": "Compact Normal",
+      "to": "紧凑-普通"
+    },
+    {
+      "from": "No suggestions",
+      "to": "无建议"
+    },
+    {
+      "from": "Insert newline",
+      "to": "插入换行"
+    },
+    {
+      "from": "Ask a question",
+      "to": "提问"
+    },
+    {
+      "from": "Attach project",
+      "to": "附加项目"
+    },
+    {
+      "from": "Slash commands",
+      "to": "斜杠命令"
+    },
+    {
+      "from": "Toggle sidebar",
+      "to": "切换侧边栏"
+    },
+    {
+      "from": "Oldest updated",
+      "to": "最早更新"
+    },
+    {
+      "from": "Loading plans…",
+      "to": "正在加载计划…"
+    },
+    {
+      "from": "Install skills",
+      "to": "安装技能"
+    },
+    {
+      "from": "Project skills",
+      "to": "项目技能"
+    },
+    {
+      "from": "Bundled skills",
+      "to": "内置技能"
+    },
+    {
+      "from": "Taste learning",
+      "to": "偏好学习"
+    },
+    {
+      "from": "Low confidence",
+      "to": "低置信度"
+    },
+    {
+      "from": "Geist Variable",
+      "to": "Geist 可变字体"
+    },
+    {
+      "from": "Manage billing",
+      "to": "管理计费"
+    },
+    {
+      "from": "Rolling limits",
+      "to": "滚动限额"
+    },
+    {
+      "from": "Out of credits",
+      "to": "额度已用完"
+    },
+    {
+      "from": "Failed to load",
+      "to": "加载失败"
+    },
+    {
+      "from": "Command failed",
+      "to": "命令执行失败"
+    },
+    {
+      "from": "Reading output",
+      "to": "正在读取输出"
+    },
+    {
+      "from": "Failed to read",
+      "to": "读取失败"
+    },
+    {
+      "from": "Failed to edit",
+      "to": "编辑失败"
+    },
+    {
+      "from": "Collapse files",
+      "to": "折叠文件"
+    },
+    {
+      "from": "Loading files…",
+      "to": "正在加载文件…"
+    },
+    {
+      "from": "Failed to list",
+      "to": "列出失败"
+    },
+    {
+      "from": "Failed to stop",
+      "to": "停止失败"
+    },
+    {
+      "from": "Checking tasks",
+      "to": "正在检查任务"
+    },
+    {
+      "from": "Run PowerShell",
+      "to": "运行 PowerShell"
+    },
+    {
+      "from": "List schedules",
+      "to": "列出定时任务"
+    },
+    {
+      "from": "Enter worktree",
+      "to": "进入工作树"
+    },
+    {
+      "from": "Updating todos",
+      "to": "正在更新待办"
+    },
+    {
+      "from": "Start planning",
+      "to": "开始规划"
+    },
+    {
+      "from": "Reviewing plan",
+      "to": "正在评审计划"
+    },
+    {
+      "from": "Failed to wait",
+      "to": "等待失败"
+    },
+    {
+      "from": "Explore failed",
+      "to": "探索失败"
+    },
+    {
+      "from": "Open in Finder",
+      "to": "在 Finder 中打开"
+    },
+    {
+      "from": "No Error Stack",
+      "to": "无错误堆栈"
+    },
+    {
+      "from": "Feature models",
+      "to": "功能模型"
+    },
+    {
+      "from": "Session titles",
+      "to": "会话标题"
+    },
+    {
+      "from": "Open a folder",
+      "to": "打开文件夹"
+    },
+    {
+      "from": "Open settings",
+      "to": "打开设置"
+    },
+    {
+      "from": "Default model",
+      "to": "默认模型"
+    },
+    {
+      "from": "Use plan mode",
+      "to": "使用计划模式"
+    },
+    {
+      "from": "Create a plan",
+      "to": "创建计划"
+    },
+    {
+      "from": "Allow options",
+      "to": "授权选项"
+    },
+    {
+      "from": "Search models",
+      "to": "搜索模型"
+    },
+    {
+      "from": "Search skills",
+      "to": "搜索技能"
+    },
+    {
+      "from": "Slash command",
+      "to": "斜杠命令"
+    },
+    {
+      "from": "Refresh plans",
+      "to": "刷新计划"
+    },
+    {
+      "from": "Show archived",
+      "to": "显示已归档"
+    },
+    {
+      "from": "Keep refining",
+      "to": "继续完善"
+    },
+    {
+      "from": "Back to plans",
+      "to": "返回计划"
+    },
+    {
+      "from": "Install skill",
+      "to": "安装技能"
+    },
+    {
+      "from": "Theme details",
+      "to": "主题详情"
+    },
+    {
+      "from": "Not connected",
+      "to": "未连接"
+    },
+    {
+      "from": "Cost by model",
+      "to": "按模型统计费用"
+    },
+    {
+      "from": "Invalid input",
+      "to": "无效输入"
+    },
+    {
+      "from": "Search failed",
+      "to": "搜索失败"
+    },
+    {
+      "from": "Write failed.",
+      "to": "写入失败。"
+    },
+    {
+      "from": "Changed files",
+      "to": "变更的文件"
+    },
+    {
+      "from": "Create branch",
+      "to": "新建分支"
+    },
+    {
+      "from": "Context usage",
+      "to": "上下文用量"
+    },
+    {
+      "from": "Context limit",
+      "to": "上下文上限"
+    },
+    {
+      "from": "Watch command",
+      "to": "监听命令"
+    },
+    {
+      "from": "Creating task",
+      "to": "正在创建任务"
+    },
+    {
+      "from": "Updating task",
+      "to": "正在更新任务"
+    },
+    {
+      "from": "Listing tasks",
+      "to": "正在列出任务"
+    },
+    {
+      "from": "Stopping task",
+      "to": "正在停止任务"
+    },
+    {
+      "from": "Loading skill",
+      "to": "正在加载技能"
+    },
+    {
+      "from": "Schedule task",
+      "to": "定时任务"
+    },
+    {
+      "from": "Exit worktree",
+      "to": "退出工作树"
+    },
+    {
+      "from": "Inspect image",
+      "to": "检查图片"
+    },
+    {
+      "from": "Failed to ask",
+      "to": "提问失败"
+    },
+    {
+      "from": "Delegate task",
+      "to": "委派任务"
+    },
+    {
+      "from": "Open DevTools",
+      "to": "打开开发者工具"
+    },
+    {
+      "from": "Corner radius",
+      "to": "圆角半径"
+    },
+    {
+      "from": "Archive chat",
+      "to": "归档会话"
+    },
+    {
+      "from": "Mark as read",
+      "to": "标为已读"
+    },
+    {
+      "from": "No chats yet",
+      "to": "暂无会话"
+    },
+    {
+      "from": "Open project",
+      "to": "打开项目"
+    },
+    {
+      "from": "Open folder…",
+      "to": "打开文件夹…"
+    },
+    {
+      "from": "Compact mode",
+      "to": "紧凑模式"
+    },
+    {
+      "from": "Compact Fast",
+      "to": "紧凑-快速"
+    },
+    {
+      "from": "Always allow",
+      "to": "始终允许"
+    },
+    {
+      "from": "Search files",
+      "to": "搜索文件"
+    },
+    {
+      "from": "Search plans",
+      "to": "搜索计划"
+    },
+    {
+      "from": "Send message",
+      "to": "发送消息"
+    },
+    {
+      "from": "Retry prompt",
+      "to": "重试提示词"
+    },
+    {
+      "from": "Save comment",
+      "to": "保存评论"
+    },
+    {
+      "from": "Resize panel",
+      "to": "调整面板大小"
+    },
+    {
+      "from": "Preview only",
+      "to": "仅预览"
+    },
+    {
+      "from": "Add a server",
+      "to": "添加服务器"
+    },
+    {
+      "from": "This project",
+      "to": "此项目"
+    },
+    {
+      "from": "Weekly limit",
+      "to": "每周限额"
+    },
+    {
+      "from": "Server error",
+      "to": "服务器错误"
+    },
+    {
+      "from": "Shell output",
+      "to": "终端输出"
+    },
+    {
+      "from": "No file open",
+      "to": "未打开文件"
+    },
+    {
+      "from": "Output limit",
+      "to": "输出上限"
+    },
+    {
+      "from": "Session cost",
+      "to": "会话费用"
+    },
+    {
+      "from": "Stop command",
+      "to": "停止命令"
+    },
+    {
+      "from": "SHELL OUTPUT",
+      "to": "终端输出"
+    },
+    {
+      "from": "Watch events",
+      "to": "监听事件"
+    },
+    {
+      "from": "Reading task",
+      "to": "正在读取任务"
+    },
+    {
+      "from": "AGENT OUTPUT",
+      "to": "智能体输出"
+    },
+    {
+      "from": "Fetch failed",
+      "to": "获取失败"
+    },
+    {
+      "from": "Update todos",
+      "to": "更新待办"
+    },
+    {
+      "from": "Ask question",
+      "to": "提问"
+    },
+    {
+      "from": "Look up docs",
+      "to": "查阅文档"
+    },
+    {
+      "from": "Present plan",
+      "to": "展示计划"
+    },
+    {
+      "from": "Running tool",
+      "to": "正在运行工具"
+    },
+    {
+      "from": "Image vision",
+      "to": "图像视觉"
+    },
+    {
+      "from": "Rename chat",
+      "to": "重命名会话"
+    },
+    {
+      "from": "Delete chat",
+      "to": "删除会话"
+    },
+    {
+      "from": "Add project",
+      "to": "添加项目"
+    },
+    {
+      "from": "Open folder",
+      "to": "打开文件夹"
+    },
+    {
+      "from": "New folder…",
+      "to": "新建文件夹…"
+    },
+    {
+      "from": "Auto accept",
+      "to": "自动接受"
+    },
+    {
+      "from": "Full access",
+      "to": "完全访问"
+    },
+    {
+      "from": "Add context",
+      "to": "添加上下文"
+    },
+    {
+      "from": "Send review",
+      "to": "发送评审"
+    },
+    {
+      "from": "Back to app",
+      "to": "返回应用"
+    },
+    {
+      "from": "Path copied",
+      "to": "路径已复制"
+    },
+    {
+      "from": "Hard reload",
+      "to": "强制刷新"
+    },
+    {
+      "from": "MCP servers",
+      "to": "MCP 服务器"
+    },
+    {
+      "from": "Find skills",
+      "to": "查找技能"
+    },
+    {
+      "from": "User skills",
+      "to": "用户技能"
+    },
+    {
+      "from": "IDE context",
+      "to": "IDE 上下文"
+    },
+    {
+      "from": "Empty state",
+      "to": "空状态"
+    },
+    {
+      "from": "Easter eggs",
+      "to": "彩蛋"
+    },
+    {
+      "from": "Signing in…",
+      "to": "正在登录…"
+    },
+    {
+      "from": "Signed out.",
+      "to": "已退出登录。"
+    },
+    {
+      "from": "Balance low",
+      "to": "余额不足"
+    },
+    {
+      "from": "Open source",
+      "to": "开源"
+    },
+    {
+      "from": "Open Source",
+      "to": "开源"
+    },
+    {
+      "from": "Run stopped",
+      "to": "运行已停止"
+    },
+    {
+      "from": "Remove file",
+      "to": "删除文件"
+    },
+    {
+      "from": "Used tokens",
+      "to": "已用 Token"
+    },
+    {
+      "from": "Create file",
+      "to": "新建文件"
+    },
+    {
+      "from": "Search text",
+      "to": "搜索文本"
+    },
+    {
+      "from": "Run command",
+      "to": "运行命令"
+    },
+    {
+      "from": "Create task",
+      "to": "创建任务"
+    },
+    {
+      "from": "Update task",
+      "to": "更新任务"
+    },
+    {
+      "from": "Review plan",
+      "to": "评审计划"
+    },
+    {
+      "from": "Learn taste",
+      "to": "学习偏好"
+    },
+    {
+      "from": "Task failed",
+      "to": "任务失败"
+    },
+    {
+      "from": "Tool failed",
+      "to": "工具失败"
+    },
+    {
+      "from": "Open result",
+      "to": "打开结果"
+    },
+    {
+      "from": "Welcome in.",
+      "to": "欢迎使用。"
+    },
+    {
+      "from": "Force OAuth",
+      "to": "强制 OAuth 登录"
+    },
+    {
+      "from": "Unpin chat",
+      "to": "取消置顶"
+    },
+    {
+      "from": "Allow once",
+      "to": "允许一次"
+    },
+    {
+      "from": "No matches",
+      "to": "无匹配结果"
+    },
+    {
+      "from": "Choose one",
+      "to": "选择一项"
+    },
+    {
+      "from": "Add photos",
+      "to": "添加图片"
+    },
+    {
+      "from": "Reset view",
+      "to": "重置视图"
+    },
+    {
+      "from": "Show panel",
+      "to": "显示面板"
+    },
+    {
+      "from": "Hide panel",
+      "to": "隐藏面板"
+    },
+    {
+      "from": "Add server",
+      "to": "添加服务器"
+    },
+    {
+      "from": "Install to",
+      "to": "安装到"
+    },
+    {
+      "from": "Use Claude",
+      "to": "使用 Claude"
+    },
+    {
+      "from": "Usage cost",
+      "to": "使用费用"
+    },
+    {
+      "from": "Expand all",
+      "to": "全部展开"
+    },
+    {
+      "from": "Read files",
+      "to": "读取文件"
+    },
+    {
+      "from": "List files",
+      "to": "列出文件"
+    },
+    {
+      "from": "Find files",
+      "to": "查找文件"
+    },
+    {
+      "from": "List tasks",
+      "to": "列出任务"
+    },
+    {
+      "from": "Load skill",
+      "to": "加载技能"
+    },
+    {
+      "from": "Search web",
+      "to": "搜索网络"
+    },
+    {
+      "from": "Compaction",
+      "to": "上下文压缩"
+    },
+    {
+      "from": "Plan mode",
+      "to": "计划模式"
+    },
+    {
+      "from": "Clear all",
+      "to": "全部清除"
+    },
+    {
+      "from": "Set aside",
+      "to": "搁置"
+    },
+    {
+      "from": "Copy link",
+      "to": "复制链接"
+    },
+    {
+      "from": "Copy path",
+      "to": "复制路径"
+    },
+    {
+      "from": "Try again",
+      "to": "重试"
+    },
+    {
+      "from": "Code font",
+      "to": "代码字体"
+    },
+    {
+      "from": "Font size",
+      "to": "字号"
+    },
+    {
+      "from": "Free plan",
+      "to": "免费套餐"
+    },
+    {
+      "from": "Read file",
+      "to": "读取文件"
+    },
+    {
+      "from": "Edit file",
+      "to": "编辑文件"
+    },
+    {
+      "from": "Read task",
+      "to": "读取任务"
+    },
+    {
+      "from": "Stop task",
+      "to": "停止任务"
+    },
+    {
+      "from": "Fetch URL",
+      "to": "获取 URL"
+    },
+    {
+      "from": "Used tool",
+      "to": "已使用工具"
+    },
+    {
+      "from": "No output",
+      "to": "无输出"
+    },
+    {
+      "from": "Close tab",
+      "to": "关闭标签页"
+    },
+    {
+      "from": "New chat",
+      "to": "新建会话"
+    },
+    {
+      "from": "New Chat",
+      "to": "新建会话"
+    },
+    {
+      "from": "Pin chat",
+      "to": "置顶会话"
+    },
+    {
+      "from": "Send now",
+      "to": "立即发送"
+    },
+    {
+      "from": "Group by",
+      "to": "分组依据"
+    },
+    {
+      "from": "Zoom out",
+      "to": "缩小"
+    },
+    {
+      "from": "Sign out",
+      "to": "退出登录"
+    },
+    {
+      "from": "Open in ",
+      "to": "在 "
+    },
+    {
+      "from": "Open in…",
+      "to": "打开方式…"
+    },
+    {
+      "from": "Sort by",
+      "to": "排序依据"
+    },
+    {
+      "from": "Zoom in",
+      "to": "放大"
+    },
+    {
+      "from": "UI font",
+      "to": "界面字体"
+    },
+    {
+      "from": "Sign in",
+      "to": "登录"
+    },
+    {
+      "from": "Log out",
+      "to": "退出登录"
+    },
+    {
+      "from": "API key",
+      "to": "API 密钥"
+    },
+    {
+      "from": "Command Code desktop is alpha software and not stable yet. Things can break or change without warning, and you use it at your own risk.",
+      "to": "Command Code 桌面版为 alpha 软件，尚不稳定。功能可能随时变更或出错，请自行承担使用风险。"
+    },
+    {
+      "from": "Render the terminal with WebGL for smooth scrolling under heavy output. Turn off if your graphics driver shows glitches. Applies to new terminals.",
+      "to": "使用 WebGL 渲染终端，重度输出时滚动更流畅。若显卡驱动显示异常请关闭。仅对新终端生效。"
+    },
+    {
+      "from": "Certain typed phrases trigger small visual effects. They are never sent to the model. Turn off to disable all of them.",
+      "to": "某些特定输入会触发小型视觉特效。它们不会发送给模型。关闭可禁用全部特效。"
+    },
+    {
+      "from": "Pause flooding commands until the screen catches up, so heavy output never freezes the app. Applies to new terminals.",
+      "to": "在屏幕跟上输出前暂停大量刷屏的命令，重度输出不会冻结应用。仅对新终端生效。"
+    },
+    {
+      "from": "Learn your coding style from this project only (same setting as /taste).",
+      "to": "仅从当前项目学习你的编码风格（与 /taste 设置相同）。"
+    },
+    {
+      "from": "Text size in every terminal. While a terminal has focus, the zoom shortcuts change this instead of the window.",
+      "to": "所有终端的文本大小。当终端处于焦点时，缩放快捷键将调整此设置而非窗口。"
+    },
+    {
+      "from": "Show the terminal and changes panel when the app starts.",
+      "to": "应用启动时显示终端与变更面板。"
+    },
+    {
+      "from": "Names your sessions after the first exchange.",
+      "to": "根据第一次交流为会话命名。"
+    },
+    {
+      "from": "Describes attached images so a text-only model can read them.",
+      "to": "描述附加的图片，让纯文本模型也能读取。"
+    },
+    {
+      "from": "Summarizes an abandoned branch when you jump away from it.",
+      "to": "当离开未完成分支时，总结该分支的进度。"
+    },
+    {
+      "from": "Summarizes long conversations when context fills up.",
+      "to": "上下文占满时压缩长对话。"
+    },
+    {
+      "from": "Streams live observations during onboarding.",
+      "to": "在引导过程中实时展示观察结果。"
+    },
+    {
+      "from": "Writes the one-line command summaries on permission prompts.",
+      "to": "在权限提示中编写一行命令摘要。"
+    },
+    {
+      "from": "Learns your coding style from your sessions.",
+      "to": "从你的会话中学习你的编码风格。"
+    },
+    {
+      "from": "Command Code (Alpha) Desktop.",
+      "to": "Command Code（Alpha）桌面版。"
+    },
+    {
+      "from": "label:\"Signal\",description:\"A quiet waveform across the workspace.\"",
+      "to": "label:\"声波\",description:\"工作区中一道安静的波形。\""
+    },
+    {
+      "from": "label:\"Beacon\",description:\"A focused light that leads into the task.\"",
+      "to": "label:\"灯塔\",description:\"一束聚焦的光，引导你进入任务。\""
+    },
+    {
+      "from": "label:\"Prism\",description:\"Crossing signals around the starting point.\"",
+      "to": "label:\"棱镜\",description:\"起点周围交叉的信号。\""
+    },
+    {
+      "from": "label:\"Clean\",description:\"No background visual, just a quiet starting screen.\"",
+      "to": "label:\"纯净\",description:\"无背景画面，只有安静的起始界面。\""
+    },
+    {
+      "from": "eyebrow:\"A CLEAR PLACE TO BEGIN\"",
+      "to": "eyebrow:\"一个清晰的起点\""
+    },
+    {
+      "from": "Append the session's live dollar cost to the usage receipt.",
+      "to": "将会话的实时美元费用附加到用量账单中。"
+    },
+    {
+      "from": "Show each response's dollar cost next to its token count.",
+      "to": "在每条回复的 token 数旁显示其美元费用。"
+    },
+    {
+      "from": "children:\"Open full output\"",
+      "to": "children:\"查看完整输出\""
+    },
+    {
+      "from": "children:\"Fix this error\"",
+      "to": "children:\"修复此错误\""
+    },
+    {
+      "from": "title:\"Send to Terminal\"",
+      "to": "title:\"发送到终端\""
+    },
+    {
+      "from": "message:\"Clear the current draft before using this action\"",
+      "to": "message:\"请先清空当前草稿再执行此操作\""
+    },
+    {
+      "from": "message:\"Could not stop the run\"",
+      "to": "message:\"无法停止运行\""
+    },
+    {
+      "from": "message:\"Chat cleared\"",
+      "to": "message:\"会话已清空\""
+    },
+    {
+      "from": "message:\"Could not discard\"",
+      "to": "message:\"无法丢弃更改\""
+    },
+    {
+      "from": "children:\"Pursue a goal\"",
+      "to": "children:\"追求一个目标\""
+    },
+    {
+      "from": "children:\"Check goal\"",
+      "to": "children:\"查看目标\""
+    },
+    {
+      "from": "children:\"Clear goal\"",
+      "to": "children:\"清除目标\""
+    },
+    {
+      "from": "description:\"Most intelligent for complex tasks\"",
+      "to": "description:\"处理复杂任务时最智能\""
+    },
+    {
+      "from": "title:\"Turn on Auto-accept?\"",
+      "to": "title:\"开启自动接受？\""
+    },
+    {
+      "from": "body:\"Auto-accept lets the agent run ordinary edits and commands without asking each time. Risky actions and sensitive files still require approval. It stays on until you switch modes, and resets when you restart the app.\"",
+      "to": "body:\"自动接受模式让智能体无需逐一询问即可执行常规编辑与命令。风险操作与敏感文件仍需你的批准。该模式在你切换模式前持续生效，重启应用后重置。\""
+    },
+    {
+      "from": "confirmLabel:\"Turn on\"",
+      "to": "confirmLabel:\"开启\""
+    },
+    {
+      "from": "busyLabel:\"Turning on…\"",
+      "to": "busyLabel:\"正在开启…\""
+    },
+    {
+      "from": "title:\"Run this project's mods?\"",
+      "to": "title:\"运行此项目的模组？\""
+    },
+    {
+      "from": "body:\"This folder contains mods. Mods are code from the repository and they run on your machine with the same access the app has. Only run them if you trust this project.\"",
+      "to": "body:\"此文件夹包含模组。模组来自仓库中的代码，会在你的机器上以与应用相同的权限运行。只有信任此项目时才应运行它们。\""
+    },
+    {
+      "from": "confirmLabel:\"Run mods\"",
+      "to": "confirmLabel:\"运行模组\""
+    },
+    {
+      "from": "description:\"Manage Command Code memory\"",
+      "to": "description:\"管理 Command Code 记忆\""
+    },
+    {
+      "from": "description:\"Resume a past conversation\"",
+      "to": "description:\"恢复过去的对话\""
+    },
+    {
+      "from": "description:\"Rename the current session\"",
+      "to": "description:\"重命名当前会话\""
+    },
+    {
+      "from": "description:\"Restore to a previous checkpoint\"",
+      "to": "description:\"恢复到之前的检查点\""
+    },
+    {
+      "from": "description:\"Duplicate this conversation into a new chat\"",
+      "to": "description:\"将会话复制到新对话中\""
+    },
+    {
+      "from": "description:\"Show this session’s tokens, cost, and branches\"",
+      "to": "description:\"显示此会话的 token、费用与分支\""
+    },
+    {
+      "from": "description:\"Clear the conversation history\"",
+      "to": "description:\"清空对话历史\""
+    },
+    {
+      "from": "description:\"Share conversation (copy link to clipboard)\"",
+      "to": "description:\"分享对话（复制链接到剪贴板）\""
+    },
+    {
+      "from": "description:\"Stop sharing conversation\"",
+      "to": "description:\"停止分享对话\""
+    },
+    {
+      "from": "description:\"Manage 偏好学习 and usage\"",
+      "to": "description:\"管理偏好学习与用量\""
+    },
+    {
+      "from": "description:\"学习偏好 from sessions with other coding agents\"",
+      "to": "description:\"从与其他编码智能体的会话中学习偏好\""
+    },
+    {
+      "from": "description:\"Show the session todo list\"",
+      "to": "description:\"显示会话待办列表\""
+    },
+    {
+      "from": "description:\"Browse and open agent skills\"",
+      "to": "description:\"浏览并打开智能体技能\""
+    },
+    {
+      "from": "description:\"Manage agent configurations\"",
+      "to": "description:\"管理智能体配置\""
+    },
+    {
+      "from": "description:\"Manage MCP server connections\"",
+      "to": "description:\"管理 MCP 服务器连接\""
+    },
+    {
+      "from": "description:\"Switch between Command Code models\"",
+      "to": "description:\"切换 Command Code 模型\""
+    },
+    {
+      "from": "description:\"Compact the conversation history\"",
+      "to": "description:\"压缩对话历史\""
+    },
+    {
+      "from": "description:\"Select a compact mode to compact sessions\"",
+      "to": "description:\"选择压缩模式以压缩会话\""
+    },
+    {
+      "from": "description:\"Show context window usage and breakdown\"",
+      "to": "description:\"显示上下文窗口用量与明细\""
+    },
+    {
+      "from": "description:\"Connect IDE to share your open file and selected lines\"",
+      "to": "description:\"连接 IDE 以共享打开的文件与选中行\""
+    },
+    {
+      "from": "description:\"Log in to Command Code\"",
+      "to": "description:\"登录 Command Code\""
+    },
+    {
+      "from": "description:\"退出登录 of Command Code\"",
+      "to": "description:\"退出登录 Command Code\""
+    },
+    {
+      "from": "description:\"Open Command Code courses in your browser\"",
+      "to": "description:\"在浏览器中打开 Command Code 课程\""
+    },
+    {
+      "from": "description:\"Share feedback or report bugs\"",
+      "to": "description:\"分享反馈或报告问题\""
+    },
+    {
+      "from": "description:\"Enter plan mode\"",
+      "to": "description:\"进入计划模式\""
+    },
+    {
+      "from": "description:\"Show or switch the permission mode\"",
+      "to": "description:\"查看或切换权限模式\""
+    },
+    {
+      "from": "description:\"Switch to default mode (prompt before edits/commands)\"",
+      "to": "description:\"切换到默认模式（编辑/命令前询问）\""
+    },
+    {
+      "from": "description:\"Switch to auto-accept mode (accept edits automatically)\"",
+      "to": "description:\"切换到自动接受模式（自动接受编辑）\""
+    },
+    {
+      "from": "description:\"Switch to plan mode (read-only, no side effects)\"",
+      "to": "description:\"切换到计划模式（只读，无副作用）\""
+    },
+    {
+      "from": "description:\"Open the plan panel\"",
+      "to": "description:\"打开计划面板\""
+    },
+    {
+      "from": "description:\"Review this session's latest plan\"",
+      "to": "description:\"查看此会话的最新计划\""
+    },
+    {
+      "from": "description:\"Review a pull request\"",
+      "to": "description:\"查看拉取请求\""
+    },
+    {
+      "from": "description:\"Fetch all PR comments for current branch\"",
+      "to": "description:\"获取当前分支的全部 PR 评论\""
+    },
+    {
+      "from": "description:\"Manage additional directory scope\"",
+      "to": "description:\"管理附加目录范围\""
+    },
+    {
+      "from": "description:\"Show comprehensive environment status\"",
+      "to": "description:\"显示完整的环境状态\""
+    },
+    {
+      "from": "description:\"Display credits, plan, and usage metrics\"",
+      "to": "description:\"显示额度、套餐与用量指标\""
+    },
+    {
+      "from": "description:\"Display help information\"",
+      "to": "description:\"显示帮助信息\""
+    },
+    {
+      "from": "description:\"Exit Command Code\"",
+      "to": "description:\"退出 Command Code\""
+    },
+    {
+      "from": "description:\"Open or start a chat before running a mod command\"",
+      "to": "description:\"先打开或开始一个会话，再运行模组命令\""
+    },
+    {
+      "from": "title:\"Profile\"",
+      "to": "title:\"资料\""
+    },
+    {
+      "from": "idleLabel:\"Retry\"",
+      "to": "idleLabel:\"重试\""
+    },
+    {
+      "from": "label:\"Account unavailable\"",
+      "to": "label:\"账户不可用\""
+    },
+    {
+      "from": "label:\"Tokens\"",
+      "to": "label:\"Tokens\""
+    },
+    {
+      "from": "description:\"5-hour and weekly caps apply on plans that have them.\"",
+      "to": "description:\"5 小时与每周上限适用于支持这些限制的套餐。\""
+    },
+    {
+      "from": "label:\"Terminal 1\"",
+      "to": "label:\"终端 1\""
+    },
+    {
+      "from": "confirmLabel:\"Stop and close\"",
+      "to": "confirmLabel:\"停止并关闭\""
+    },
+    {
+      "from": "title:\"Run the project's setup script\"",
+      "to": "title:\"运行项目的设置脚本\""
+    },
+    {
+      "from": "title:\"Run the project's run script\"",
+      "to": "title:\"运行项目的运行脚本\""
+    },
+    {
+      "from": "aria-label:\"Terminal panel\"",
+      "to": "aria-label:\"终端面板\""
+    },
+    {
+      "from": "label:\"Resize terminal\"",
+      "to": "label:\"调整终端大小\""
+    },
+    {
+      "from": "children:\"Ask agent instead\"",
+      "to": "children:\"改为询问智能体\""
+    },
+    {
+      "from": "children:\"Dev server at\"",
+      "to": "children:\"开发服务器地址\""
+    },
+    {
+      "from": "label:\"The sidebar\"",
+      "to": "label:\"侧边栏\""
+    },
+    {
+      "from": "label:\"The terminal\"",
+      "to": "label:\"终端\""
+    },
+    {
+      "from": "label:\"The workbench\"",
+      "to": "label:\"工作台\""
+    },
+    {
+      "from": "children:\"Diff layout\"",
+      "to": "children:\"差异布局\""
+    },
+    {
+      "from": "title:\"Changed by the agent in its last run\"",
+      "to": "title:\"上次运行时由智能体更改\""
+    },
+    {
+      "from": "children:\"Render anyway\"",
+      "to": "children:\"仍然渲染\""
+    },
+    {
+      "from": "placeholder:\"Commit message…\"",
+      "to": "placeholder:\"提交信息…\""
+    },
+    {
+      "from": "label:\"Commit and push\"",
+      "to": "label:\"提交并推送\""
+    },
+    {
+      "from": "label:\"Push\"",
+      "to": "label:\"推送\""
+    },
+    {
+      "from": "label:\"Commit\"",
+      "to": "label:\"提交\""
+    },
+    {
+      "from": "placeholder:\"Search projects\"",
+      "to": "placeholder:\"搜索项目\""
+    },
+    {
+      "from": "children:\"No projects match\"",
+      "to": "children:\"没有匹配的项目\""
+    },
+    {
+      "from": "title:\"Don't ask for this project\"",
+      "to": "title:\"不再询问此项目\""
+    },
+    {
+      "from": "children:\"Loading preview\"",
+      "to": "children:\"正在加载预览\""
+    },
+    {
+      "from": "title:\"Switch project\"",
+      "to": "title:\"切换项目\""
+    },
+    {
+      "from": "children:\"Allow for session\"",
+      "to": "children:\"允许本次会话使用\""
+    },
+    {
+      "from": "copyCode:\"Copy Code\"",
+      "to": "copyCode:\"复制代码\""
+    },
+    {
+      "from": "downloadFile:\"Download file\"",
+      "to": "downloadFile:\"下载文件\""
+    },
+    {
+      "from": "downloadDiagram:\"Download diagram\"",
+      "to": "downloadDiagram:\"下载图表\""
+    },
+    {
+      "from": "downloadDiagramAsSvg:\"Download diagram as SVG\"",
+      "to": "downloadDiagramAsSvg:\"将图表下载为 SVG\""
+    },
+    {
+      "from": "downloadDiagramAsPng:\"Download diagram as PNG\"",
+      "to": "downloadDiagramAsPng:\"将图表下载为 PNG\""
+    },
+    {
+      "from": "downloadDiagramAsMmd:\"Download diagram as MMD\"",
+      "to": "downloadDiagramAsMmd:\"将图表下载为 MMD\""
+    },
+    {
+      "from": "viewFullscreen:\"View fullscreen\"",
+      "to": "viewFullscreen:\"全屏查看\""
+    },
+    {
+      "from": "exitFullscreen:\"Exit fullscreen\"",
+      "to": "exitFullscreen:\"退出全屏\""
+    },
+    {
+      "from": "copyTable:\"Copy table\"",
+      "to": "copyTable:\"复制表格\""
+    },
+    {
+      "from": "copyTableAsMarkdown:\"Copy table as Markdown\"",
+      "to": "copyTableAsMarkdown:\"以 Markdown 复制表格\""
+    },
+    {
+      "from": "copyTableAsCsv:\"Copy table as CSV\"",
+      "to": "copyTableAsCsv:\"以 CSV 复制表格\""
+    },
+    {
+      "from": "copyTableAsTsv:\"Copy table as TSV\"",
+      "to": "copyTableAsTsv:\"以 TSV 复制表格\""
+    },
+    {
+      "from": "downloadTable:\"Download table\"",
+      "to": "downloadTable:\"下载表格\""
+    },
+    {
+      "from": "downloadTableAsCsv:\"Download table as CSV\"",
+      "to": "downloadTableAsCsv:\"将表格下载为 CSV\""
+    },
+    {
+      "from": "downloadTableAsMarkdown:\"Download table as Markdown\"",
+      "to": "downloadTableAsMarkdown:\"将表格下载为 Markdown\""
+    },
+    {
+      "from": "imageNotAvailable:\"Image not available\"",
+      "to": "imageNotAvailable:\"图片不可用\""
+    },
+    {
+      "from": "downloadImage:\"Download image\"",
+      "to": "downloadImage:\"下载图片\""
+    },
+    {
+      "from": "openExternalLink:\"Open external link?\"",
+      "to": "openExternalLink:\"打开外部链接？\""
+    },
+    {
+      "from": "copied:\"Copied\"",
+      "to": "copied:\"已复制\""
+    },
+    {
+      "from": "openLink:\"Open link\"",
+      "to": "openLink:\"打开链接\""
+    },
+    {
+      "from": "children:\"Show Code\"",
+      "to": "children:\"显示代码\""
+    },
+    {
+      "from": "title:\"Reset zoom and pan\"",
+      "to": "title:\"重置缩放与平移\""
+    },
+    {
+      "from": "description:\"How aggressively long chats are compacted. The model that runs compaction is the 上下文压缩 row in Config.\"",
+      "to": "description:\"长对话被压缩的激进程度。执行压缩的模型是 Config 中的“上下文压缩”一行。\""
+    },
+    {
+      "from": "description:\"The Allow button carries a menu with scope choices, like allowing a tool for the whole session. Turn off for a plain Allow button.\"",
+      "to": "description:\"允许按钮带有一个包含范围选项的菜单，例如允许某个工具在整个会话中使用。关闭后“允许”按钮将不再带菜单。\""
+    },
+    {
+      "from": "description: \"Auto-compact aggressiveness when context fills up (same setting as /compact-mode).\"",
+      "to": "description: \"上下文占满时自动压缩的激进程度（与 /compact-mode 设置相同）。\""
+    },
+    {
+      "from": "children:\"Browser sign-in did not complete. Paste the API 密钥 shown in your browser to finish.\"",
+      "to": "children:\"浏览器登录未完成。请粘贴浏览器中显示的 API 密钥以完成登录。\""
+    },
+    {
+      "from": "children:\"Uses the same account as the Command Code CLI and studio.\"",
+      "to": "children:\"使用与 Command Code CLI 和工作室相同的账户。\""
+    },
+    {
+      "from": "children:\"This page didn't load\"",
+      "to": "children:\"此页面未能加载\""
+    },
+    {
+      "from": "children:\"Fetch a GitHub 仓库 and pick the skills to install.\"",
+      "to": "children:\"获取 GitHub 仓库并选择要安装的技能。\""
+    },
+    {
+      "from": "children:\"No project found: toggles are saved to your user settings.\"",
+      "to": "children:\"未找到项目：开关将保存到你的用户设置中。\""
+    },
+    {
+      "from": "children:\"Run Claude models directly through your own Anthropic subscription (Pro/Max) instead of the Command Code gateway. Internal and development builds only.\"",
+      "to": "children:\"直接通过你自己的 Anthropic 订阅（Pro/Max）运行 Claude 模型，而不是使用 Command Code 网关。仅限内部与开发版本。\""
+    },
+    {
+      "from": "description:\"ChatGPT Pro/Plus subscription\"",
+      "to": "description:\"ChatGPT Pro/Plus 订阅\""
+    },
+    {
+      "from": "message:\"We couldn't reach the server. Check your internet connection and try again.\"",
+      "to": "message:\"无法连接到服务器。请检查网络连接后重试。\""
+    },
+    {
+      "from": "message:\"Your Anthropic sign-in is no longer valid. Open Settings and use the Claude section to re-authenticate or sign out.\"",
+      "to": "message:\"你的 Anthropic 登录已失效。请打开设置，使用 Claude 区域重新认证或退出登录。\""
+    },
+    {
+      "from": "message:\"Your account is out of credits or needs a billing update. Add credits to keep going.\"",
+      "to": "message:\"你的账户额度已用完，或需要更新计费信息。请充值后继续使用。\""
+    },
+    {
+      "from": "message:\"You've sent requests too quickly. Wait a few seconds and try again.\"",
+      "to": "message:\"请求发送过于频繁。请稍等几秒后重试。\""
+    },
+    {
+      "from": "message:\"The service is temporarily overloaded. Give it a moment, then retry.\"",
+      "to": "message:\"服务暂时过载。请稍候片刻再重试。\""
+    },
+    {
+      "from": "message:\"This chat reached the model's context limit. Start a new chat or remove some history.\"",
+      "to": "message:\"此会话已达到模型的上下文上限。请新开会话或清理部分历史。\""
+    },
+    {
+      "from": "message:\"The selected model has no vision support. Switch to a vision-capable model to send images.\"",
+      "to": "message:\"当前模型不支持图像识别。请切换到支持视觉的模型以发送图片。\""
+    },
+    {
+      "from": "message:\"The model declined this request under its content policy. Rephrase and try again.\"",
+      "to": "message:\"模型依据内容策略拒绝了此请求。请换一种说法重试。\""
+    },
+    {
+      "from": "message:\"This model or service is not available in your region right now.\"",
+      "to": "message:\"此模型或服务当前在你所在地区不可用。\""
+    },
+    {
+      "from": "message:\"The selected model isn't available right now. Pick another from the model menu.\"",
+      "to": "message:\"所选模型当前不可用。请从模型菜单中选择其他模型。\""
+    },
+    {
+      "from": "message:\"An MCP server returned an error or isn't responding. Check its setup in Settings.\"",
+      "to": "message:\"某个 MCP 服务器返回错误或未响应。请在设置中检查其配置。\""
+    },
+    {
+      "from": "message:\"Your disk is full. Free up some space and try again.\"",
+      "to": "message:\"磁盘已满。请释放一些空间后重试。\""
+    },
+    {
+      "from": "message:\"Couldn't start the agent CLI. Check the CLI path is correct in Settings.\"",
+      "to": "message:\"无法启动智能体 CLI。请在设置中确认 CLI 路径是否正确。\""
+    },
+    {
+      "from": "message:\"The request was rejected as invalid. This is usually a transient glitch; try again.\"",
+      "to": "message:\"请求被判定为无效而被拒绝。这通常是暂时性故障，请重试。\""
+    },
+    {
+      "from": "message:\"The service hit an error on its end. Give it a moment, then try again.\"",
+      "to": "message:\"服务端出错。请稍候片刻再重试。\""
+    },
+    {
+      "from": "message:\"The agent stopped unexpectedly. 重试, or check the logs if it keeps happening.\"",
+      "to": "message:\"智能体意外停止。请重试；若反复出现，请检查日志。\""
+    },
+    {
+      "from": "children:\"Learning this project's taste, takes a few minutes\"",
+      "to": "children:\"正在学习此项目的偏好，大约需要几分钟\""
+    },
+    {
+      "from": "message:\"Could not refresh changes.\"",
+      "to": "message:\"无法刷新变更。\""
+    },
+    {
+      "from": "description:\"They are still changed on disk.\"",
+      "to": "description:\"这些更改仍保留在磁盘上。\""
+    },
+    {
+      "from": "title:\"Discard file changes?\"",
+      "to": "title:\"放弃文件更改？\""
+    },
+    {
+      "from": "message:\"Your permission choice did not reach the engine. Please try again.\"",
+      "to": "message:\"你的权限选择未送达引擎。请重试。\""
+    },
+    {
+      "from": "message:\"Your answer did not reach the engine. Please answer again.\"",
+      "to": "message:\"你的回答未送达引擎。请重新回答。\""
+    },
+    {
+      "from": "label: \"Check for Updates…\"",
+      "to": "label: \"检查更新…\""
+    },
+    {
+      "from": "message: \"No update is ready yet.\"",
+      "to": "message: \"尚无可安装的更新。\""
+    },
+    {
+      "from": "message: \"The update is being installed. The app will restart shortly.\"",
+      "to": "message: \"更新正在安装。应用即将重启。\""
+    },
+    {
+      "from": "title: \"Select Project Folder\"",
+      "to": "title: \"选择项目文件夹\""
+    },
+    {
+      "from": "message: \"Sign-out ran but could not be verified. If you still appear signed in, try again.\"",
+      "to": "message: \"退出登录已执行但无法确认。如果仍显示已登录，请重试。\""
+    },
+    {
+      "from": "description: \"The default main-loop model. A long-lived host may also apply the change to its current session.\"",
+      "to": "description: \"主循环使用的默认模型。常驻宿主也可能将更改应用到当前会话。\""
+    },
+    {
+      "from": "description: \"Use the provider default reasoning level\"",
+      "to": "description: \"使用服务商默认的推理强度\""
+    },
+    {
+      "from": "description: \"Allow this command\",\n    scope: void 0",
+      "to": "description: \"允许此命令\",\n    scope: void 0"
+    },
+    {
+      "from": "description: \"Allow this tool call\",\n    scope: void 0",
+      "to": "description: \"允许此工具调用\",\n    scope: void 0"
+    },
+    {
+      "from": "message: \"Login to synthesize your taste profile\"",
+      "to": "message: \"登录以综合你的偏好画像\""
+    },
+    {
+      "from": "children:\"Loading diagram...\"",
+      "to": "children:\"正在加载图表...\""
+    },
+    {
+      "from": "alt:\"Command Code desktop update\"",
+      "to": "alt:\"Command Code 桌面版更新\""
+    },
+    {
+      "from": "description:\"Command Code was updated. See the newest desktop features and fixes.\"",
+      "to": "description:\"Command Code 已更新。查看最新的桌面版功能与修复。\""
+    },
+    {
+      "from": "children:\"The app hit an unexpected error. Reloading usually fixes it, your chats are saved.\"",
+      "to": "children:\"应用遇到了意外错误。重新加载通常可以解决，你的会话已保存。\""
+    },
+    {
+      "from": "message:\"Your chats could not be saved to disk. Recent changes may be lost if the app closes.\"",
+      "to": "message:\"会话无法保存到磁盘。如果应用关闭，最近的更改可能会丢失。\""
+    },
+    {
+      "from": "title:\"Your Taste, Learned & Applied\"",
+      "to": "title:\"你的偏好：已被学习并应用\""
+    },
+    {
+      "from": "body:\"Just describe what you want. It reads your code, edits across files, and waits for your review before anything ships.\"",
+      "to": "body:\"只需描述你想要的结果。它会阅读你的代码、跨文件编辑，并在任何改动落地前等待你的评审。\""
+    },
+    {
+      "from": "body:\"Go from idea to done without leaving the app. Every change is yours to approve. When you're ready, Commit saves your work straight to git.\"",
+      "to": "body:\"无需离开应用即可从想法到完成。每一次更改都由你批准。准备好后，Commit 会将你的工作直接保存到 git。\""
+    },
+    {
+      "from": "body:\"As you code, it learns your patterns, tools, and conventions, then starts applying them automatically. Check Settings > Taste to see what it has learned.\"",
+      "to": "body:\"在你编码时，它会学习你的模式、工具与约定，然后自动应用它们。可在 设置 → 偏好 中查看它学到了什么。\""
+    },
+    {
+      "from": "body:\"Taste is learned per project. Open one to see what the agent has picked up.\"",
+      "to": "body:\"偏好按项目分别学习。打开一个项目即可查看智能体学到了什么。\""
+    },
+    {
+      "from": "children:\"Skills are instructions the agent reads and follows. Only install from repositories you trust.\"",
+      "to": "children:\"技能是智能体阅读并遵循的说明。只从你信任的仓库安装。\""
+    },
+    {
+      "from": "body:\"As you work, the agent records the preferences it picks up and they show up here. Or learn this project's taste from your past coding sessions right now.\"",
+      "to": "body:\"工作时，智能体会记录它捕捉到的偏好并显示在这里。也可以现在就从这个项目过去的编码会话中学习偏好。\""
+    },
+    {
+      "from": "description:\"Copilot subscription\"",
+      "to": "description:\"Copilot 订阅\""
+    },
+    {
+      "from": "children:\"Binary file (no preview)\"",
+      "to": "children:\"二进制文件（无预览）\""
+    },
+    {
+      "from": "children:\"Click a file link in chat or pick a file from the tree\"",
+      "to": "children:\"点击会话中的文件链接，或从文件树中选择文件\""
+    },
+    {
+      "from": "description:\"Create a local commit\"",
+      "to": "description:\"创建本地提交\""
+    },
+    {
+      "from": "title:\"Rewind to before this message?\"",
+      "to": "title:\"回退到这条消息之前？\""
+    },
+    {
+      "from": "body:\"Files and chat return to that point. The prompt goes back into the composer.\"",
+      "to": "body:\"文件与会话将回到该时间点。提示内容会回到输入框中。\""
+    },
+    {
+      "from": "error:\"Workspace selection superseded.\"",
+      "to": "error:\"工作区选择已被新操作取代。\""
+    },
+    {
+      "from": "children:\"Commands saved for this project.\"",
+      "to": "children:\"已为此项目保存命令。\""
+    },
+    {
+      "from": "message:\"That image is too large to attach.\"",
+      "to": "message:\"该图片过大，无法附加。\""
+    },
+    {
+      "from": "children:\"Revising the plan. It will reopen when the next version is ready.\"",
+      "to": "children:\"正在修订计划。新版本就绪后会自动重新打开。\""
+    },
+    {
+      "from": "message:\"A file is locked or read-only, or the app lacks permission to write it.\"",
+      "to": "message:\"文件被锁定或是只读，或应用缺少写入权限。\""
+    },
+    {
+      "from": "children:\"All modified, deleted, and untracked files will be staged and committed.\"",
+      "to": "children:\"所有已修改、已删除和未跟踪的文件都将被暂存并提交。\""
+    },
+    {
+      "from": "message:\"A git operation could not complete. Check the repository state and try again.\"",
+      "to": "message:\"Git 操作未能完成。请检查仓库状态后重试。\""
+    },
+    {
+      "from": "message:\"Images attached to this draft were released to free memory. Re-attach them before sending.\"",
+      "to": "message:\"附加到此草稿的图片已被释放以节省内存。发送前请重新附加。\""
+    },
+    {
+      "from": "description:\"Initialize AGENTS.md for this project\"",
+      "to": "description:\"为此项目初始化 AGENTS.md\""
+    },
+    {
+      "from": "text:\"Look at this repo and tell me the right setup and run commands for it. Reply with just the two commands.\"",
+      "to": "text:\"查看这个仓库，告诉我正确的设置和运行命令。只需回复这两条命令。\""
+    },
+    {
+      "from": "children:\"Command Code works inside a project folder so files, tools, and terminal commands stay in the right place.\"",
+      "to": "children:\"Command Code 在项目文件夹内工作，这样文件、工具和终端命令都会保持在正确的位置。\""
+    },
+    {
+      "from": "Let a text-only model read attached images by describing them with the vision model",
+      "to": "让纯文本模型也能读取附加图片——由视觉模型描述图片内容"
+    },
+    {
+      "from": "label: \"Enabled\"",
+      "to": "label: \"启用\""
+    },
+    {
+      "from": "label: \"Disabled\"",
+      "to": "label: \"禁用\""
+    },
+    {
+      "from": "label: \"Inherit from user\"",
+      "to": "label: \"继承自用户\""
+    },
+    {
+      "from": "id: \"theme\",\n    label: \"Theme\",\n    description: \"Terminal color theme (same setting as /theme). Auto automatically detects your terminal background and uses light or dark to match.\"",
+      "to": "id: \"theme\",\n    label: \"主题\",\n    description: \"终端配色主题（与 /theme 设置相同）。自动模式会检测你的终端背景，并自动使用浅色或深色以匹配。\""
+    }
+  ]
+}

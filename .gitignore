@@ -1,0 +1,9 @@
+# 汉化前自动备份（体积大，不入库）
+backups/
+
+# Node.js
+node_modules/
+
+# 系统 / 编辑器
+Thumbs.db
+.DS_Store
