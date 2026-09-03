@@ -3120,6 +3120,682 @@
     {
       "from": "id: \"theme\",\n    label: \"Theme\",\n    description: \"Terminal color theme (same setting as /theme). Auto automatically detects your terminal background and uses light or dark to match.\"",
       "to": "id: \"theme\",\n    label: \"主题\",\n    description: \"终端配色主题（与 /theme 设置相同）。自动模式会检测你的终端背景，并自动使用浅色或深色以匹配。\""
+    },
+    {
+      "from": "\" the agent has learned from your sessions in this project. These shape how it writes code for you. Remove any that no longer fit.\"",
+      "to": "\"是智能体从本项目会话中学到的。它们会影响智能体为你编写代码的方式。删除不再适用的条目。\""
+    },
+    {
+      "from": "`${d} preferences`",
+      "to": "`${d} 条偏好`"
+    },
+    {
+      "from": "\"Preferences\"",
+      "to": "\"偏好\""
+    },
+    {
+      "from": "{title:\"Terminal\",children:[s.jsx(F,{label:\"字号\"",
+      "to": "{title:\"终端\",children:[s.jsx(F,{label:\"字号\""
+    },
+    {
+      "from": "{title:\"Layout\",children:s.jsx(F,{label:\"启动时打开工作台\"",
+      "to": "{title:\"布局\",children:s.jsx(F,{label:\"启动时打开工作台\""
+    },
+    {
+      "from": "{title:\"Preferences\",children:[d?",
+      "to": "{title:\"偏好设置\",children:[d?"
+    },
+    {
+      "from": "{title:\"Behavior\",children:[o?",
+      "to": "{title:\"行为\",children:[o?"
+    },
+    {
+      "from": "{title:\"Configuration\",children:s.jsx(\"div\"",
+      "to": "{title:\"配置\",children:s.jsx(\"div\""
+    },
+    {
+      "from": "{title:\"Application\",children:[s.jsx(Dv,{})",
+      "to": "{title:\"应用\",children:[s.jsx(Dv,{})"
+    },
+    {
+      "from": "{title:\"Skills\",children:[s.jsx(F,{label:\"安装技能\"",
+      "to": "{title:\"技能\",children:[s.jsx(F,{label:\"安装技能\""
+    },
+    {
+      "from": "title:\"Profile\",action:s.jsx(Fi,{refreshing:o,refresh:r,idleLabel:\"重试\"",
+      "to": "title:\"资料\",action:s.jsx(Fi,{refreshing:o,refresh:r,idleLabel:\"重试\""
+    },
+    {
+      "from": "{id:\"general\",label:\"General\",group:\"Workspace\"",
+      "to": "{id:\"general\",label:\"通用\",group:\"工作区\""
+    },
+    {
+      "from": "{id:\"appearance\",label:\"Appearance\",group:\"Workspace\"",
+      "to": "{id:\"appearance\",label:\"外观\",group:\"工作区\""
+    },
+    {
+      "from": "{id:\"shortcuts\",label:\"Shortcuts\",group:\"Workspace\"",
+      "to": "{id:\"shortcuts\",label:\"快捷键\",group:\"工作区\""
+    },
+    {
+      "from": "{id:\"agent\",label:\"Agent\",group:\"Agent\"",
+      "to": "{id:\"agent\",label:\"智能体\",group:\"智能体\""
+    },
+    {
+      "from": "{id:\"config\",label:\"Config\",group:\"Agent\"",
+      "to": "{id:\"config\",label:\"配置\",group:\"智能体\""
+    },
+    {
+      "from": "{id:\"taste\",label:\"Taste\",group:\"Agent\"",
+      "to": "{id:\"taste\",label:\"偏好\",group:\"智能体\""
+    },
+    {
+      "from": "{id:\"skills\",label:\"Skills\",group:\"Agent\"",
+      "to": "{id:\"skills\",label:\"技能\",group:\"智能体\""
+    },
+    {
+      "from": "{id:\"mcp\",label:\"MCP\",group:\"Agent\"",
+      "to": "{id:\"mcp\",label:\"MCP\",group:\"智能体\""
+    },
+    {
+      "from": "{id:\"account\",label:\"账户\",group:\"Account\"",
+      "to": "{id:\"account\",label:\"账户\",group:\"账户\""
+    },
+    {
+      "from": "{id:\"claude\",label:\"Claude\",group:\"Agent\"",
+      "to": "{id:\"claude\",label:\"Claude\",group:\"智能体\""
+    },
+    {
+      "from": "Ev=[\"General\",\"Sharing\",\"Taste\",\"功能模型\"]",
+      "to": "Ev=[\"通用\",\"分享\",\"偏好\",\"功能模型\"]"
+    },
+    {
+      "from": "label:\"Accent\",description:\"跟随当前主题。\"",
+      "to": "label:\"强调色\",description:\"跟随当前主题。\""
+    },
+    {
+      "from": "label:\"Background\",children:s.jsx(At,{hex:r.background})",
+      "to": "label:\"背景色\",children:s.jsx(At,{hex:r.background})"
+    },
+    {
+      "from": "label:\"Foreground\",children:s.jsx(At,{hex:r.foreground})",
+      "to": "label:\"前景色\",children:s.jsx(At,{hex:r.foreground})"
+    },
+    {
+      "from": "label:\"Version\",description:\"Command Code（Alpha）桌面版。\"",
+      "to": "label:\"版本\",description:\"Command Code（Alpha）桌面版。\""
+    },
+    {
+      "from": "label:\"Tokens\",value:d?Sm(d.totalTokens):\"不可用\"",
+      "to": "label:\"令牌\",value:d?Sm(d.totalTokens):\"不可用\""
+    },
+    {
+      "from": "children:[\"~\",e.estimatedTokens,\" tokens\"]",
+      "to": "children:[\"约 \",e.estimatedTokens,\" 个令牌\"]"
+    },
+    {
+      "from": "unknown:\"Learned\"",
+      "to": "unknown:\"已学习\""
+    },
+    {
+      "from": "children:\"Name\"}),s.jsx(we,{id:V,name:\"mcp-server-name\"",
+      "to": "children:\"名称\"}),s.jsx(we,{id:V,name:\"mcp-server-name\""
+    },
+    {
+      "from": "children:\"Command\"}),s.jsx(we,{id:D,name:\"mcp-server-command\"",
+      "to": "children:\"命令\"}),s.jsx(we,{id:D,name:\"mcp-server-command\""
+    },
+    {
+      "from": "placeholder:\"Playwright\"",
+      "to": "placeholder:\"例如 Playwright\""
+    },
+    {
+      "from": "children:\"Submit\"",
+      "to": "children:\"提交\""
+    },
+    {
+      "from": "children:t?\"Removing…\":\"Remove\"",
+      "to": "children:t?\"正在移除…\":\"移除\""
+    },
+    {
+      "from": "children:n?\"Removing…\":\"Remove\"",
+      "to": "children:n?\"正在移除…\":\"移除\""
+    },
+    {
+      "from": "children:\"Remove\"",
+      "to": "children:\"移除\""
+    },
+    {
+      "from": "title:\"Remove\"",
+      "to": "title:\"移除\""
+    },
+    {
+      "from": "S||r.kind===\"confirm\"?\"Back\":\"Cancel\"",
+      "to": "S||r.kind===\"confirm\"?\"返回\":\"取消\""
+    },
+    {
+      "from": "children:\"Cancel\"}),s.jsx(\"button\",{type:\"button\",onClick:o,disable",
+      "to": "children:\"取消\"}),s.jsx(\"button\",{type:\"button\",onClick:o,disable"
+    },
+    {
+      "from": "children:\"Cancel\"})]}):s.jsx(\"button\"",
+      "to": "children:\"取消\"})]}):s.jsx(\"button\""
+    },
+    {
+      "from": "children:\"Loading…\"}),o&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\"",
+      "to": "children:\"加载中…\"}),o&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\""
+    },
+    {
+      "from": "children:\"Loading…\"}),a&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\",role:\"alert\"",
+      "to": "children:\"加载中…\"}),a&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\",role:\"alert\""
+    },
+    {
+      "from": "children:\"Loading…\"}):l.length===0",
+      "to": "children:\"加载中…\"}):l.length===0"
+    },
+    {
+      "from": "title:\"Refresh\",className:\"flex h-7 w-7 shrink-0",
+      "to": "title:\"刷新\",className:\"flex h-7 w-7 shrink-0"
+    },
+    {
+      "from": "idleLabel:i=\"Refresh\"",
+      "to": "idleLabel:i=\"刷新\""
+    },
+    {
+      "from": "placeholder:\"Paste code#state\"",
+      "to": "placeholder:\"粘贴 code#state\""
+    },
+    {
+      "from": "scope:\"Global\"",
+      "to": "scope:\"全局\""
+    },
+    {
+      "from": "scope:\"Workbench\"",
+      "to": "scope:\"工作台\""
+    },
+    {
+      "from": "scope:\"Composer\"",
+      "to": "scope:\"输入框\""
+    },
+    {
+      "from": "e.defaultDisplayValue??(a&&e.displayValue?e.displayValue:\"Default\")",
+      "to": "e.defaultDisplayValue??(a&&e.displayValue?e.displayValue:\"默认\")"
+    },
+    {
+      "from": "n<=0?{key:\"today\",label:\"Today\"}:n===1?{key:\"yesterday\",label:\"Yesterday\"}:n<7?{key:\"week\",label:\"最近 7 天\"}:n<30?{key:\"month\",label:\"最近 30 天\"}:{key:\"older\",label:\"Older\"}",
+      "to": "n<=0?{key:\"today\",label:\"今天\"}:n===1?{key:\"yesterday\",label:\"昨天\"}:n<7?{key:\"week\",label:\"最近 7 天\"}:n<30?{key:\"month\",label:\"最近 30 天\"}:{key:\"older\",label:\"更早\"}"
+    },
+    {
+      "from": "Nf=[{value:\"project\",label:\"Project\",icon:Br},{value:\"updated\",label:\"Updated\",icon:Wc},{value:\"status\",label:\"Status\",icon:gp}]",
+      "to": "Nf=[{value:\"project\",label:\"项目\",icon:Br},{value:\"updated\",label:\"更新时间\",icon:Wc},{value:\"status\",label:\"状态\",icon:gp}]"
+    },
+    {
+      "from": "{value:\"updated-desc\",label:\"最近更新\"},{value:\"updated-asc\",label:\"最早更新\"},{value:\"name\",label:\"Name\"}",
+      "to": "{value:\"updated-desc\",label:\"最近更新\"},{value:\"updated-asc\",label:\"最早更新\"},{value:\"name\",label:\"名称\"}"
+    },
+    {
+      "from": "n.push({key:\"pushed\",label:\"Pushed\",tone:\"muted\"})",
+      "to": "n.push({key:\"pushed\",label:\"已推送\",tone:\"muted\"})"
+    },
+    {
+      "from": "o.jsx(xc,{label:\"Projects\",action:",
+      "to": "o.jsx(xc,{label:\"项目\",action:"
+    },
+    {
+      "from": "o.jsx(kS,{icon:Or,label:\"Search\",shortcut:Gt(\"Mod+K\")",
+      "to": "o.jsx(kS,{icon:Or,label:\"搜索\",shortcut:Gt(\"Mod+K\")"
+    },
+    {
+      "from": "o.jsx(If,{label:\"Pinned\",threads:U,showCount:!1",
+      "to": "o.jsx(If,{label:\"置顶\",threads:U,showCount:!1"
+    },
+    {
+      "from": "children:\"History\"}),o.jsx(\"span\",{className:xd,children:e.length}",
+      "to": "children:\"历史记录\"}),o.jsx(\"span\",{className:xd,children:e.length}"
+    },
+    {
+      "from": "jx={changes:{label:\"Changes\",icon:ga},source:{label:\"Files\",icon:rr},plan:{label:\"Plan\",icon:In},browser:{label:\"Browser\",icon:cr},output:{label:\"Output\",icon:ni}}",
+      "to": "jx={changes:{label:\"变更\",icon:ga},source:{label:\"文件\",icon:rr},plan:{label:\"计划\",icon:In},browser:{label:\"浏览器\",icon:cr},output:{label:\"输出\",icon:ni}}"
+    },
+    {
+      "from": "Kn.Group,{heading:\"Files\",children:d.map",
+      "to": "Kn.Group,{heading:\"文件\",children:d.map"
+    },
+    {
+      "from": "confirmLabel:\"Rewind\",busy:bn,busyLabel:\"Rewinding…\"",
+      "to": "confirmLabel:\"回退\",busy:bn,busyLabel:\"正在回退…\""
+    },
+    {
+      "from": "message:Ze.error??\"Rewind failed.\"",
+      "to": "message:Ze.error??\"回退失败。\""
+    },
+    {
+      "from": "message:Ze instanceof Error?Ze.message:\"Rewind failed.\"",
+      "to": "message:Ze instanceof Error?Ze.message:\"回退失败。\""
+    },
+    {
+      "from": "children:\"Restart\"}),o.jsx(\"button\",{type:\"button\",onClick:()=>Q(Ee.id)",
+      "to": "children:\"重启\"}),o.jsx(\"button\",{type:\"button\",onClick:()=>Q(Ee.id)"
+    },
+    {
+      "from": "s?\"正在下载更新\":a?\"Restarting…\":\"重启以更新\"",
+      "to": "s?\"正在下载更新\":a?\"正在重启…\":\"重启以更新\""
+    },
+    {
+      "from": "i=\"Suggestions\"",
+      "to": "i=\"建议\""
+    },
+    {
+      "from": "label:r=\"Loading...\"",
+      "to": "label:r=\"加载中...\""
+    },
+    {
+      "from": "children:\"Focus tab\"})]})]}):null]}),U&&e?",
+      "to": "children:\"聚焦此标签页\"})]})]}):null]}),U&&e?"
+    },
+    {
+      "from": "children:\"Open preview\"}):null,Ee.status===\"running\"",
+      "to": "children:\"打开预览\"}):null,Ee.status===\"running\""
+    },
+    {
+      "from": "children:[o.jsx(\"span\",{className:\"shrink-0\",children:\"Open preview\"})",
+      "to": "children:[o.jsx(\"span\",{className:\"shrink-0\",children:\"打开预览\"})"
+    },
+    {
+      "from": "children:\"Review\"}),o.jsx(\"button\",{type:\"button\",\"aria-label\":\"关闭变更摘要\"",
+      "to": "children:\"审阅\"}),o.jsx(\"button\",{type:\"button\",\"aria-label\":\"关闭变更摘要\""
+    },
+    {
+      "from": "o.jsx(ld,{className:\"sr-only\",children:\"Settings\"})",
+      "to": "o.jsx(ld,{className:\"sr-only\",children:\"设置\"})"
+    },
+    {
+      "from": "children:\"Loading settings…\"",
+      "to": "children:\"正在加载设置…\""
+    },
+    {
+      "from": "text:\"Interrupted\"",
+      "to": "text:\"已中断\""
+    },
+    {
+      "from": "label:\"Command\"",
+      "to": "label:\"命令\""
+    },
+    {
+      "from": "\"aria-label\":\"跳至最新\",title:\"Jump to latest\"",
+      "to": "\"aria-label\":\"跳至最新\",title:\"跳至最新\""
+    },
+    {
+      "from": "children:\"Learned\"}),o.jsx(ed,{className:\"min-w-0 flex-1 truncate text-ink-muted\",text:e}",
+      "to": "children:\"已学习\"}),o.jsx(ed,{className:\"min-w-0 flex-1 truncate text-ink-muted\",text:e}"
+    },
+    {
+      "from": "children:\"Tool hook output:\"",
+      "to": "children:\"工具钩子输出：\""
+    },
+    {
+      "from": "content:\"The plan content was not attached. You can still accept or keep refining.\"",
+      "to": "content:\"计划内容未附加。你仍可接受或继续完善。\""
+    },
+    {
+      "from": "case\"search\":return\"Matches\";case\"glob\":case\"files\":return\"Files\";case\"list\":return\"Directory\";case\"web\":return\"网页结果\";case\"tasks\":return\"任务详情\";case\"schedule\":return\"Schedule\";default:return\"Details\"",
+      "to": "case\"search\":return\"匹配项\";case\"glob\":case\"files\":return\"文件\";case\"list\":return\"目录\";case\"web\":return\"网页结果\";case\"tasks\":return\"任务详情\";case\"schedule\":return\"计划\";default:return\"详情\""
+    },
+    {
+      "from": "pe({title:\"Plan\",content:\"计划内容未附加",
+      "to": "pe({title:\"计划\",content:\"计划内容未附加"
+    },
+    {
+      "from": "children:\"Cancel\"}),o.jsx(\"button\",{ref:f,type:\"button\",onClick:l,disabled:s,className:X(\"rounded-md px-3 py-1.5",
+      "to": "children:\"取消\"}),o.jsx(\"button\",{ref:f,type:\"button\",onClick:l,disabled:s,className:X(\"rounded-md px-3 py-1.5"
+    },
+    {
+      "from": "children:\"Cancel\"}),o.jsx(wi,{type:\"button\",size:\"sm\",onClick:D,children:\"保存评论\"",
+      "to": "children:\"取消\"}),o.jsx(wi,{type:\"button\",size:\"sm\",onClick:D,children:\"保存评论\""
+    },
+    {
+      "from": "children:\"Cancel\"}),o.jsx(\"button\",{type:\"button\",disabled:d,onClick:()=>void b(s),className:\"rounded-md bg-danger",
+      "to": "children:\"取消\"}),o.jsx(\"button\",{type:\"button\",disabled:d,onClick:()=>void b(s),className:\"rounded-md bg-danger"
+    },
+    {
+      "from": "children:\"Cancel\"}),o.jsx(\"button\",{type:\"button\",onClick:()=>n({setup:r.trim()||void 0,run:a.trim()||void 0})",
+      "to": "children:\"取消\"}),o.jsx(\"button\",{type:\"button\",onClick:()=>n({setup:r.trim()||void 0,run:a.trim()||void 0})"
+    },
+    {
+      "from": "fA=\"Yes, exit\"",
+      "to": "fA=\"是，退出\""
+    },
+    {
+      "from": "{label:\"Regular\",value:\"font-normal\"",
+      "to": "{label:\"常规\",value:\"font-normal\""
+    },
+    {
+      "from": "{label:\"Medium\",value:\"font-medium\"",
+      "to": "{label:\"中等\",value:\"font-medium\""
+    },
+    {
+      "from": "{label:\"Semi\",value:\"font-semibold\"",
+      "to": "{label:\"半粗\",value:\"font-semibold\""
+    },
+    {
+      "from": "{label:\"Bold\",value:\"font-bold\"",
+      "to": "{label:\"粗体\",value:\"font-bold\""
+    },
+    {
+      "from": "{label:\"Left\",value:\"text-left\"",
+      "to": "{label:\"左对齐\",value:\"text-left\""
+    },
+    {
+      "from": "{label:\"Center\",value:\"text-center\"",
+      "to": "{label:\"居中\",value:\"text-center\""
+    },
+    {
+      "from": "{label:\"Right\",value:\"text-right\"",
+      "to": "{label:\"右对齐\",value:\"text-right\""
+    },
+    {
+      "from": "{label:\"Ink\",value:\"text-slate-900\"",
+      "to": "{label:\"墨色\",value:\"text-slate-900\""
+    },
+    {
+      "from": "{label:\"White\",value:\"text-white\"",
+      "to": "{label:\"白色\",value:\"text-white\""
+    },
+    {
+      "from": "{label:\"Blue\",value:\"text-blue-600\"",
+      "to": "{label:\"蓝色\",value:\"text-blue-600\""
+    },
+    {
+      "from": "{label:\"Violet\",value:\"text-violet-600\"",
+      "to": "{label:\"紫色\",value:\"text-violet-600\""
+    },
+    {
+      "from": "{label:\"Red\",value:\"text-red-600\"",
+      "to": "{label:\"红色\",value:\"text-red-600\""
+    },
+    {
+      "from": "{label:\"Green\",value:\"text-green-600\"",
+      "to": "{label:\"绿色\",value:\"text-green-600\""
+    },
+    {
+      "from": "{label:\"Ink\",value:\"bg-gray-900\"",
+      "to": "{label:\"墨色\",value:\"bg-gray-900\""
+    },
+    {
+      "from": "{label:\"White\",value:\"bg-white\"",
+      "to": "{label:\"白色\",value:\"bg-white\""
+    },
+    {
+      "from": "{label:\"Blue\",value:\"bg-blue-500\"",
+      "to": "{label:\"蓝色\",value:\"bg-blue-500\""
+    },
+    {
+      "from": "{label:\"Violet\",value:\"bg-violet-500\"",
+      "to": "{label:\"紫色\",value:\"bg-violet-500\""
+    },
+    {
+      "from": "{label:\"Red\",value:\"bg-red-500\"",
+      "to": "{label:\"红色\",value:\"bg-red-500\""
+    },
+    {
+      "from": "{label:\"Green\",value:\"bg-green-500\"",
+      "to": "{label:\"绿色\",value:\"bg-green-500\""
+    },
+    {
+      "from": "te,{label:\"Layout\",children:[e.jsx(D,{label:\"Size\"",
+      "to": "te,{label:\"布局\",children:[e.jsx(D,{label:\"尺寸\""
+    },
+    {
+      "from": "te,{label:\"Text\",children:[e.jsx(D,{label:\"Size\"",
+      "to": "te,{label:\"文本\",children:[e.jsx(D,{label:\"字号\""
+    },
+    {
+      "from": "te,{label:\"Color\",children:[e.jsx(pe,{label:\"Text\"",
+      "to": "te,{label:\"颜色\",children:[e.jsx(pe,{label:\"文本\""
+    },
+    {
+      "from": "te,{label:\"Appearance\",children:[e.jsx(D,{label:\"Radius\"",
+      "to": "te,{label:\"外观\",children:[e.jsx(D,{label:\"圆角\""
+    },
+    {
+      "from": "D,{label:\"Padding\",children:e.jsx(Q,{options:He,family:\"p\",ariaLabel:\"Padding\"",
+      "to": "D,{label:\"内边距\",children:e.jsx(Q,{options:He,family:\"p\",ariaLabel:\"内边距\""
+    },
+    {
+      "from": "D,{label:\"Margin\",children:e.jsx(Q,{options:We,family:\"m\",ariaLabel:\"Margin\"",
+      "to": "D,{label:\"外边距\",children:e.jsx(Q,{options:We,family:\"m\",ariaLabel:\"外边距\""
+    },
+    {
+      "from": "D,{label:\"Weight\",children:e.jsx(re,{options:Ue,family:\"font-weight\"",
+      "to": "D,{label:\"字重\",children:e.jsx(re,{options:Ue,family:\"font-weight\""
+    },
+    {
+      "from": "D,{label:\"Align\",children:e.jsx(re,{options:Xe,family:\"text-align\"",
+      "to": "D,{label:\"对齐\",children:e.jsx(re,{options:Xe,family:\"text-align\""
+    },
+    {
+      "from": "D,{label:\"Shadow\",children:e.jsx(re,{options:Ye,family:\"shadow\"",
+      "to": "D,{label:\"阴影\",children:e.jsx(re,{options:Ye,family:\"shadow\""
+    },
+    {
+      "from": "D,{label:\"Opacity\",children:e.jsx(Q,{options:Je,family:\"opacity\",ariaLabel:\"Opacity\"",
+      "to": "D,{label:\"不透明度\",children:e.jsx(Q,{options:Je,family:\"opacity\",ariaLabel:\"不透明度\""
+    },
+    {
+      "from": "{label:\"Fix\",glyph:\"F\"",
+      "to": "{label:\"修复\",glyph:\"F\""
+    },
+    {
+      "from": "{label:\"Review\",glyph:\"R\"",
+      "to": "{label:\"审阅\",glyph:\"R\""
+    },
+    {
+      "from": "{label:\"Responsive\",glyph:\"S\"",
+      "to": "{label:\"响应式\",glyph:\"S\""
+    },
+    {
+      "from": "children:\"Send to chat\"",
+      "to": "children:\"发送到对话\""
+    },
+    {
+      "from": "children:\"Discard\"",
+      "to": "children:\"放弃\""
+    },
+    {
+      "from": "children:\"Design actions\"",
+      "to": "children:\"设计操作\""
+    },
+    {
+      "from": "children:n?\"A detected local server will open here when it is ready.\":\"Enter an address to preview your app or inspect a page without leaving the workspace.\"",
+      "to": "children:n?\"检测到的本地服务器就绪后将在此处打开。\":\"输入网址即可预览应用或在工作区内检查页面。\""
+    },
+    {
+      "from": "children:\"Enter an address\"",
+      "to": "children:\"输入网址\""
+    },
+    {
+      "from": "oe,{icon:ke,label:\"Forward\"",
+      "to": "oe,{icon:ke,label:\"前进\""
+    },
+    {
+      "from": "oe,{icon:ge,label:\"Reload\"",
+      "to": "oe,{icon:ge,label:\"重新加载\""
+    },
+    {
+      "from": "oe,{icon:ut,label:\"Back\"",
+      "to": "oe,{icon:ut,label:\"后退\""
+    },
+    {
+      "from": "label:\"Back\",disabled:!a.canGoBack",
+      "to": "label:\"后退\",disabled:!a.canGoBack"
+    },
+    {
+      "from": "label: \"Settings\",\\n        accelerator: \"CmdOrCtrl+,\"",
+      "to": "label: \"设置\",\\n        accelerator: \"CmdOrCtrl+,\""
+    },
+    {
+      "from": "label: \"New Window\",\\n        accelerator: \"CmdOrCtrl+Shift+N\"",
+      "to": "label: \"新建窗口\",\\n        accelerator: \"CmdOrCtrl+Shift+N\""
+    },
+    {
+      "from": "label: \"Open Project\",\\n        accelerator: \"CmdOrCtrl+O\"",
+      "to": "label: \"打开项目\",\\n        accelerator: \"CmdOrCtrl+O\""
+    },
+    {
+      "from": "label: \"Archive Chat\",\\n        accelerator: \"CmdOrCtrl+Shift+A\"",
+      "to": "label: \"归档会话\",\\n        accelerator: \"CmdOrCtrl+Shift+A\""
+    },
+    {
+      "from": "label: \"Close Window\",\\n        role: \"close\"",
+      "to": "label: \"关闭窗口\",\\n        role: \"close\""
+    },
+    {
+      "from": "label: \"Reset Zoom\",\\n        accelerator: \"CmdOrCtrl+0\"",
+      "to": "label: \"重置缩放\",\\n        accelerator: \"CmdOrCtrl+0\""
+    },
+    {
+      "from": "label: \"Zoom In\",\\n        accelerator: \"CmdOrCtrl+Plus\"",
+      "to": "label: \"放大\",\\n        accelerator: \"CmdOrCtrl+Plus\""
+    },
+    {
+      "from": "label: \"Zoom Out\",\\n        accelerator: \"CmdOrCtrl+-\"",
+      "to": "label: \"缩小\",\\n        accelerator: \"CmdOrCtrl+-\""
+    },
+    {
+      "from": "label: \"Join Command Code Discord\",\\n        click",
+      "to": "label: \"加入 Command Code Discord\",\\n        click"
+    },
+    {
+      "from": "label: \"Paste and Match Style\",\\n        role: \"pasteAndMatchStyle\"",
+      "to": "label: \"粘贴并匹配样式\",\\n        role: \"pasteAndMatchStyle\""
+    },
+    {
+      "from": "label: \"Select All\",\\n        role: \"selectAll\"",
+      "to": "label: \"全选\",\\n        role: \"selectAll\""
+    },
+    {
+      "from": "label: \"Copy Link Address\",\\n        click",
+      "to": "label: \"复制链接地址\",\\n        click"
+    },
+    {
+      "from": "label: \"Window\",\\n    submenu: isMac",
+      "to": "label: \"窗口\",\\n    submenu: isMac"
+    },
+    {
+      "from": "title: \"Updates Disabled\",\\n      message: \"Automatic updates are not available in this build.\"",
+      "to": "title: \"更新已禁用\",\\n      message: \"此版本不支持自动更新。\""
+    },
+    {
+      "from": "title: \"Update Error\",\\n      message: \"Update check failed.\"",
+      "to": "title: \"更新错误\",\\n      message: \"检查更新失败。\""
+    },
+    {
+      "from": "title: \"Update in Progress\",",
+      "to": "title: \"正在更新\","
+    },
+    {
+      "from": "title: \"Update Ready\",\\n      message: result.message",
+      "to": "title: \"更新就绪\",\\n      message: result.message"
+    },
+    {
+      "from": "message: \"Update install is already in progress.\"",
+      "to": "message: \"更新安装已在进行中。\""
+    },
+    {
+      "from": "message: \"Update restart timed out. Check for updates and try again.\"",
+      "to": "message: \"更新重启超时。请检查更新后重试。\""
+    },
+    {
+      "from": "message: \"Updater unavailable.\"",
+      "to": "message: \"更新程序不可用。\""
+    },
+    {
+      "from": "title: \"New project\",\\n      buttonLabel: \"Create\",\\n      nameFieldLabel: \"Project name:\"",
+      "to": "title: \"新建项目\",\\n      buttonLabel: \"创建\",\\n      nameFieldLabel: \"项目名称：\""
+    },
+    {
+      "from": "text: \"Denied\"",
+      "to": "text: \"已拒绝\""
+    },
+    {
+      "from": "text: \"Interrupted\"",
+      "to": "text: \"已中断\""
+    },
+    {
+      "from": "text: \"The connection did not recover after sleep, so this run was stopped. Send again to continue.\"",
+      "to": "text: \"休眠后连接未能恢复，本次运行已停止。请再次发送以继续。\""
+    },
+    {
+      "from": "label: \"Not now\",\\n        description: \"Skips image reading. You'll get a heads-up when you attach an image this model can't read.\"",
+      "to": "label: \"暂不\",\\n        description: \"跳过图片读取。当你附加此模型无法读取的图片时会收到提示。\""
+    },
+    {
+      "from": "header: input.inPlanMode ? \"Exit Plan\" : \"Plan Review\"",
+      "to": "header: input.inPlanMode ? \"退出计划\" : \"计划评审\""
+    },
+    {
+      "from": "question: \"Enter plan mode for read-only exploration and planning?\",\\n                header: \"Plan Mode\",",
+      "to": "question: \"进入计划模式进行只读探索与规划？\",\\n                header: \"计划模式\","
+    },
+    {
+      "from": "label: \"No, stay in current mode\",\\n                    description: \"Continue without entering plan mode\"",
+      "to": "label: \"否，保持当前模式\",\\n                    description: \"不进入计划模式，继续当前模式\""
+    },
+    {
+      "from": "label: \"Yes\",\\n    value: \"yes\",\\n    description: \"Allow this edit\",\\n    scope: void 0",
+      "to": "label: \"是\",\\n    value: \"yes\",\\n    description: \"允许此编辑\",\\n    scope: void 0"
+    },
+    {
+      "from": "label: \"Yes, allow all edits this session [shift+tab]\",\\n    value: \"yes-session\",\\n    description: \"自动接受编辑 for this session\",\\n    scope: \"session\"",
+      "to": "label: \"是，本次会话允许所有编辑 [shift+tab]\",\\n    value: \"yes-session\",\\n    description: \"本次会话自动接受编辑\",\\n    scope: \"session\""
+    },
+    {
+      "from": "label: \"Yes\",\\n  value: \"yes\",\\n  description: \"Allow this action\",\\n  scope: void 0",
+      "to": "label: \"是\",\\n  value: \"yes\",\\n  description: \"允许此操作\",\\n  scope: void 0"
+    },
+    {
+      "from": "value: \"Off on BYOK\",\\n        defaultDisplay: \"Off on BYOK\"",
+      "to": "value: \"BYOK 下关闭\",\\n        defaultDisplay: \"BYOK 下关闭\""
+    },
+    {
+      "from": "title: `余额不足 - $${i.toFixed(2)} left. Open usage.`",
+      "to": "title: `余额不足 - 剩余 $${i.toFixed(2)}。打开用量页面。`"
+    },
+    {
+      "from": "title:s?`Downloading version ${r.version}`:`重启以更新到版本 ${r.version}`",
+      "to": "title:s?`正在下载版本 ${r.version}`:`重启以更新到版本 ${r.version}`"
+    },
+    {
+      "from": "\"创建计划 in 计划模式 and it will stay available here.\"",
+      "to": "\"在计划模式中创建计划，它会一直保留在这里。\""
+    },
+    {
+      "from": "invalid_key: \"Invalid API 密钥. Please check and try again.\"",
+      "to": "invalid_key: \"API 密钥无效。请检查后重试。\""
+    },
+    {
+      "from": "network_error: \"Could not reach server. 检查你的网络连接 and try again.\"",
+      "to": "network_error: \"无法连接到服务器。请检查你的网络连接后重试。\""
+    },
+    {
+      "from": "server_error: \"服务器错误. Please try again later.\"",
+      "to": "server_error: \"服务器错误。请稍后重试。\""
+    },
+    {
+      "from": "network: \"Network error reaching Command Code. 检查你的网络连接.\"",
+      "to": "network: \"连接 Command Code 时出现网络错误。请检查你的网络连接。\""
+    },
+    {
+      "from": "title:\"打开开发者工具 for this page\"",
+      "to": "title:\"为此页面打开开发者工具\""
+    },
+    {
+      "from": "children:[S.scope,\" scope\"]",
+      "to": "children:[S.scope===\"user\"?\"用户\":S.scope===\"project\"?\"项目\":S.scope===\"local\"?\"本地\":S.scope,\" 范围\"]"
+    },
+    {
+      "from": "Learning timed out. 重试 with /learn-taste",
+      "to": "学习超时。请用 /learn-taste 重试"
     }
   ]
 }
