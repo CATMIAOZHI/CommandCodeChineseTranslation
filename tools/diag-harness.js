@@ -1,8 +1,24 @@
 // 统计 harness/dist/index.js 中的配置 schema label（Config 页面文本源）
+// 用法: node diag-harness.js [安装目录]（或设置环境变量 CC_APP_DIR）
 'use strict';
 const fs = require('fs');
+const path = require('path');
 
-const h = 'D:/commandcodedesktop/Command Code/resources/app/node_modules/@commandcode/harness/dist/index.js';
+function detectAppDir() {
+  if (process.env.CC_APP_DIR) return process.env.CC_APP_DIR;
+  const candidates = [];
+  if (process.env.LOCALAPPDATA) candidates.push(path.join(process.env.LOCALAPPDATA, 'Programs', 'Command Code'));
+  if (process.env.PROGRAMFILES) candidates.push(path.join(process.env.PROGRAMFILES, 'Command Code'));
+  for (const drive of 'CDEFGH'.split('')) candidates.push(path.join(drive + ':\\', 'commandcodedesktop', 'Command Code'));
+  for (const c of candidates) {
+    try { if (fs.existsSync(path.join(c, 'resources', 'app', 'node_modules', '@commandcode', 'harness', 'dist', 'index.js'))) return c; } catch {}
+  }
+  return null;
+}
+const app = process.argv[2] || detectAppDir();
+if (!app) { console.error('用法: node diag-harness.js [安装目录]'); process.exit(1); }
+
+const h = path.join(app, 'resources', 'app', 'node_modules', '@commandcode', 'harness', 'dist', 'index.js');
 const s = fs.readFileSync(h, 'utf8');
 console.log('harness size KB:', Math.round(s.length / 1024));
 

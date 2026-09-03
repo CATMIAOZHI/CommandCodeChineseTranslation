@@ -4,8 +4,14 @@
 const fs = require('fs');
 const path = require('path');
 
-const APP_DIR = process.argv[2] || 'D:\\commandcodedesktop\\Command Code';
+// 安装目录：优先命令行参数，其次环境变量 CC_APP_DIR
+const APP_DIR = process.argv[2] || process.env.CC_APP_DIR;
 const OUT_FILE = process.argv[3] || path.join(__dirname, 'strings-report.json');
+if (!APP_DIR) {
+  console.error('用法: node extract.js [安装目录] [输出json]');
+  console.error('或设置环境变量 CC_APP_DIR 指向 Command Code 安装目录。');
+  process.exit(1);
+}
 
 // 已知属于语法高亮/语言包的 chunk 前缀（无需翻译）
 const NOISE_PREFIX = /^(abap|abnfDiagram|actionscript|ada|angular|apache|apex|apl|applescript|ara-|arc-|asciidoc|asm|astro|aurora|awk|ballerina|bat-|beancount|berry|bibtex|bicep|bird2|blade|blockDiagram|bsl|c3-|c4Diagram|cadence|cairo|catppuccin|channel|classDiagram|clarity|clojure|cmake|cobol|coffee|common-lisp|coq|cose-|cpp|crystal|css-|cue|cynefin|csv|cytoscape|d-85|dagre|dart|dax|defaultLocale|desktop-|diagram-|diff-|docker|dotenv|dracula|dream-maker|d-|ebnfDiagram|edge-|elixir|elm|emacs-lisp|erDiagram|erb-|erlang|everforest|fish-|flowDiagram|fluent|fortran|fsharp|ganttDiagram|gdresource|gdscript|gdshader|genie|gherkin|git-commit|git-rebase|gitGraphDiagram|gleam|glimmer|glsl|gn-|gnuplot|go-|graph-|graphql|groovy|gruvbox|hack-|haml|handlebars|haskell|haxe|hcl|highlighted-body|hjson|hlsl|horizon|houston|html-|http-|hurl|hxml|hy-|imba|infoDiagram|ini-|ishikawaDiagram|java-|javascript|jinja|jison|journeyDiagram|json|jssm|jsx-|julia|just-|kanagawa|kanban|katex|kdl|kotlin|kusto|laserwave|latex|layout-|lean-|less-|light-plus|linear|liquid|llvm|log-|logo-|lua|luau|make-|map-|markdown|marko|material-theme|matlab|mdc-|mdx|mermaid|mindmap|min-dark|min-light|mipsasm|mojo|monokai|moonbit|move-|narrat|nextflow|nginx|night-owl|nim-|nix-|nord-|nushell|objective-c|ocaml|odin-|one-dark|one-light|openscad|ordinal|pascal|pegDiagram|perl-|php-|pieDiagram|pierre|pkl-|plsql|plastic|po-|poimandres|polar-|postcss|powerquery|powershell|prisma|prolog|proto-|pug-|puppet|purescript|python|qml|qss-|quadrantDiagram|r-|racket|railroadDiagram|raku|razor|red-|reg-|regexp|rel-|requirementDiagram|riscv|ron-|rose-pine|rosmsg|rst-|ruby|rust|sankeyDiagram|sas-|sass|scala|scheme|scss|sdbl|sequenceDiagram|shaderlab|shellscript|shellsession|sizeCapture|slack-|smalltalk|snazzy|solarized|solidity|soy-|sparql|splunk|sql-|ssh-config|stateDiagram|stata-|stylus|surrealql|svelte|swift|swimlanes|synthwave|system-verilog|systemd|talonscript|tasl|tcl-|templ|terminal-settings|terraform|tex-|timeline-definition|tokyo-night|toml-|ts-tags|tsv-|tsx-|turtle|twig|typescript|typespec|typst|vala|vb-|vennDiagram|verilog|vesper|vhdl|viml-|vitesse|vue|vyper|wardleyDiagram|wasm-|wenyan|wgsl|wikitext|wit-|wolfram|xml-|xychartDiagram|yaml-|zenscript|zig-)/;

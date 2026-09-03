@@ -4,14 +4,44 @@
 //   node localize.js restore  [安装目录]   从最近备份还原
 //   node localize.js status   [安装目录]   查看汉化/备份状态
 //   node localize.js dry      [安装目录]   试运行，只报告将替换多少处
+//
+// 安装目录解析优先级（后两者为空/失败时依次回退）:
+//   1. 命令行参数: node localize.js apply "D:\path\to\Command Code"
+//   2. 环境变量:   set CC_APP_DIR=D:\path\to\Command Code
+//   3. 自动探测:   遍历常见安装位置（Program Files、AppData、D:\commandcodedesktop 等），
+//                  匹配含 resources\app\out\main\index.js 特征的目录
+//   4. 显式报错并提示传入路径
 'use strict';
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const { execSync } = require('child_process');
 
-const APP_DEFAULT = 'D:\\commandcodedesktop\\Command Code';
-const APP_DIR = process.argv[3] || APP_DEFAULT;
+// 常见安装位置候选（按平台）。命中条件为存在 Command Code 的 Electron 应用特征文件。
+function detectAppDir() {
+  const candidates = [];
+  if (process.env.CC_APP_DIR) candidates.push(process.env.CC_APP_DIR);
+  if (process.env.LOCALAPPDATA) candidates.push(path.join(process.env.LOCALAPPDATA, 'Programs', 'Command Code'));
+  if (process.env.PROGRAMFILES) candidates.push(path.join(process.env.PROGRAMFILES, 'Command Code'));
+  if (process.env['PROGRAMFILES(X86)']) candidates.push(path.join(process.env['PROGRAMFILES(X86)'], 'Command Code'));
+  if (process.env.APPDATA) candidates.push(path.join(process.env.APPDATA, 'Command Code'));
+  if (process.platform === 'darwin') candidates.push('/Applications/Command Code.app/Contents/Resources/app');
+  if (process.platform === 'linux') candidates.push('/opt/Command Code');
+  // Windows 常见自定义安装盘（cdef...）下的 commandcodedesktop 目录
+  for (const drive of 'CDEFGH'.split('')) {
+    candidates.push(path.join(drive + ':\\', 'commandcodedesktop', 'Command Code'));
+  }
+  for (const c of candidates) {
+    if (!c) continue;
+    try {
+      if (fs.existsSync(path.join(c, 'resources', 'app', 'out', 'main', 'index.js'))) return c;
+    } catch {}
+  }
+  // 兜底：在常见根目录下找 commandcodedesktop/Command Code（如果上述盘符路径没拼对）
+  return null;
+}
+
+const APP_DIR = process.argv[3] || detectAppDir();
 const OUT_DIR = path.join(APP_DIR, 'resources', 'app', 'out');
 const BACKUP_ROOT = path.join(__dirname, 'backups');
 const DICT_PATH = path.join(__dirname, 'dict.json');
@@ -277,6 +307,12 @@ function cmdDry() {
 }
 
 const cmd = process.argv[2] || 'status';
+if (!APP_DIR || !fs.existsSync(path.join(APP_DIR, 'resources', 'app', 'out', 'main', 'index.js'))) {
+  console.error('未找到 Command Code 安装目录。请通过以下任一方式指定:');
+  console.error('  1. 命令行参数: node localize.js ' + cmd + ' "D:\\path\\to\\Command Code"');
+  console.error('  2. 环境变量:   set CC_APP_DIR=D:\\path\\to\\Command Code');
+  process.exit(1);
+}
 switch (cmd) {
   case 'apply': cmdApply(); break;
   case 'restore': cmdRestore(); break;

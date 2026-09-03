@@ -1,24 +1,30 @@
 # Command Code 中文汉化工具
 
-将 **Command Code 桌面应用**（Windows 版）的界面从英文汉化为简体中文。
+将 **Command Code 桌面应用**的界面从英文汉化为简体中文（跨平台：Windows / macOS / Linux）。
 
-> 词典 948 条词条，覆盖 renderer 各 UI 屏幕 + 主进程 + harness 配置包，
-> 实测替换 1000+ 处。工具只修改安装目录内的文件，**自动备份、一键还原**。
+> 词典 948 条词条，覆盖 renderer 各 UI 屏幕 + 主进程 + harness 配置包。
+> 工具只修改安装目录内的文件，**自动备份、一键还原**。
 
 ## 快速使用
 
 ### 汉化
 
-双击 **`汉化.bat`**，或命令行执行：
+双击 **`汉化.bat`**（Windows），或命令行执行：
 
 ```bat
 node localize.js apply
 ```
 
-- 默认应用目录：`D:\commandcodedesktop\Command Code`
-- 自定义目录：`node localize.js apply "D:\你的安装路径"`
-- 汉化前自动把原文件备份到 `backups\` 目录（每次独立时间戳，可还原到任意历史版本）
-- 汉化后**需完全退出并重启 Command Code** 生效
+安装目录解析优先级：
+
+1. 命令行参数：`node localize.js apply "D:\你的安装路径\Command Code"`
+2. 环境变量：`set CC_APP_DIR=D:\你的安装路径\Command Code`
+3. 自动探测：`%LOCALAPPDATA%\Programs`、`Program Files`、`D:\commandcodedesktop`、
+   macOS `/Applications/Command Code.app`、Linux `/opt` 等常见位置
+4. 都找不到时报错并提示传入路径
+
+汉化前自动把原文件备份到 `backups\` 目录（每次独立时间戳，可还原到任意历史版本）；
+汉化后**需完全退出并重启 Command Code** 生效。
 
 ### 还原英文版
 
@@ -34,8 +40,38 @@ node localize.js restore
 
 ```bat
 node localize.js status
-node localize.js dry        % 只打印将要替换的内容，不写入
+node localize.js dry        :: 只打印将要替换的内容，不写入
 ```
+
+## 给 AI Agent 的自动化指引
+
+如果你是一个 AI 编码代理，想替用户完成汉化，请按以下步骤操作：
+
+1. **定位安装目录**：先让用户确认 Command Code 安装在哪里，或尝试常见位置
+   （Windows: `%LOCALAPPDATA%\Programs\Command Code`、`D:\commandcodedesktop\Command Code`；
+   macOS: `/Applications/Command Code.app/Contents/Resources/app`；
+   Linux: `/opt/Command Code`）。验证方式是检查
+   `<安装目录>/resources/app/out/main/index.js` 是否存在。
+2. **执行汉化**（安装目录任选一种传法）：
+
+   ```bash
+   node localize.js apply "<安装目录>"      # 推荐：显式传参
+   CC_APP_DIR="<安装目录>" node localize.js apply   # 或环境变量
+   ```
+
+3. **检查结果**：
+
+   ```bash
+   node localize.js status                  # 确认"已汉化"
+   node tools/syntax-check.js "<安装目录>"   # 确认所有目标文件语法通过
+   ```
+
+4. **提醒用户**：完全退出并重启 Command Code 后生效。
+5. **如遇"已汉化"提示**：先 `node localize.js restore` 还原，再重新 apply。
+6. **新增翻译词条**：编辑 `dict.json`（结构见下），遵守"词典维护"约束，
+   然后重新 apply。**不要**直接修改应用安装目录下的 JS 文件——改动会被下次
+   apply/restore 覆盖，且无法追溯。所有词条应沉淀到 `dict.json`。
+7. **建议执行前询问用户**，因为 apply 会修改安装目录文件（可 restore 还原）。
 
 ## 工作原理
 
