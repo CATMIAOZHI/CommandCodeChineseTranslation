@@ -1,5 +1,7 @@
 # Command Code 中文汉化工具
 
+> **[English](README.en.md) · 简体中文**
+
 将 **Command Code 桌面应用**的界面从英文汉化为简体中文（跨平台：Windows / macOS / Linux）。
 
 > 词典 948 条词条，覆盖 renderer 各 UI 屏幕 + 主进程 + harness 配置包。
