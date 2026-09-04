@@ -2,7 +2,7 @@
   "meta": {
     "app": "Command Code Desktop",
     "note": "中英对照词典。from 为代码中的英文字符串原文(整串匹配,不处理模板占位符 $)。to 为中文译文。安全规则: 只翻译明确为 UI 文案的词条; 模型名/语言/主题名/SVG path/库错误不收录。",
-    "updated": "2026-09-03"
+    "updated": "2026-09-04"
   },
   "terms": [
     {
@@ -3796,6 +3796,34 @@
     {
       "from": "Learning timed out. 重试 with /learn-taste",
       "to": "学习超时。请用 /learn-taste 重试"
+    },
+    {
+      "from": "function wm(e){return e?.planId?e.planId.split(/[-_]/).filter(Boolean).map(t=>t.charAt(0).toUpperCase()+t.slice(1)).join(\" \"):\"Free\"}",
+      "to": "function wm(e){const L={free:\"免费套餐\",pro:\"Pro 套餐\",plus:\"Plus 套餐\",max:\"Max 套餐\",premium:\"Premium 套餐\",contributor:\"Contributor 套餐\",beta:\"Beta 套餐\"};if(!e?.planId)return\"免费套餐\";const p=String(e.planId).toLowerCase();return L[p]??(p.charAt(0).toUpperCase()+p.slice(1)+\" 套餐\")}"
+    },
+    {
+      "from": "function eS(e){if(!e?.planId)return\"免费套餐\";const t=e.planId;return`${t.charAt(0).toUpperCase()}${t.slice(1)} plan`}",
+      "to": "function eS(e){const L={free:\"免费\",pro:\"Pro\",plus:\"Plus\",max:\"Max\",premium:\"Premium\",contributor:\"Contributor\",beta:\"Beta\"};if(!e?.planId)return\"免费套餐\";const p=String(e.planId).toLowerCase();return(L[p]??p.charAt(0).toUpperCase()+p.slice(1))+\" 套餐\"}"
+    },
+    {
+      "from": "`renews ${Em(l.currentPeriodEnd)}`",
+      "to": "`续期于 ${Em(l.currentPeriodEnd)}`"
+    },
+    {
+      "from": "`${s.org.name} (organization)`",
+      "to": "`${s.org.name}（组织）`"
+    },
+    {
+      "from": "let d=\"Account unavailable\";",
+      "to": "let d=\"账户不可用\";"
+    },
+    {
+      "from": "g=c.name||c.userName||c.email?.split(\"@\")[0]||\"Account\"",
+      "to": "g=c.name||c.userName||c.email?.split(\"@\")[0]||\"账户\""
+    },
+    {
+      "from": "a=s?.name||s?.userName||s?.email?.split(\"@\")[0]||\"Account\"",
+      "to": "a=s?.name||s?.userName||s?.email?.split(\"@\")[0]||\"账户\""
     }
   ]
 }
