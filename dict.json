@@ -2,7 +2,7 @@
   "meta": {
     "app": "Command Code Desktop",
     "note": "中英对照词典。from 为代码中的英文字符串原文(整串匹配,不处理模板占位符 $)。to 为中文译文。安全规则: 只翻译明确为 UI 文案的词条; 模型名/语言/主题名/SVG path/库错误不收录。",
-    "updated": "2026-09-04"
+    "updated": "2026-09-08"
   },
   "terms": [
     {
@@ -3824,6 +3824,274 @@
     {
       "from": "a=s?.name||s?.userName||s?.email?.split(\"@\")[0]||\"Account\"",
       "to": "a=s?.name||s?.userName||s?.email?.split(\"@\")[0]||\"账户\""
+    },
+    {
+      "from": "o.jsx(Yn.Group,{heading:\"Commands\",children:m.map",
+      "to": "o.jsx(Yn.Group,{heading:\"命令\",children:m.map"
+    },
+    {
+      "from": "children:\"Navigate\"",
+      "to": "children:\"导航\""
+    },
+    {
+      "from": "o.jsx(tc,{title:\"Terminal\",keybind:s??\"\"",
+      "to": "o.jsx(tc,{title:\"终端\",keybind:s??\"\""
+    },
+    {
+      "from": "children:\"Terminal\"}),o.jsx(\"span\",{className:qp,children:Ht(\"Mod+J\")}",
+      "to": "children:\"终端\"}),o.jsx(\"span\",{className:qp,children:Ht(\"Mod+J\")}"
+    },
+    {
+      "from": "label:\"Terminal\",description:\"Opens as a drawer under the chat\"",
+      "to": "label:\"终端\",description:\"在聊天下方以抽屉形式打开\""
+    },
+    {
+      "from": "e.archived?{key:\"archived\",label:\"Archived\"}:t?.[e.id]===\"attention\"?{key:\"attention\",label:\"需要关注\"}:t?.[e.id]===\"running\"?{key:\"running\",label:\"Running\"}:e.unread?{key:\"unread\",label:\"Unread\"}:e.pinned?{key:\"pinned\",label:\"Pinned\"}:{key:\"other\",label:\"Other\"}",
+      "to": "e.archived?{key:\"archived\",label:\"已归档\"}:t?.[e.id]===\"attention\"?{key:\"attention\",label:\"需要关注\"}:t?.[e.id]===\"running\"?{key:\"running\",label:\"运行中\"}:e.unread?{key:\"unread\",label:\"未读\"}:e.pinned?{key:\"pinned\",label:\"置顶\"}:{key:\"other\",label:\"其他\"}"
+    },
+    {
+      "from": "ME=[{value:\"running\",label:\"Running\",icon:cr}",
+      "to": "ME=[{value:\"running\",label:\"运行中\",icon:cr}"
+    },
+    {
+      "from": "o.jsx(cs,{label:\"Environment\"",
+      "to": "o.jsx(cs,{label:\"环境\""
+    },
+    {
+      "from": "o.jsx(cs,{label:\"Activity\"",
+      "to": "o.jsx(cs,{label:\"活动\""
+    },
+    {
+      "from": "children:\"Show empty folders\"",
+      "to": "children:\"显示空文件夹\""
+    },
+    {
+      "from": "children:\"Show PR status\"",
+      "to": "children:\"显示 PR 状态\""
+    },
+    {
+      "from": "_d,{variant:\"seam\",label:\"Resize sidebar\",tooltip:\"Drag to resize sidebar\"",
+      "to": "_d,{variant:\"seam\",label:\"调整侧边栏大小\",tooltip:\"拖动以调整侧边栏大小\""
+    },
+    {
+      "from": "o.jsx(bi,{icon:qr,label:\"Customize\",onClick:()=>m(\"agent\")",
+      "to": "o.jsx(bi,{icon:qr,label:\"自定义\",onClick:()=>m(\"agent\")"
+    },
+    {
+      "from": "o.jsx(Fl,{label:\"Favorites\",count:n",
+      "to": "o.jsx(Fl,{label:\"收藏\",count:n"
+    },
+    {
+      "from": "o.jsx(Fl,{label:\"Other vendors\",count:s",
+      "to": "o.jsx(Fl,{label:\"其他供应商\",count:s"
+    },
+    {
+      "from": "children:\"No starred models\"}),o.jsx(\"p\",{className:\"text-[11px] text-ink-subtle\",children:\"Star a model in any vendor to keep it here.\"",
+      "to": "children:\"暂无收藏模型\"}),o.jsx(\"p\",{className:\"text-[11px] text-ink-subtle\",children:\"收藏任意供应商的模型即可固定在此处。\""
+    },
+    {
+      "from": "description:\"Applies edits and safe commands; still asks before risky ones\"",
+      "to": "description:\"自动应用编辑与安全命令，风险操作前仍会询问\""
+    },
+    {
+      "from": "message:ot.error??\"Rewind failed.\"",
+      "to": "message:ot.error??\"回退失败。\""
+    },
+    {
+      "from": "message:ot instanceof Error?ot.message:\"Rewind failed.\"",
+      "to": "message:ot instanceof Error?ot.message:\"回退失败。\""
+    },
+    {
+      "from": "\"aria-label\":\"Jump to latest\",title:\"Jump to latest\"",
+      "to": "\"aria-label\":\"跳至最新\",title:\"跳至最新\""
+    },
+    {
+      "from": "confirmLabel:\"Rewind\",busy:kn,busyLabel:\"Rewinding…\"",
+      "to": "confirmLabel:\"回退\",busy:kn,busyLabel:\"正在回退…\""
+    },
+    {
+      "from": "title:\"Could not discard\",description:b.error??w.path",
+      "to": "title:\"无法放弃更改\",description:b.error??w.path"
+    },
+    {
+      "from": "title:\"Could not stop the run\",description:String(ie)",
+      "to": "title:\"无法停止运行\",description:String(ie)"
+    },
+    {
+      "from": "title:\"New terminal\",\"aria-label\":\"New terminal\"",
+      "to": "title:\"新建终端\",\"aria-label\":\"新建终端\""
+    },
+    {
+      "from": "title:\"Configure scripts\",\"aria-label\":\"Configure terminal scripts\"",
+      "to": "title:\"配置脚本\",\"aria-label\":\"配置终端脚本\""
+    },
+    {
+      "from": "children:\"Focus tab\"",
+      "to": "children:\"聚焦此标签页\""
+    },
+    {
+      "from": "children:\"Open preview\"}):null,Ke.status===\"running\"",
+      "to": "children:\"打开预览\"}):null,Ke.status===\"running\""
+    },
+    {
+      "from": "title:\"Open in app\",\"aria-label\":\"Open in app\"",
+      "to": "title:\"在应用中打开\",\"aria-label\":\"在应用中打开\""
+    },
+    {
+      "from": "{value:\"unified\",label:\"Inline\",Icon:Vv},{value:\"split\",label:\"Side by side\",Icon:Gv}",
+      "to": "{value:\"unified\",label:\"内联\",Icon:Vv},{value:\"split\",label:\"并排\",Icon:Gv}"
+    },
+    {
+      "from": "confirmLabel:\"Discard changes\",busy:m,busyLabel:\"Discarding…\"",
+      "to": "confirmLabel:\"放弃更改\",busy:m,busyLabel:\"正在放弃…\""
+    },
+    {
+      "from": "title:\"Open a view\",\"aria-label\":\"Open a view\"",
+      "to": "title:\"打开视图\",\"aria-label\":\"打开视图\""
+    },
+    {
+      "from": "children:\"Open a view\"}),o.jsx(\"p\",{className:\"mt-0.5 text-label text-ink-subtle\",children:\"Views open as tabs and stay until you close them.\"",
+      "to": "children:\"打开视图\"}),o.jsx(\"p\",{className:\"mt-0.5 text-label text-ink-subtle\",children:\"视图以标签页形式打开，在你关闭前一直保留。\""
+    },
+    {
+      "from": "e===\"refining\"?{description:\"Being refined\"}:{}",
+      "to": "e===\"refining\"?{description:\"正在完善\"}:{}"
+    },
+    {
+      "from": "children:[o.jsx(Gb,{className:Lo}),\"Settings\"]",
+      "to": "children:[o.jsx(Gb,{className:Lo}),\"设置\"]"
+    },
+    {
+      "from": "o.jsx(Ld,{className:\"sr-only\",children:\"Settings\"})",
+      "to": "o.jsx(Ld,{className:\"sr-only\",children:\"设置\"})"
+    },
+    {
+      "from": "children:t??\"Thinking…\"",
+      "to": "children:t??\"正在思考…\""
+    },
+    {
+      "from": "children:\"Thinking…\"}):qA(n)]",
+      "to": "children:\"正在思考…\"}):qA(n)]"
+    },
+    {
+      "from": "children:\"HTTP URL\"}),s.jsx(Ee,{id:T,name:\"mcp-server-url\"",
+      "to": "children:\"HTTP 地址\"}),s.jsx(Ee,{id:T,name:\"mcp-server-url\""
+    },
+    {
+      "from": "children:\"Browse skills.sh\"",
+      "to": "children:\"浏览 skills.sh\""
+    },
+    {
+      "from": "s.jsxs(Q,{title:\"Terminal\",children:[s.jsx(J,{label:\"字号\"",
+      "to": "s.jsxs(Q,{title:\"终端\",children:[s.jsx(J,{label:\"字号\""
+    },
+    {
+      "from": "s.jsxs(Q,{title:\"Behavior\",children:[o?s.jsxs(\"div\"",
+      "to": "s.jsxs(Q,{title:\"行为\",children:[o?s.jsxs(\"div\""
+    },
+    {
+      "from": "s.jsxs(Q,{title:\"Application\",children:[s.jsx(xh,{})",
+      "to": "s.jsxs(Q,{title:\"应用\",children:[s.jsx(xh,{})"
+    },
+    {
+      "from": "s.jsxs(Q,{title:\"Preferences\",children:[d?s.jsxs(\"div\"",
+      "to": "s.jsxs(Q,{title:\"偏好设置\",children:[d?s.jsxs(\"div\""
+    },
+    {
+      "from": "description:\"Show the side panel when the app starts.\"",
+      "to": "description:\"应用启动时显示侧边面板。\""
+    },
+    {
+      "from": "children:[s.jsx(Ie,{label:\"Identity\",value:\"Loading…\"}),s.jsx(Ie,{label:\"Plan\",value:\"Loading…\"})]",
+      "to": "children:[s.jsx(Ie,{label:\"身份\",value:\"加载中…\"}),s.jsx(Ie,{label:\"套餐\",value:\"加载中…\"})]"
+    },
+    {
+      "from": "s.jsx(J,{label:\"Background\",children:s.jsx(Rt,{hex:r.background})})",
+      "to": "s.jsx(J,{label:\"背景色\",children:s.jsx(Rt,{hex:r.background})})"
+    },
+    {
+      "from": "s.jsx(J,{label:\"Foreground\",children:s.jsx(Rt,{hex:r.foreground})})",
+      "to": "s.jsx(J,{label:\"前景色\",children:s.jsx(Rt,{hex:r.foreground})})"
+    },
+    {
+      "from": "children:\"Connected\"}),s.jsx(\"button\",{type:\"button\",onClick:p,disabled:i",
+      "to": "children:\"已连接\"}),s.jsx(\"button\",{type:\"button\",onClick:p,disabled:i"
+    },
+    {
+      "from": "children:\"Re-authenticate\"}),s.jsx(\"button\",{type:\"button\",onClick:g,disabled:i",
+      "to": "children:\"重新认证\"}),s.jsx(\"button\",{type:\"button\",onClick:g,disabled:i"
+    },
+    {
+      "from": "label:\"Archive current chat\",keys:\"Mod+Shift+A\"",
+      "to": "label:\"归档当前会话\",keys:\"Mod+Shift+A\""
+    },
+    {
+      "from": "label:\"Interrupt the run (nothing selected)\",keys:\"Mod+C\"",
+      "to": "label:\"中断当前运行（未选中内容）\",keys:\"Mod+C\""
+    },
+    {
+      "from": "const message = \"Update restart timed out. Check for updates and try again.\"",
+      "to": "const message = \"更新重启超时。请检查更新后重试。\""
+    },
+    {
+      "from": "title: \"Updates Disabled\",\n      message: \"Automatic updates are not available in this build.\"",
+      "to": "title: \"更新已禁用\",\n      message: \"此版本不支持自动更新。\""
+    },
+    {
+      "from": "title: \"Update Error\",\n      message: \"Update check failed.\"",
+      "to": "title: \"更新错误\",\n      message: \"检查更新失败。\""
+    },
+    {
+      "from": "title: \"No Updates\",\n      message: \"You're up to date.\"",
+      "to": "title: \"无更新\",\n      message: \"你已是最新版本。\""
+    },
+    {
+      "from": "label: \"Command Code on GitHub\",\n        click",
+      "to": "label: \"GitHub 上的 Command Code\",\n        click"
+    },
+    {
+      "from": "label: \"Join Command Code Discord\",\n        click",
+      "to": "label: \"加入 Command Code Discord\",\n        click"
+    },
+    {
+      "from": "label: \"Paste and Match Style\",\n        role: \"pasteAndMatchStyle\"",
+      "to": "label: \"粘贴并匹配样式\",\n        role: \"pasteAndMatchStyle\""
+    },
+    {
+      "from": "body: \"Command Code will notify you when a run finishes in the background.\"",
+      "to": "body: \"后台运行完成时 Command Code 会通知你。\""
+    },
+    {
+      "from": "title: \"Update Ready\",\n      message: result.message",
+      "to": "title: \"更新就绪\",\n      message: result.message"
+    },
+    {
+      "from": "title: \"New project\",\n      buttonLabel: \"Create\",\n      nameFieldLabel: \"Project name:\",",
+      "to": "title: \"新建项目\",\n      buttonLabel: \"创建\",\n      nameFieldLabel: \"项目名称：\","
+    },
+    {
+      "from": "var CONFIRM_YES_LABEL = \"Yes\";\nvar CONFIRM_NO_LABEL = \"No\";",
+      "to": "var CONFIRM_YES_LABEL = \"是\";\nvar CONFIRM_NO_LABEL = \"否\";"
+    },
+    {
+      "from": "label: \"Yes\",\n  value: \"yes\",\n  description: \"Allow this action\",\n  scope: void 0",
+      "to": "label: \"是\",\n  value: \"yes\",\n  description: \"允许此操作\",\n  scope: void 0"
+    },
+    {
+      "from": "label: \"Yes\",\n    value: \"yes\",\n    description: \"Allow this edit\",\n    scope: void 0",
+      "to": "label: \"是\",\n    value: \"yes\",\n    description: \"允许此编辑\",\n    scope: void 0"
+    },
+    {
+      "from": "params.answer.startsWith(\"Yes, auto-accept\") ? \"auto-accept\" : params.answer.startsWith(\"Yes, exit\") ? \"default\" : null",
+      "to": "params.answer.startsWith(\"是，自动接受\") || params.answer.startsWith(\"Yes, auto-accept\") ? \"auto-accept\" : params.answer.startsWith(\"是，退出\") || params.answer.startsWith(\"Yes, exit\") ? \"default\" : null"
+    },
+    {
+      "from": "return params.answer.startsWith(\"Yes\") ? \"plan\" : null;",
+      "to": "return params.answer.startsWith(\"是\") || params.answer.startsWith(\"Yes\") ? \"plan\" : null;"
+    },
+    {
+      "from": "return (result.answers[0]?.selectedOptions[0] ?? \"\").startsWith(\"Yes\");",
+      "to": "return (result.answers[0]?.selectedOptions[0] ?? \"\").startsWith(\"是\") || (result.answers[0]?.selectedOptions[0] ?? \"\").startsWith(\"Yes\");"
     }
   ]
 }

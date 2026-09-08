@@ -53,26 +53,44 @@ const DICT_PATH = path.join(__dirname, 'dict.json');
 //   auth-screen-* onboarding-screen-* browser-panel-*
 // main/index.js 恒为应用主进程。
 // harness/dist/index.js: Config 设置页文本源(label/description schema)。
+//
+// 应用更新后旧版本 chunk 会残留在 assets 目录中。同前缀多文件时
+// 只取 mtime 最新的（当前激活版本），避免对已废弃的旧文件重复操作。
 const UI_CHUNK_RE = /^(workspace-screen|settings-panel|terminal-|source-panel|auth-screen|onboarding-screen|browser-panel)/;
 
-// 备份/还原时的相对基准目录(resources/app)
-const APP_RES_ROOT = path.join(APP_DIR, 'resources', 'app');
+// assets 下同 UI 前缀的最新文件（升级后旧 chunk 残留时只取当前版本）
+function newestByPrefix(assets) {
+  const prefixes = ['workspace-screen', 'settings-panel', 'browser-panel', 'source-panel',
+    'auth-screen', 'onboarding-screen', 'terminal', 'index'];
+  const byPrefix = new Map();
+  for (const prefix of prefixes) {
+    let best = null;
+    for (const f of fs.readdirSync(assets)) {
+      if (!f.startsWith(prefix + '-') && !f.startsWith(prefix + '.')) continue;
+      if (!f.endsWith('.js')) continue;
+      const full = path.join(assets, f);
+      const stat = fs.statSync(full);
+      if (!best || stat.mtimeMs > best.mtime) best = { file: full, mtime: stat.mtimeMs };
+    }
+    if (best) byPrefix.set(prefix, best.file);
+  }
+  return [...byPrefix.values()];
+}
 
 function targetFiles() {
   const files = [];
   const assets = path.join(OUT_DIR, 'renderer', 'assets');
   if (fs.existsSync(assets)) {
-    for (const f of fs.readdirSync(assets)) {
-      if (!f.endsWith('.js')) continue;
-      const base = f.replace(/\.js$/, '');
-      // 屏幕级 UI chunk（白名单前缀）
-      if (UI_CHUNK_RE.test(base)) { files.push(path.join(assets, f)); continue; }
+    // 1) 每个 UI 前缀只取最新文件（避免旧版残留干扰）
+    for (const f of newestByPrefix(assets)) {
+      const base = path.basename(f);
+      if (UI_CHUNK_RE.test(base)) { files.push(f); continue; }
       // index-* 主入口: 只收录真正含应用 UI 的(体积>700KB 且非语言/图表库)
       if (base.startsWith('index-')) {
-        const code = fs.readFileSync(path.join(assets, f), 'utf8');
-        const stat = fs.statSync(path.join(assets, f));
+        const code = fs.readFileSync(f, 'utf8');
+        const stat = fs.statSync(f);
         if (stat.size > 700 * 1024 && !/mermaid|shiki|textmate|oniguruma/i.test(code.slice(0, 500))) {
-          files.push(path.join(assets, f));
+          files.push(f);
         }
       }
     }
@@ -85,6 +103,9 @@ function targetFiles() {
   return files;
 }
 
+// 备份/还原时的相对基准目录(resources/app)
+const APP_RES_ROOT = path.join(APP_DIR, 'resources', 'app');
+
 // 计算目标文件相对 resources/app 的路径(用于备份目录)
 function relPath(f) {
   const rel = path.relative(APP_RES_ROOT, f);
@@ -96,12 +117,22 @@ function dict() {
 }
 
 function isChineseApp() {
-  // 统计连续的 2+ 中文字符片段数量（排除 KaTeX/Unicode 数学符号等零星字符）
+  // 统计简体中文 UI 特征。仅统计 CJK 片段会误伤 zod 等库的日文 locale 数据
+  // （日文假名在 U+3040–30FF 区，但日文汉字与中文同区）。这里要求片段含
+  // 简体中文高频用字（的/了/是/在/与/这/进/请 等），或片段总量显著超过
+  // 日文 locale 规模（zod 日文约 200 段，但整文件中文会轻松上千段）。
   for (const f of targetFiles()) {
     try {
       const s = fs.readFileSync(f, 'utf8');
       const runs = (s.match(/[\u4e00-\u9fff]{2,}/g) || []).length;
-      if (runs > 200) return true;
+      if (runs > 200) {
+        // 简体特征字（日文 locale 几乎不含这些简体字）
+        const zhCount = (s.match(/[的了是在与进这请会话文件设置打开发送取消确认删除保存新增管理需要可以内容模式工具命令]/g) || []).length;
+        // 日文假名（zod ja locale 的特征）
+        const jaCount = (s.match(/[\u3040-\u30ff]/g) || []).length;
+        // 简体字多且假名少 → 真汉化；假名多 → 日语 locale（如 zod ja/zh-TW 变体）
+        if (zhCount > 100 && jaCount < zhCount) return true;
+      }
     } catch {}
   }
   return false;
