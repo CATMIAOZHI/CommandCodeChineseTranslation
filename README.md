@@ -4,7 +4,7 @@
 
 将 **Command Code 桌面应用**的界面从英文汉化为简体中文（跨平台：Windows / macOS / Linux）。
 
-> 词典 948 条词条，覆盖 renderer 各 UI 屏幕 + 主进程 + harness 配置包。
+> 词典 939 条词条，覆盖 renderer 各 UI 屏幕 + 主进程 + harness 配置包。
 > 工具只修改安装目录内的文件，**自动备份、一键还原**。
 
 ## 快速使用
@@ -100,7 +100,7 @@ Command Code 是 Electron 应用，界面文字硬编码在打包后的 JS 文�
 | --- | --- |
 | `汉化.bat` / `还原.bat` | 双击一键操作 |
 | `localize.js` | 核心逻辑：apply / restore / status / dry |
-| `dict.json` | 中英翻译词典（948 条，可自行增删词条） |
+| `dict.json` | 中英翻译词典（939 条，可自行增删词条） |
 | `backups/` | 汉化前自动备份（按时间戳，不入库） |
 | `tools/extract.js` | 扫描应用 JS 提取候选英文字符串（只读） |
 | `tools/filter.js` | 从扫描报告过滤 UI 句子候选 |
@@ -114,7 +114,7 @@ Command Code 是 Electron 应用，界面文字硬编码在打包后的 JS 文�
 
 ```json
 {
-  "meta": { "updated": "2026-09-03", "count": 948 },
+  "meta": { "updated": "2026-09-08", "count": 939 },
   "terms": [
     { "from": "New chat", "to": "新建会话" },
     { "from": "Rename chat", "to": "重命名会话" }

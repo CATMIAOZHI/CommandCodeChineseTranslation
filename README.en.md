@@ -2,7 +2,7 @@
 
 Localize the **Command Code desktop app** UI from English to Simplified Chinese (cross-platform: Windows / macOS / Linux).
 
-> Dictionary with 948 entries, covering renderer UI screens + main process + the harness config package.
+> Dictionary with 939 entries, covering renderer UI screens + main process + the harness config package.
 > The tool only modifies files inside the installation directory — **automatic backups, one-click restore**.
 
 ## Quick Start
@@ -107,7 +107,7 @@ no language pack. This tool performs **dictionary-driven whole-string replacemen
 | --- | --- |
 | `汉化.bat` / `还原.bat` | Double-click one-shot scripts (Windows) |
 | `localize.js` | Core logic: apply / restore / status / dry |
-| `dict.json` | EN→ZH translation dictionary (948 entries, editable) |
+| `dict.json` | EN→ZH translation dictionary (939 entries, editable) |
 | `backups/` | Automatic pre-patch backups (timestamped, git-ignored) |
 | `tools/extract.js` | Scan app JS for candidate English strings (read-only) |
 | `tools/filter.js` | Filter UI sentence candidates from scan reports |
@@ -121,7 +121,7 @@ no language pack. This tool performs **dictionary-driven whole-string replacemen
 
 ```json
 {
-  "meta": { "updated": "2026-09-03", "count": 948 },
+  "meta": { "updated": "2026-09-08", "count": 939 },
   "terms": [
     { "from": "New chat", "to": "新建会话" },
     { "from": "Rename chat", "to": "重命名会话" }

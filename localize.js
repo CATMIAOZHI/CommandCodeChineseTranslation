@@ -299,30 +299,68 @@ function cmdApply() {
   console.log('请重启 Command Code 查看效果。如需还原: node localize.js restore');
 }
 
-function cmdRestore() {
-  const list = findBackups();
-  if (list.length === 0) { console.log('没有找到备份，无法还原。'); return; }
-  const latest = path.join(BACKUP_ROOT, list[0]);
-  console.log('使用备份: ' + latest);
-  let restored = 0;
-  for (const f of targetFiles()) {
-    // 新备份以 resources/app 为基准; 兼容旧备份(以 out 为基准, 即去掉 out/ 前缀)
-    let src = path.join(latest, relPath(f));
-    if (!fs.existsSync(src)) {
-      const relOut = path.relative(OUT_DIR, f);
-      if (!relOut.startsWith('..')) {
-        const alt = path.join(latest, relOut);
-        if (fs.existsSync(alt)) src = alt;
-      }
-    }
-    if (fs.existsSync(src)) {
-      fs.copyFileSync(src, f);
-      restored++;
-    } else {
-      console.log('  警告: 备份中缺少 ' + path.basename(f) + '，跳过');
-    }
+// 简体字特征计数(用于识别备份里的英文原版/汉化中间态;
+// settings 等 chunk 内嵌 zod 中文 locale, 故不设固定阈值, 而同文件比较取最少者)
+function zhFeatureCount(code) {
+  return (code.match(/[的了是在与进这请会话文件设置打开发送取消确认删除保存新增管理需要可以内容模式工具命令]/g) || []).length;
+}
+
+// 在备份目录中定位某目标文件的副本(兼容旧备份的 out 相对布局)
+function backupCopyPath(dir, f) {
+  const p1 = path.join(BACKUP_ROOT, dir, relPath(f));
+  if (fs.existsSync(p1)) return p1;
+  const relOut = path.relative(OUT_DIR, f);
+  if (!relOut.startsWith('..')) {
+    const p2 = path.join(BACKUP_ROOT, dir, relOut);
+    if (fs.existsSync(p2)) return p2;
   }
-  console.log(`已还原 ${restored} 个文件。`);
+  const p3 = path.join(BACKUP_ROOT, dir, path.basename(f));
+  return fs.existsSync(p3) ? p3 : null;
+}
+
+function cmdRestore() {
+  const dirs = findBackups(); // 已按时间倒序
+  if (dirs.length === 0) { console.log('没有找到备份，无法还原。'); return; }
+  const files = targetFiles();
+  const assets = path.join(OUT_DIR, 'renderer', 'assets');
+  // 当前激活的 renderer 文件名集合(用于判定备份是否同 build)
+  let active = [];
+  try { active = fs.readdirSync(assets); } catch {}
+  const sameBuild = (dir) => {
+    const ad = path.join(BACKUP_ROOT, dir, 'out', 'renderer', 'assets');
+    try {
+      const names = fs.readdirSync(ad);
+      return active.some((a) => names.includes(a));
+    } catch { return false; }
+  };
+  let restored = 0, skipped = 0;
+  for (const f of files) {
+    const isChunk = path.dirname(f) === assets;
+    // 逐文件从"同 build 且英文原版"的备份中取副本:
+    // 应用更新/稀疏备份/汉化中间态都会留下干扰项, 这里取简体字特征最少的那个
+    let best = null; // { src, zh }
+    for (const dir of dirs) {
+      const p = backupCopyPath(dir, f);
+      if (!p) continue;
+      if (isChunk && path.basename(p) !== path.basename(f)) continue; // 旧版 chunk 文件名不同
+      if (!isChunk && !sameBuild(dir)) continue; // 主进程/harness 需同 build 的备份目录
+      const zh = zhFeatureCount(fs.readFileSync(p, 'utf8'));
+      if (!best || zh < best.zh) best = { src: p, zh };
+    }
+    if (!best) {
+      console.log('  警告: 备份中没有可用于还原 ' + path.basename(f) + ' 的同版本文件，跳过');
+      skipped++;
+      continue;
+    }
+    if (best.zh > 100) {
+      console.log('  警告: ' + path.basename(f) + ' 的备份均为汉化后状态(特征字 ' + best.zh + ')，无法还原英文版，跳过');
+      skipped++;
+      continue;
+    }
+    fs.copyFileSync(best.src, f);
+    restored++;
+  }
+  console.log(`已还原 ${restored} 个文件。` + (skipped ? `（跳过 ${skipped} 个，详见上方警告）` : ''));
 }
 
 function cmdStatus() {

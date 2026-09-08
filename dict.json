@@ -2,7 +2,8 @@
   "meta": {
     "app": "Command Code Desktop",
     "note": "中英对照词典。from 为代码中的英文字符串原文(整串匹配,不处理模板占位符 $)。to 为中文译文。安全规则: 只翻译明确为 UI 文案的词条; 模型名/语言/主题名/SVG path/库错误不收录。",
-    "updated": "2026-09-08"
+    "updated": "2026-09-08",
+    "count": 939
   },
   "terms": [
     {
@@ -10,8 +11,108 @@
       "to": "在每次请求中断言零数据保留且不进行提示词训练；若上游服务两者皆不满足，网关将拒绝而非转发。部分模型没有符合要求的上游，会被替换为符合的模型（费用可能更高）——配置页会列出具体变化。"
     },
     {
+      "from": "e.archived?{key:\"archived\",label:\"Archived\"}:t?.[e.id]===\"attention\"?{key:\"attention\",label:\"Needs attention\"}:t?.[e.id]===\"running\"?{key:\"running\",label:\"Running\"}:e.unread?{key:\"unread\",label:\"Unread\"}:e.pinned?{key:\"pinned\",label:\"Pinned\"}:{key:\"other\",label:\"Other\"}",
+      "to": "e.archived?{key:\"archived\",label:\"已归档\"}:t?.[e.id]===\"attention\"?{key:\"attention\",label:\"需要关注\"}:t?.[e.id]===\"running\"?{key:\"running\",label:\"运行中\"}:e.unread?{key:\"unread\",label:\"未读\"}:e.pinned?{key:\"pinned\",label:\"置顶\"}:{key:\"other\",label:\"其他\"}"
+    },
+    {
+      "from": "body:\"Auto-accept lets the agent run ordinary edits and commands without asking each time. Risky actions and sensitive files still require approval. It stays on until you switch modes, and resets when you restart the app.\"",
+      "to": "body:\"自动接受模式让智能体无需逐一询问即可执行常规编辑与命令。风险操作与敏感文件仍需你的批准。该模式在你切换模式前持续生效，重启应用后重置。\""
+    },
+    {
+      "from": "case\"search\":return\"Matches\";case\"glob\":case\"files\":return\"Files\";case\"list\":return\"Directory\";case\"web\":return\"Web result\";case\"tasks\":return\"Task details\";case\"schedule\":return\"Schedule\";default:return\"Details\"",
+      "to": "case\"search\":return\"匹配项\";case\"glob\":case\"files\":return\"文件\";case\"list\":return\"目录\";case\"web\":return\"网页结果\";case\"tasks\":return\"任务详情\";case\"schedule\":return\"计划\";default:return\"详情\""
+    },
+    {
+      "from": "e===\"running\"?{label:\"Running\",dot:\"bg-success cursor-pulse\"}:e===\"failed\"?{label:\"Failed\",dot:\"bg-danger\"}:e===\"exited\"?{label:\"Exited\",dot:\"bg-muted-foreground\"}:{label:\"Idle\",dot:\"bg-muted-foreground/40\"}",
+      "to": "e===\"running\"?{label:\"运行中\",dot:\"bg-success cursor-pulse\"}:e===\"failed\"?{label:\"失败\",dot:\"bg-danger\"}:e===\"exited\"?{label:\"已退出\",dot:\"bg-muted-foreground\"}:{label:\"空闲\",dot:\"bg-muted-foreground/40\"}"
+    },
+    {
+      "from": "n<=0?{key:\"today\",label:\"Today\"}:n===1?{key:\"yesterday\",label:\"Yesterday\"}:n<7?{key:\"week\",label:\"Previous 7 days\"}:n<30?{key:\"month\",label:\"Previous 30 days\"}:{key:\"older\",label:\"Older\"}",
+      "to": "n<=0?{key:\"today\",label:\"今天\"}:n===1?{key:\"yesterday\",label:\"昨天\"}:n<7?{key:\"week\",label:\"最近 7 天\"}:n<30?{key:\"month\",label:\"最近 30 天\"}:{key:\"older\",label:\"更早\"}"
+    },
+    {
+      "from": "id: \"theme\",\n    label: \"Theme\",\n    description: \"Terminal color theme (same setting as /theme). Auto automatically detects your terminal background and uses light or dark to match.\"",
+      "to": "id: \"theme\",\n    label: \"主题\",\n    description: \"终端配色主题（与 /theme 设置相同）。自动模式会检测你的终端背景，并自动使用浅色或深色以匹配。\""
+    },
+    {
+      "from": "body:\"This folder contains mods. Mods are code from the repository and they run on your machine with the same access the app has. Only run them if you trust this project.\"",
+      "to": "body:\"此文件夹包含模组。模组来自仓库中的代码，会在你的机器上以与应用相同的权限运行。只有信任此项目时才应运行它们。\""
+    },
+    {
+      "from": "children:\"Run Claude models directly through your own Anthropic subscription (Pro/Max) instead of the Command Code gateway. Internal and development builds only.\"",
+      "to": "children:\"直接通过你自己的 Anthropic 订阅（Pro/Max）运行 Claude 模型，而不是使用 Command Code 网关。仅限内部与开发版本。\""
+    },
+    {
+      "from": "body:\"As you code, it learns your patterns, tools, and conventions, then starts applying them automatically. Check Settings > Taste to see what it has learned.\"",
+      "to": "body:\"在你编码时，它会学习你的模式、工具与约定，然后自动应用它们。可在 设置 → 偏好 中查看它学到了什么。\""
+    },
+    {
+      "from": "body:\"As you work, the agent records the preferences it picks up and they show up here. Or learn this project's taste from your past coding sessions right now.\"",
+      "to": "body:\"工作时，智能体会记录它捕捉到的偏好并显示在这里。也可以现在就从这个项目过去的编码会话中学习偏好。\""
+    },
+    {
+      "from": "children:n?\"A detected local server will open here when it is ready.\":\"Enter an address to preview your app or inspect a page without leaving the workspace.\"",
+      "to": "children:n?\"检测到的本地服务器就绪后将在此处打开。\":\"输入网址即可预览应用或在工作区内检查页面。\""
+    },
+    {
+      "from": "Render the terminal with WebGL for smooth scrolling under heavy output. Turn off if your graphics driver shows glitches. Applies to new terminals.",
+      "to": "使用 WebGL 渲染终端，重度输出时滚动更流畅。若显卡驱动显示异常请关闭。仅对新终端生效。"
+    },
+    {
+      "from": "body:\"Go from idea to done without leaving the app. Every change is yours to approve. When you're ready, Commit saves your work straight to git.\"",
+      "to": "body:\"无需离开应用即可从想法到完成。每一次更改都由你批准。准备好后，Commit 会将你的工作直接保存到 git。\""
+    },
+    {
+      "from": "description:\"The Allow button carries a menu with scope choices, like allowing a tool for the whole session. Turn off for a plain Allow button.\"",
+      "to": "description:\"允许按钮带有一个包含范围选项的菜单，例如允许某个工具在整个会话中使用。关闭后“允许”按钮将不再带菜单。\""
+    },
+    {
+      "from": "children:\"Open a view\"}),o.jsx(\"p\",{className:\"mt-0.5 text-label text-ink-subtle\",children:\"Views open as tabs and stay until you close them.\"",
+      "to": "children:\"打开视图\"}),o.jsx(\"p\",{className:\"mt-0.5 text-label text-ink-subtle\",children:\"视图以标签页形式打开，在你关闭前一直保留。\""
+    },
+    {
+      "from": "children:\"No starred models\"}),o.jsx(\"p\",{className:\"text-[11px] text-ink-subtle\",children:\"Star a model in any vendor to keep it here.\"",
+      "to": "children:\"暂无收藏模型\"}),o.jsx(\"p\",{className:\"text-[11px] text-ink-subtle\",children:\"收藏任意供应商的模型即可固定在此处。\""
+    },
+    {
+      "from": "Command Code desktop is alpha software and not stable yet. Things can break or change without warning, and you use it at your own risk.",
+      "to": "Command Code 桌面版为 alpha 软件，尚不稳定。功能可能随时变更或出错，请自行承担使用风险。"
+    },
+    {
+      "from": "\" the agent has learned from your sessions in this project. These shape how it writes code for you. Remove any that no longer fit.\"",
+      "to": "\"是智能体从本项目会话中学到的。它们会影响智能体为你编写代码的方式。删除不再适用的条目。\""
+    },
+    {
       "from": "Explain shell commands on permission prompts only when you press ctrl+e (default). Turn off to generate every explanation upfront.",
       "to": "仅在按下 ctrl+e 时于权限提示中解释 shell 命令（默认）。关闭后则每次提前生成解释。"
+    },
+    {
+      "from": "message:\"Your Anthropic sign-in is no longer valid. Open Settings and use the Claude section to re-authenticate or sign out.\"",
+      "to": "message:\"你的 Anthropic 登录已失效。请打开设置，使用 Claude 区域重新认证或退出登录。\""
+    },
+    {
+      "from": "body:\"Just describe what you want. It reads your code, edits across files, and waits for your review before anything ships.\"",
+      "to": "body:\"只需描述你想要的结果。它会阅读你的代码、跨文件编辑，并在任何改动落地前等待你的评审。\""
+    },
+    {
+      "from": "ah=[{value:\"updated-desc\",label:\"Last activity\"},{value:\"updated-asc\",label:\"Oldest activity\"},{value:\"name\",label:\"Name\"}]",
+      "to": "ah=[{value:\"updated-desc\",label:\"最近更新\"},{value:\"updated-asc\",label:\"最早更新\"},{value:\"name\",label:\"名称\"}]"
+    },
+    {
+      "from": "description:\"How aggressively long chats are compacted. The model that runs compaction is the Compaction row in Config.\"",
+      "to": "description:\"长对话被压缩的激进程度。执行压缩的模型是 Config 中的“上下文压缩”一行。\""
+    },
+    {
+      "from": "params.answer.startsWith(\"Yes, auto-accept\") ? \"auto-accept\" : params.answer.startsWith(\"Yes, exit\") ? \"default\" : null",
+      "to": "params.answer.startsWith(\"是，自动接受\") || params.answer.startsWith(\"Yes, auto-accept\") ? \"auto-accept\" : params.answer.startsWith(\"是，退出\") || params.answer.startsWith(\"Yes, exit\") ? \"default\" : null"
+    },
+    {
+      "from": "Pause flooding commands until the screen catches up, so heavy output never freezes the app. Applies to new terminals.",
+      "to": "在屏幕跟上输出前暂停大量刷屏的命令，重度输出不会冻结应用。仅对新终端生效。"
+    },
+    {
+      "from": "children:\"Command Code works inside a project folder so files, tools, and terminal commands stay in the right place.\"",
+      "to": "children:\"Command Code 在项目文件夹内工作，这样文件、工具和终端命令都会保持在正确的位置。\""
     },
     {
       "from": "Format a bare /share gist (no format argument) posts \\u2014 an explicit /share gist html|jsonl|md always overrides.",
@@ -22,16 +123,400 @@
       "to": "不带格式或路径的 /export 的默认写入格式——显式指定 /export html|jsonl|md|<路径> 时始终覆盖。"
     },
     {
+      "from": "text:\"Look at this repo and tell me the right setup and run commands for it. Reply with just the two commands.\"",
+      "to": "text:\"查看这个仓库，告诉我正确的设置和运行命令。只需回复这两条命令。\""
+    },
+    {
+      "from": "Text size in every terminal. While a terminal has focus, the zoom shortcuts change this instead of the window.",
+      "to": "所有终端的文本大小。当终端处于焦点时，缩放快捷键将调整此设置而非窗口。"
+    },
+    {
+      "from": "children:\"Cancel\"}),o.jsx(\"button\",{type:\"button\",onClick:()=>n({setup:r.trim()||void 0,run:a.trim()||void 0})",
+      "to": "children:\"取消\"}),o.jsx(\"button\",{type:\"button\",onClick:()=>n({setup:r.trim()||void 0,run:a.trim()||void 0})"
+    },
+    {
+      "from": "children:\"Skills are instructions the agent reads and follows. Only install from repositories you trust.\"",
+      "to": "children:\"技能是智能体阅读并遵循的说明。只从你信任的仓库安装。\""
+    },
+    {
+      "from": "message:\"The selected model has no vision support. Switch to a vision-capable model to send images.\"",
+      "to": "message:\"当前模型不支持图像识别。请切换到支持视觉的模型以发送图片。\""
+    },
+    {
+      "from": "message:\"Images attached to this draft were released to free memory. Re-attach them before sending.\"",
+      "to": "message:\"附加到此草稿的图片已被释放以节省内存。发送前请重新附加。\""
+    },
+    {
+      "from": "text: \"The connection did not recover after sleep, so this run was stopped. Send again to continue.\"",
+      "to": "text: \"休眠后连接未能恢复，本次运行已停止。请再次发送以继续。\""
+    },
+    {
+      "from": "children:\"Loading…\"}),a&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\",role:\"alert\"",
+      "to": "children:\"加载中…\"}),a&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\",role:\"alert\""
+    },
+    {
+      "from": "children:[s.jsx(Ie,{label:\"Identity\",value:\"Loading…\"}),s.jsx(Ie,{label:\"Plan\",value:\"Loading…\"})]",
+      "to": "children:[s.jsx(Ie,{label:\"身份\",value:\"加载中…\"}),s.jsx(Ie,{label:\"套餐\",value:\"加载中…\"})]"
+    },
+    {
+      "from": "description: \"Auto-compact aggressiveness when context fills up (same setting as /compact-mode).\"",
+      "to": "description: \"上下文占满时自动压缩的激进程度（与 /compact-mode 设置相同）。\""
+    },
+    {
+      "from": "message:\"This chat reached the model's context limit. Start a new chat or remove some history.\"",
+      "to": "message:\"此会话已达到模型的上下文上限。请新开会话或清理部分历史。\""
+    },
+    {
+      "from": "children:\"Browser sign-in did not complete. Paste the API key shown in your browser to finish.\"",
+      "to": "children:\"浏览器登录未完成。请粘贴浏览器中显示的 API 密钥以完成登录。\""
+    },
+    {
+      "from": "message:\"Your account is out of credits or needs a billing update. Add credits to keep going.\"",
+      "to": "message:\"你的账户额度已用完，或需要更新计费信息。请充值后继续使用。\""
+    },
+    {
+      "from": "message:\"Your chats could not be saved to disk. Recent changes may be lost if the app closes.\"",
+      "to": "message:\"会话无法保存到磁盘。如果应用关闭，最近的更改可能会丢失。\""
+    },
+    {
+      "from": "title: \"Updates Disabled\",\n      message: \"Automatic updates are not available in this build.\"",
+      "to": "title: \"更新已禁用\",\n      message: \"此版本不支持自动更新。\""
+    },
+    {
+      "from": "message:\"The request was rejected as invalid. This is usually a transient glitch; try again.\"",
+      "to": "message:\"请求被判定为无效而被拒绝。这通常是暂时性故障，请重试。\""
+    },
+    {
+      "from": "children:\"The app hit an unexpected error. Reloading usually fixes it, your chats are saved.\"",
+      "to": "children:\"应用遇到了意外错误。重新加载通常可以解决，你的会话已保存。\""
+    },
+    {
+      "from": "message:\"The agent stopped unexpectedly. Try again, or check the logs if it keeps happening.\"",
+      "to": "message:\"智能体意外停止。请重试；若反复出现，请检查日志。\""
+    },
+    {
+      "from": "message: \"Sign-out ran but could not be verified. If you still appear signed in, try again.\"",
+      "to": "message: \"退出登录已执行但无法确认。如果仍显示已登录，请重试。\""
+    },
+    {
+      "from": "message:\"The model declined this request under its content policy. Rephrase and try again.\"",
+      "to": "message:\"模型依据内容策略拒绝了此请求。请换一种说法重试。\""
+    },
+    {
+      "from": "message:\"An MCP server returned an error or isn't responding. Check its setup in Settings.\"",
+      "to": "message:\"某个 MCP 服务器返回错误或未响应。请在设置中检查其配置。\""
+    },
+    {
+      "from": "message:\"The selected model isn't available right now. Pick another from the model menu.\"",
+      "to": "message:\"所选模型当前不可用。请从模型菜单中选择其他模型。\""
+    },
+    {
+      "from": "title: \"New project\",\n      buttonLabel: \"Create\",\n      nameFieldLabel: \"Project name:\",",
+      "to": "title: \"新建项目\",\n      buttonLabel: \"创建\",\n      nameFieldLabel: \"项目名称：\","
+    },
+    {
+      "from": "message:\"A git operation could not complete. Check the repository state and try again.\"",
+      "to": "message:\"Git 操作未能完成。请检查仓库状态后重试。\""
+    },
+    {
+      "from": "message:\"We couldn't reach the server. Check your internet connection and try again.\"",
+      "to": "message:\"无法连接到服务器。请检查网络连接后重试。\""
+    },
+    {
+      "from": "children:\"Loading…\"}),o&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\"",
+      "to": "children:\"加载中…\"}),o&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\""
+    },
+    {
+      "from": "{value:\"unified\",label:\"Inline\",Icon:Vv},{value:\"split\",label:\"Side by side\",Icon:Gv}",
+      "to": "{value:\"unified\",label:\"内联\",Icon:Vv},{value:\"split\",label:\"并排\",Icon:Gv}"
+    },
+    {
+      "from": "label: \"Yes\",\n    value: \"yes\",\n    description: \"Allow this edit\",\n    scope: void 0",
+      "to": "label: \"是\",\n    value: \"yes\",\n    description: \"允许此编辑\",\n    scope: void 0"
+    },
+    {
+      "from": "body:\"Files and chat return to that point. The prompt goes back into the composer.\"",
+      "to": "body:\"文件与会话将回到该时间点。提示内容会回到输入框中。\""
+    },
+    {
+      "from": "children:\"All modified, deleted, and untracked files will be staged and committed.\"",
+      "to": "children:\"所有已修改、已删除和未跟踪的文件都将被暂存并提交。\""
+    },
+    {
+      "from": "Let a text-only model read attached images by describing them with the vision model",
+      "to": "让纯文本模型也能读取附加图片——由视觉模型描述图片内容"
+    },
+    {
+      "from": "content:\"The plan content was not attached. You can still accept or keep refining.\"",
+      "to": "content:\"计划内容未附加。你仍可接受或继续完善。\""
+    },
+    {
+      "from": "message:\"Couldn't start the agent CLI. Check the CLI path is correct in Settings.\"",
+      "to": "message:\"无法启动智能体 CLI。请在设置中确认 CLI 路径是否正确。\""
+    },
+    {
+      "from": "description:\"Command Code was updated. See the newest desktop features and fixes.\"",
+      "to": "description:\"Command Code 已更新。查看最新的桌面版功能与修复。\""
+    },
+    {
+      "from": "body:\"Taste is learned per project. Open one to see what the agent has picked up.\"",
+      "to": "body:\"偏好按项目分别学习。打开一个项目即可查看智能体学到了什么。\""
+    },
+    {
+      "from": "message:\"A file is locked or read-only, or the app lacks permission to write it.\"",
+      "to": "message:\"文件被锁定或是只读，或应用缺少写入权限。\""
+    },
+    {
+      "from": "label: \"Yes\",\n  value: \"yes\",\n  description: \"Allow this action\",\n  scope: void 0",
+      "to": "label: \"是\",\n  value: \"yes\",\n  description: \"允许此操作\",\n  scope: void 0"
+    },
+    {
+      "from": "message:\"The service hit an error on its end. Give it a moment, then try again.\"",
+      "to": "message:\"服务端出错。请稍候片刻再重试。\""
+    },
+    {
       "from": "Learn your coding style from your sessions, user-wide (same setting as /taste).",
       "to": "从你的会话中学习编码风格（用户级，与 /taste 设置相同）。"
+    },
+    {
+      "from": "label:\"Clean\",description:\"No background visual, just a quiet starting screen.\"",
+      "to": "label:\"纯净\",description:\"无背景画面，只有安静的起始界面。\""
+    },
+    {
+      "from": "children:\"Re-authenticate\"}),s.jsx(\"button\",{type:\"button\",onClick:g,disabled:i",
+      "to": "children:\"重新认证\"}),s.jsx(\"button\",{type:\"button\",onClick:g,disabled:i"
+    },
+    {
+      "from": "message:\"The service is temporarily overloaded. Give it a moment, then retry.\"",
+      "to": "message:\"服务暂时过载。请稍候片刻再重试。\""
+    },
+    {
+      "from": "message:\"You've sent requests too quickly. Wait a few seconds and try again.\"",
+      "to": "message:\"请求发送过于频繁。请稍等几秒后重试。\""
+    },
+    {
+      "from": "network_error: \"Could not reach server. Check your connection and try again.\"",
+      "to": "network_error: \"无法连接到服务器。请检查你的网络连接后重试。\""
+    },
+    {
+      "from": "message:\"Your permission choice did not reach the engine. Please try again.\"",
+      "to": "message:\"你的权限选择未送达引擎。请重试。\""
+    },
+    {
+      "from": "children:\"Revising the plan. It will reopen when the next version is ready.\"",
+      "to": "children:\"正在修订计划。新版本就绪后会自动重新打开。\""
+    },
+    {
+      "from": "const message = \"Update restart timed out. Check for updates and try again.\"",
+      "to": "const message = \"更新重启超时。请检查更新后重试。\""
+    },
+    {
+      "from": "description:\"Applies edits and safe commands; still asks before risky ones\"",
+      "to": "description:\"自动应用编辑与安全命令，风险操作前仍会询问\""
+    },
+    {
+      "from": "body: \"Command Code will notify you when a run finishes in the background.\"",
+      "to": "body: \"后台运行完成时 Command Code 会通知你。\""
+    },
+    {
+      "from": "message:\"This model or service is not available in your region right now.\"",
+      "to": "message:\"此模型或服务当前在你所在地区不可用。\""
+    },
+    {
+      "from": "_d,{variant:\"seam\",label:\"Resize sidebar\",tooltip:\"Drag to resize sidebar\"",
+      "to": "_d,{variant:\"seam\",label:\"调整侧边栏大小\",tooltip:\"拖动以调整侧边栏大小\""
+    },
+    {
+      "from": "children:\"Connected\"}),s.jsx(\"button\",{type:\"button\",onClick:p,disabled:i",
+      "to": "children:\"已连接\"}),s.jsx(\"button\",{type:\"button\",onClick:p,disabled:i"
+    },
+    {
+      "from": "Learn your coding style from this project only (same setting as /taste).",
+      "to": "仅从当前项目学习你的编码风格（与 /taste 设置相同）。"
+    },
+    {
+      "from": "label:\"Prism\",description:\"Crossing signals around the starting point.\"",
+      "to": "label:\"棱镜\",description:\"起点周围交叉的信号。\""
+    },
+    {
+      "from": "message: \"The update is being installed. The app will restart shortly.\"",
+      "to": "message: \"更新正在安装。应用即将重启。\""
+    },
+    {
+      "from": "return (result.answers[0]?.selectedOptions[0] ?? \"\").startsWith(\"Yes\");",
+      "to": "return (result.answers[0]?.selectedOptions[0] ?? \"\").startsWith(\"是\") || (result.answers[0]?.selectedOptions[0] ?? \"\").startsWith(\"Yes\");"
+    },
+    {
+      "from": "label:\"Beacon\",description:\"A focused light that leads into the task.\"",
+      "to": "label:\"灯塔\",description:\"一束聚焦的光，引导你进入任务。\""
+    },
+    {
+      "from": "children:[o.jsx(\"span\",{className:\"shrink-0\",children:\"Open preview\"})",
+      "to": "children:[o.jsx(\"span\",{className:\"shrink-0\",children:\"打开预览\"})"
+    },
+    {
+      "from": "children:\"Terminal\"}),o.jsx(\"span\",{className:qp,children:Ht(\"Mod+J\")}",
+      "to": "children:\"终端\"}),o.jsx(\"span\",{className:qp,children:Ht(\"Mod+J\")}"
+    },
+    {
+      "from": "description:\"Switch to auto-accept mode (accept edits automatically)\"",
+      "to": "description:\"切换到自动接受模式（自动接受编辑）\""
+    },
+    {
+      "from": "children:\"No project found: toggles are saved to your user settings.\"",
+      "to": "children:\"未找到项目：开关将保存到你的用户设置中。\""
+    },
+    {
+      "from": "description:\"Connect IDE to share your open file and selected lines\"",
+      "to": "description:\"连接 IDE 以共享打开的文件与选中行\""
+    },
+    {
+      "from": "children:\"Uses the same account as the Command Code CLI and studio.\"",
+      "to": "children:\"使用与 Command Code CLI 和工作室相同的账户。\""
+    },
+    {
+      "from": "message:\"Your answer did not reach the engine. Please answer again.\"",
+      "to": "message:\"你的回答未送达引擎。请重新回答。\""
+    },
+    {
+      "from": "label:\"Signal\",description:\"A quiet waveform across the workspace.\"",
+      "to": "label:\"声波\",description:\"工作区中一道安静的波形。\""
+    },
+    {
+      "from": "description:\"Switch to default mode (prompt before edits/commands)\"",
+      "to": "description:\"切换到默认模式（编辑/命令前询问）\""
+    },
+    {
+      "from": "description:\"5-hour and weekly caps apply on plans that have them.\"",
+      "to": "description:\"5 小时与每周上限适用于支持这些限制的套餐。\""
+    },
+    {
+      "from": "children:\"Cancel\"}),s.jsx(\"button\",{type:\"button\",onClick:o,disable",
+      "to": "children:\"取消\"}),s.jsx(\"button\",{type:\"button\",onClick:o,disable"
+    },
+    {
+      "from": "e.defaultDisplayValue??(a&&e.displayValue?e.displayValue:\"Default\")",
+      "to": "e.defaultDisplayValue??(a&&e.displayValue?e.displayValue:\"默认\")"
+    },
+    {
+      "from": "title:\"Configure scripts\",\"aria-label\":\"Configure terminal scripts\"",
+      "to": "title:\"配置脚本\",\"aria-label\":\"配置终端脚本\""
+    },
+    {
+      "from": "s.jsx(J,{label:\"Background\",children:s.jsx(Rt,{hex:r.background})})",
+      "to": "s.jsx(J,{label:\"背景色\",children:s.jsx(Rt,{hex:r.background})})"
+    },
+    {
+      "from": "s.jsx(J,{label:\"Foreground\",children:s.jsx(Rt,{hex:r.foreground})})",
+      "to": "s.jsx(J,{label:\"前景色\",children:s.jsx(Rt,{hex:r.foreground})})"
+    },
+    {
+      "from": "label: \"Paste and Match Style\",\n        role: \"pasteAndMatchStyle\"",
+      "to": "label: \"粘贴并匹配样式\",\n        role: \"pasteAndMatchStyle\""
+    },
+    {
+      "from": "children:\"Click a file link in chat or pick a file from the tree\"",
+      "to": "children:\"点击会话中的文件链接，或从文件树中选择文件\""
+    },
+    {
+      "from": "description:\"Learn taste from sessions with other coding agents\"",
+      "to": "description:\"从与其他编码智能体的会话中学习偏好\""
+    },
+    {
+      "from": "label:\"Terminal\",description:\"Opens as a drawer under the chat\"",
+      "to": "label:\"终端\",description:\"在聊天下方以抽屉形式打开\""
+    },
+    {
+      "from": "description:\"Switch to plan mode (read-only, no side effects)\"",
+      "to": "description:\"切换到计划模式（只读，无副作用）\""
+    },
+    {
+      "from": "message:\"Your disk is full. Free up some space and try again.\"",
+      "to": "message:\"磁盘已满。请释放一些空间后重试。\""
     },
     {
       "from": "Never ask about summarizing when switching branches in /tree.",
       "to": "在 /tree 中切换分支时从不询问是否总结。"
     },
     {
+      "from": "Describes attached images so a text-only model can read them.",
+      "to": "描述附加的图片，让纯文本模型也能读取。"
+    },
+    {
+      "from": "children:\"Learning this project's taste, takes a few minutes\"",
+      "to": "children:\"正在学习此项目的偏好，大约需要几分钟\""
+    },
+    {
+      "from": "confirmLabel:\"Discard changes\",busy:m,busyLabel:\"Discarding…\"",
+      "to": "confirmLabel:\"放弃更改\",busy:m,busyLabel:\"正在放弃…\""
+    },
+    {
+      "from": "\"Create a plan in Plan mode and it will stay available here.\"",
+      "to": "\"在计划模式中创建计划，它会一直保留在这里。\""
+    },
+    {
+      "from": "Writes the one-line command summaries on permission prompts.",
+      "to": "在权限提示中编写一行命令摘要。"
+    },
+    {
+      "from": "description:\"Show this session’s tokens, cost, and branches\"",
+      "to": "description:\"显示此会话的 token、费用与分支\""
+    },
+    {
+      "from": "title: \"Update Error\",\n      message: \"Update check failed.\"",
+      "to": "title: \"更新错误\",\n      message: \"检查更新失败。\""
+    },
+    {
       "from": "Search open chats, project files, and application commands.",
       "to": "搜索打开的会话、项目文件与应用命令。"
+    },
+    {
+      "from": "var CONFIRM_YES_LABEL = \"Yes\";\nvar CONFIRM_NO_LABEL = \"No\";",
+      "to": "var CONFIRM_YES_LABEL = \"是\";\nvar CONFIRM_NO_LABEL = \"否\";"
+    },
+    {
+      "from": "label:\"Version\",description:\"Command Code (Alpha) Desktop.\"",
+      "to": "label:\"版本\",description:\"Command Code（Alpha）桌面版。\""
+    },
+    {
+      "from": "invalid_key: \"Invalid API key. Please check and try again.\"",
+      "to": "invalid_key: \"API 密钥无效。请检查后重试。\""
+    },
+    {
+      "from": "Summarizes an abandoned branch when you jump away from it.",
+      "to": "当离开未完成分支时，总结该分支的进度。"
+    },
+    {
+      "from": "message:\"Clear the current draft before using this action\"",
+      "to": "message:\"请先清空当前草稿再执行此操作\""
+    },
+    {
+      "from": "a=s?.name||s?.userName||s?.email?.split(\"@\")[0]||\"Account\"",
+      "to": "a=s?.name||s?.userName||s?.email?.split(\"@\")[0]||\"账户\""
+    },
+    {
+      "from": "o.jsx(bi,{icon:qr,label:\"Customize\",onClick:()=>m(\"agent\")",
+      "to": "o.jsx(bi,{icon:qr,label:\"自定义\",onClick:()=>m(\"agent\")"
+    },
+    {
+      "from": "children:\"HTTP URL\"}),s.jsx(Ee,{id:T,name:\"mcp-server-url\"",
+      "to": "children:\"HTTP 地址\"}),s.jsx(Ee,{id:T,name:\"mcp-server-url\""
+    },
+    {
+      "from": "s?\"Downloading update\":a?\"Restarting…\":\"Restart to update\"",
+      "to": "s?\"正在下载更新\":a?\"正在重启…\":\"重启以更新\""
+    },
+    {
+      "from": "description:\"Duplicate this conversation into a new chat\"",
+      "to": "description:\"将会话复制到新对话中\""
+    },
+    {
+      "from": "description:\"Share conversation (copy link to clipboard)\"",
+      "to": "description:\"分享对话（复制链接到剪贴板）\""
+    },
+    {
+      "from": "label:\"Interrupt the run (nothing selected)\",keys:\"Mod+C\"",
+      "to": "label:\"中断当前运行（未选中内容）\",keys:\"Mod+C\""
     },
     {
       "from": "This action accesses a path outside the current project.",
@@ -40,6 +525,34 @@
     {
       "from": "Finish the current response before changing Claude mode.",
       "to": "请先完成当前回复再切换 Claude 模式。"
+    },
+    {
+      "from": "title: \"No Updates\",\n      message: \"You're up to date.\"",
+      "to": "title: \"无更新\",\n      message: \"你已是最新版本。\""
+    },
+    {
+      "from": "description:\"Select a compact mode to compact sessions\"",
+      "to": "description:\"选择压缩模式以压缩会话\""
+    },
+    {
+      "from": "description:\"Open Command Code courses in your browser\"",
+      "to": "description:\"在浏览器中打开 Command Code 课程\""
+    },
+    {
+      "from": "description: \"Use the provider default reasoning level\"",
+      "to": "description: \"使用服务商默认的推理强度\""
+    },
+    {
+      "from": "g=c.name||c.userName||c.email?.split(\"@\")[0]||\"Account\"",
+      "to": "g=c.name||c.userName||c.email?.split(\"@\")[0]||\"账户\""
+    },
+    {
+      "from": "message:ot instanceof Error?ot.message:\"Rewind failed.\"",
+      "to": "message:ot instanceof Error?ot.message:\"回退失败。\""
+    },
+    {
+      "from": "return params.answer.startsWith(\"Yes\") ? \"plan\" : null;",
+      "to": "return params.answer.startsWith(\"是\") || params.answer.startsWith(\"Yes\") ? \"plan\" : null;"
     },
     {
       "from": "Open the selected project before running this command.",
@@ -54,6 +567,38 @@
       "to": "此安装会话已过期，请重新发现仓库。"
     },
     {
+      "from": "description:\"Fetch all PR comments for current branch\"",
+      "to": "description:\"获取当前分支的全部 PR 评论\""
+    },
+    {
+      "from": "description:\"Display credits, plan, and usage metrics\"",
+      "to": "description:\"显示额度、套餐与用量指标\""
+    },
+    {
+      "from": "description: \"Allow this tool call\",\n    scope: void 0",
+      "to": "description: \"允许此工具调用\",\n    scope: void 0"
+    },
+    {
+      "from": "header: input.inPlanMode ? \"Exit Plan\" : \"Plan Review\"",
+      "to": "header: input.inPlanMode ? \"退出计划\" : \"计划评审\""
+    },
+    {
+      "from": "s.jsxs(Q,{title:\"Preferences\",children:[d?s.jsxs(\"div\"",
+      "to": "s.jsxs(Q,{title:\"偏好设置\",children:[d?s.jsxs(\"div\""
+    },
+    {
+      "from": "description:\"Show the side panel when the app starts.\"",
+      "to": "description:\"应用启动时显示侧边面板。\""
+    },
+    {
+      "from": "label:\"Tokens\",value:d?of(d.totalTokens):\"Unavailable\"",
+      "to": "label:\"令牌\",value:d?of(d.totalTokens):\"不可用\""
+    },
+    {
+      "from": "label: \"Yes, allow all edits this session [shift+tab]\"",
+      "to": "label: \"是，本次会话允许所有编辑 [shift+tab]\""
+    },
+    {
       "from": "Command Code could not restart to install the update.",
       "to": "Command Code 无法重启以安装更新。"
     },
@@ -62,12 +607,68 @@
       "to": "要求 OAuth 登录并阻止 API 密钥认证。"
     },
     {
+      "from": "description:\"Show context window usage and breakdown\"",
+      "to": "description:\"显示上下文窗口用量与明细\""
+    },
+    {
+      "from": "{id:\"appearance\",label:\"Appearance\",group:\"Workspace\"",
+      "to": "{id:\"appearance\",label:\"外观\",group:\"工作区\""
+    },
+    {
+      "from": "title:\"Could not discard\",description:b.error??w.path",
+      "to": "title:\"无法放弃更改\",description:b.error??w.path"
+    },
+    {
+      "from": "title:\"Could not stop the run\",description:String(ie)",
+      "to": "title:\"无法停止运行\",description:String(ie)"
+    },
+    {
+      "from": "server_error: \"Server error. Please try again later.\"",
+      "to": "server_error: \"服务器错误。请稍后重试。\""
+    },
+    {
+      "from": "Make sure your dev server is running, then try again.",
+      "to": "请确保开发服务器已运行，然后重试。"
+    },
+    {
       "from": "This command may delete or overwrite important data.",
       "to": "此命令可能删除或覆盖重要数据。"
     },
     {
       "from": "That worktree does not belong to the source project.",
       "to": "该工作树不属于源项目。"
+    },
+    {
+      "from": "Summarizes long conversations when context fills up.",
+      "to": "上下文占满时压缩长对话。"
+    },
+    {
+      "from": "downloadTableAsMarkdown:\"Download table as Markdown\"",
+      "to": "downloadTableAsMarkdown:\"将表格下载为 Markdown\""
+    },
+    {
+      "from": "description: \"Allow this command\",\n    scope: void 0",
+      "to": "description: \"允许此命令\",\n    scope: void 0"
+    },
+    {
+      "from": "\"aria-label\":\"Jump to latest\",title:\"Jump to latest\"",
+      "to": "\"aria-label\":\"跳至最新\",title:\"跳至最新\""
+    },
+    {
+      "from": "confirmLabel:\"Rewind\",busy:kn,busyLabel:\"Rewinding…\"",
+      "to": "confirmLabel:\"回退\",busy:kn,busyLabel:\"正在回退…\""
+    },
+    {
+      "from": "children:\"Open preview\"}):null,Ke.status===\"running\"",
+      "to": "children:\"打开预览\"}):null,Ke.status===\"running\""
+    },
+    {
+      "from": "s.jsxs(Q,{title:\"Application\",children:[s.jsx(xh,{})",
+      "to": "s.jsxs(Q,{title:\"应用\",children:[s.jsx(xh,{})"
+    },
+    {
+      "from": "title: \"Update Ready\",\n      message: result.message",
+      "to": "title: \"更新就绪\",\n      message: result.message"
     },
     {
       "from": "A configured permission rule requires confirmation.",
@@ -86,12 +687,40 @@
       "to": "请在浏览器中完成登录，然后返回此处。"
     },
     {
+      "from": "description:\"Show comprehensive environment status\"",
+      "to": "description:\"显示完整的环境状态\""
+    },
+    {
+      "from": "description:\"Initialize AGENTS.md for this project\"",
+      "to": "description:\"为此项目初始化 AGENTS.md\""
+    },
+    {
+      "from": "{id:\"shortcuts\",label:\"Shortcuts\",group:\"Workspace\"",
+      "to": "{id:\"shortcuts\",label:\"快捷键\",group:\"工作区\""
+    },
+    {
+      "from": "o.jsx(Ld,{className:\"sr-only\",children:\"Settings\"})",
+      "to": "o.jsx(Ld,{className:\"sr-only\",children:\"设置\"})"
+    },
+    {
+      "from": "s.jsxs(Q,{title:\"Behavior\",children:[o?s.jsxs(\"div\"",
+      "to": "s.jsxs(Q,{title:\"行为\",children:[o?s.jsxs(\"div\""
+    },
+    {
+      "from": "label:\"Accent\",description:\"From the active theme.\"",
+      "to": "label:\"强调色\",description:\"跟随当前主题。\""
+    },
+    {
       "from": "Answer the question before editing queued messages",
       "to": "先回答问题再编辑排队消息"
     },
     {
       "from": "The window closed before the terminal could start.",
       "to": "终端启动前窗口已关闭。"
+    },
+    {
+      "from": "n.push({key:\"pushed\",label:\"Pushed\",tone:\"muted\"})",
+      "to": "n.push({key:\"pushed\",label:\"已推送\",tone:\"muted\"})"
     },
     {
       "from": "Select this project with the folder picker first.",
@@ -122,6 +751,26 @@
       "to": "选择首条消息前展示的画面。"
     },
     {
+      "from": "message: \"Login to synthesize your taste profile\"",
+      "to": "message: \"登录以综合你的偏好画像\""
+    },
+    {
+      "from": "message: \"Update install is already in progress.\"",
+      "to": "message: \"更新安装已在进行中。\""
+    },
+    {
+      "from": "o.jsx(Yn.Group,{heading:\"Commands\",children:m.map",
+      "to": "o.jsx(Yn.Group,{heading:\"命令\",children:m.map"
+    },
+    {
+      "from": "label: \"Join Command Code Discord\",\n        click",
+      "to": "label: \"加入 Command Code Discord\",\n        click"
+    },
+    {
+      "from": "Couldn't write to source. Send it to chat instead",
+      "to": "无法写入源文件，已改为发送到聊天"
+    },
+    {
       "from": "Runs edits and commands without asking each time",
       "to": "直接执行编辑与命令，不再逐一询问"
     },
@@ -146,12 +795,64 @@
       "to": "无法应用部分差异的文档变更"
     },
     {
+      "from": "description:\"Most intelligent for complex tasks\"",
+      "to": "description:\"处理复杂任务时最智能\""
+    },
+    {
+      "from": "description:\"Switch between Command Code models\"",
+      "to": "description:\"切换 Command Code 模型\""
+    },
+    {
+      "from": "description:\"Show or switch the permission mode\"",
+      "to": "description:\"查看或切换权限模式\""
+    },
+    {
+      "from": "title:\"Refresh\",className:\"flex h-7 w-7 shrink-0",
+      "to": "title:\"刷新\",className:\"flex h-7 w-7 shrink-0"
+    },
+    {
+      "from": "title:\"New terminal\",\"aria-label\":\"New terminal\"",
+      "to": "title:\"新建终端\",\"aria-label\":\"新建终端\""
+    },
+    {
+      "from": "Could not undo: the file changed since that edit",
+      "to": "无法撤销：该文件自上次修改后已变更"
+    },
+    {
+      "from": "Design mode: click an element to send it to chat",
+      "to": "设计模式：点击元素即可发送到聊天"
+    },
+    {
       "from": "Session import failed without an error message.",
       "to": "会话导入失败，但未返回错误信息。"
     },
     {
       "from": "Terminal session id is in use by another window",
       "to": "终端会话 ID 正被另一个窗口使用"
+    },
+    {
+      "from": "description:\"Review this session's latest plan\"",
+      "to": "description:\"查看此会话的最新计划\""
+    },
+    {
+      "from": "description:\"Manage additional directory scope\"",
+      "to": "description:\"管理附加目录范围\""
+    },
+    {
+      "from": "{id:\"general\",label:\"General\",group:\"Workspace\"",
+      "to": "{id:\"general\",label:\"通用\",group:\"工作区\""
+    },
+    {
+      "from": "e===\"refining\"?{description:\"Being refined\"}:{}",
+      "to": "e===\"refining\"?{description:\"正在完善\"}:{}"
+    },
+    {
+      "from": "label:\"Archive current chat\",keys:\"Mod+Shift+A\"",
+      "to": "label:\"归档当前会话\",keys:\"Mod+Shift+A\""
+    },
+    {
+      "from": "Learning timed out. Try again with /learn-taste",
+      "to": "学习超时。请用 /learn-taste 重试"
     },
     {
       "from": "The agent took too long to respond. Try again.",
@@ -162,8 +863,72 @@
       "to": "无法更新部分差异的渲染缓存"
     },
     {
+      "from": "description:\"Restore to a previous checkpoint\"",
+      "to": "description:\"恢复到之前的检查点\""
+    },
+    {
+      "from": "description:\"Compact the conversation history\"",
+      "to": "description:\"压缩对话历史\""
+    },
+    {
+      "from": "downloadDiagramAsSvg:\"Download diagram as SVG\"",
+      "to": "downloadDiagramAsSvg:\"将图表下载为 SVG\""
+    },
+    {
+      "from": "downloadDiagramAsPng:\"Download diagram as PNG\"",
+      "to": "downloadDiagramAsPng:\"将图表下载为 PNG\""
+    },
+    {
+      "from": "downloadDiagramAsMmd:\"Download diagram as MMD\"",
+      "to": "downloadDiagramAsMmd:\"将图表下载为 MMD\""
+    },
+    {
+      "from": "title:\"Open in app\",\"aria-label\":\"Open in app\"",
+      "to": "title:\"在应用中打开\",\"aria-label\":\"在应用中打开\""
+    },
+    {
+      "from": "title:\"Open a view\",\"aria-label\":\"Open a view\"",
+      "to": "title:\"打开视图\",\"aria-label\":\"打开视图\""
+    },
+    {
+      "from": "children:[o.jsx(Gb,{className:Lo}),\"Settings\"]",
+      "to": "children:[o.jsx(Gb,{className:Lo}),\"设置\"]"
+    },
+    {
+      "from": "label: \"Command Code on GitHub\",\n        click",
+      "to": "label: \"GitHub 上的 Command Code\",\n        click"
+    },
+    {
+      "from": "[\"General\",\"Sharing\",\"Taste\",\"Feature models\"]",
+      "to": "[\"通用\",\"分享\",\"偏好\",\"功能模型\"]"
+    },
+    {
+      "from": "Changes preview instantly. Apply writes source",
+      "to": "更改即时预览，Apply 会写入源文件"
+    },
+    {
       "from": "Could not find the selected folder to rename.",
       "to": "找不到要重命名的文件夹。"
+    },
+    {
+      "from": "Names your sessions after the first exchange.",
+      "to": "根据第一次交流为会话命名。"
+    },
+    {
+      "from": "description:\"They are still changed on disk.\"",
+      "to": "description:\"这些更改仍保留在磁盘上。\""
+    },
+    {
+      "from": "ME=[{value:\"running\",label:\"Running\",icon:cr}",
+      "to": "ME=[{value:\"running\",label:\"运行中\",icon:cr}"
+    },
+    {
+      "from": "description:\"Manage Taste learning and usage\"",
+      "to": "description:\"管理偏好学习与用量\""
+    },
+    {
+      "from": "{id:\"account\",label:\"Account\",group:\"Account\"",
+      "to": "{id:\"account\",label:\"账户\",group:\"账户\""
     },
     {
       "from": "Project path is not selected in this window.",
@@ -186,6 +951,30 @@
       "to": "useToast 必须在 ToastProvider 内使用"
     },
     {
+      "from": "Streams live observations during onboarding.",
+      "to": "在引导过程中实时展示观察结果。"
+    },
+    {
+      "from": "Learns your coding style from your sessions.",
+      "to": "从你的会话中学习你的编码风格。"
+    },
+    {
+      "from": "description:\"Clear the conversation history\"",
+      "to": "description:\"清空对话历史\""
+    },
+    {
+      "from": "title:\"Changed by the agent in its last run\"",
+      "to": "title:\"上次运行时由智能体更改\""
+    },
+    {
+      "from": "copyTableAsMarkdown:\"Copy table as Markdown\"",
+      "to": "copyTableAsMarkdown:\"以 Markdown 复制表格\""
+    },
+    {
+      "from": "message:\"That image is too large to attach.\"",
+      "to": "message:\"该图片过大，无法附加。\""
+    },
+    {
       "from": "Switch this chat to auto-accept, then build",
       "to": "切换本会话为自动接受模式，然后执行"
     },
@@ -206,6 +995,26 @@
       "to": "找不到要重命名的文件。"
     },
     {
+      "from": "description:\"Manage MCP server connections\"",
+      "to": "description:\"管理 MCP 服务器连接\""
+    },
+    {
+      "from": "description:\"Share feedback or report bugs\"",
+      "to": "description:\"分享反馈或报告问题\""
+    },
+    {
+      "from": "description:\"ChatGPT Pro/Plus subscription\"",
+      "to": "description:\"ChatGPT Pro/Plus 订阅\""
+    },
+    {
+      "from": "children:\"Commands saved for this project.\"",
+      "to": "children:\"已为此项目保存命令。\""
+    },
+    {
+      "from": "{title:\"Configuration\",children:s.jsx(\"div\"",
+      "to": "{title:\"配置\",children:s.jsx(\"div\""
+    },
+    {
       "from": "Higher effort is more thorough but slower.",
       "to": "更高强度更全面，但速度更慢。"
     },
@@ -222,6 +1031,22 @@
       "to": "Anthropic 返回了无效的登录链接。"
     },
     {
+      "from": "description:\"Browse and open agent skills\"",
+      "to": "description:\"浏览并打开智能体技能\""
+    },
+    {
+      "from": "downloadTableAsCsv:\"Download table as CSV\"",
+      "to": "downloadTableAsCsv:\"将表格下载为 CSV\""
+    },
+    {
+      "from": "children:[\"~\",e.estimatedTokens,\" tokens\"]",
+      "to": "children:[\"约 \",e.estimatedTokens,\" 个令牌\"]"
+    },
+    {
+      "from": "Design mode works on your local dev server",
+      "to": "设计模式适用于你的本地开发服务器"
+    },
+    {
       "from": "Write a comment or remove this line note.",
       "to": "写评论或移除此行备注。"
     },
@@ -230,8 +1055,44 @@
       "to": "该授权码未被接受。"
     },
     {
+      "from": "description:\"Manage agent configurations\"",
+      "to": "description:\"管理智能体配置\""
+    },
+    {
+      "from": "{id:\"config\",label:\"Config\",group:\"Agent\"",
+      "to": "{id:\"config\",label:\"配置\",group:\"智能体\""
+    },
+    {
+      "from": "{id:\"skills\",label:\"Skills\",group:\"Agent\"",
+      "to": "{id:\"skills\",label:\"技能\",group:\"智能体\""
+    },
+    {
+      "from": "{id:\"claude\",label:\"Claude\",group:\"Agent\"",
+      "to": "{id:\"claude\",label:\"Claude\",group:\"智能体\""
+    },
+    {
       "from": "No configuration settings are available.",
       "to": "没有可用的配置项。"
+    },
+    {
+      "from": "description:\"Manage Command Code memory\"",
+      "to": "description:\"管理 Command Code 记忆\""
+    },
+    {
+      "from": "description:\"Resume a past conversation\"",
+      "to": "description:\"恢复过去的对话\""
+    },
+    {
+      "from": "description:\"Rename the current session\"",
+      "to": "description:\"重命名当前会话\""
+    },
+    {
+      "from": "description:\"Show the session todo list\"",
+      "to": "description:\"显示会话待办列表\""
+    },
+    {
+      "from": "o.jsx(tc,{title:\"Terminal\",keybind:s??\"\"",
+      "to": "o.jsx(tc,{title:\"终端\",keybind:s??\"\""
     },
     {
       "from": "A fresh chat resets the context window.",
@@ -240,6 +1101,34 @@
     {
       "from": "More unchanged context may be available",
       "to": "可能有更多未变更的上下文"
+    },
+    {
+      "from": "description:\"Stop sharing conversation\"",
+      "to": "description:\"停止分享对话\""
+    },
+    {
+      "from": "imageNotAvailable:\"Image not available\"",
+      "to": "imageNotAvailable:\"图片不可用\""
+    },
+    {
+      "from": "error:\"Workspace selection superseded.\"",
+      "to": "error:\"工作区选择已被新操作取代。\""
+    },
+    {
+      "from": "{id:\"agent\",label:\"Agent\",group:\"Agent\"",
+      "to": "{id:\"agent\",label:\"智能体\",group:\"智能体\""
+    },
+    {
+      "from": "{id:\"taste\",label:\"Taste\",group:\"Agent\"",
+      "to": "{id:\"taste\",label:\"偏好\",group:\"智能体\""
+    },
+    {
+      "from": "{label:\"Violet\",value:\"text-violet-600\"",
+      "to": "{label:\"紫色\",value:\"text-violet-600\""
+    },
+    {
+      "from": "o.jsx(Fl,{label:\"Other vendors\",count:s",
+      "to": "o.jsx(Fl,{label:\"其他供应商\",count:s"
     },
     {
       "from": "Used for new messages in the composer.",
@@ -254,24 +1143,124 @@
       "to": "循环切换 询问 / 自动接受 / 计划 模式"
     },
     {
+      "from": "description:\"Display help information\"",
+      "to": "description:\"显示帮助信息\""
+    },
+    {
+      "from": "title:\"Run the project's setup script\"",
+      "to": "title:\"运行项目的设置脚本\""
+    },
+    {
+      "from": "openExternalLink:\"Open external link?\"",
+      "to": "openExternalLink:\"打开外部链接？\""
+    },
+    {
+      "from": "title:\"Rewind to before this message?\"",
+      "to": "title:\"回退到这条消息之前？\""
+    },
+    {
+      "from": "Click an element to edit it. Esc exits",
+      "to": "点击元素进行编辑，按 Esc 退出"
+    },
+    {
       "from": "No preview available for this change.",
       "to": "此变更没有可用的预览。"
     },
     {
-      "from": "Runs tools without asking each time.",
-      "to": "每次直接运行工具，不再询问。"
+      "from": "title:\"Your Taste, Learned & Applied\"",
+      "to": "title:\"你的偏好：已被学习并应用\""
     },
     {
-      "from": "Add skills from a GitHub repository.",
-      "to": "从 GitHub 仓库添加技能。"
+      "from": "children:\"Cancel\"})]}):s.jsx(\"button\"",
+      "to": "children:\"取消\"})]}):s.jsx(\"button\""
+    },
+    {
+      "from": "{label:\"Green\",value:\"text-green-600\"",
+      "to": "{label:\"绿色\",value:\"text-green-600\""
+    },
+    {
+      "from": "{label:\"Violet\",value:\"bg-violet-500\"",
+      "to": "{label:\"紫色\",value:\"bg-violet-500\""
+    },
+    {
+      "from": "description:\"Log out of Command Code\"",
+      "to": "description:\"退出登录 Command Code\""
+    },
+    {
+      "from": "Check the address or your connection.",
+      "to": "请检查地址或你的网络连接。"
     },
     {
       "from": "Dismiss until the files change again",
       "to": "在文件再次变更前不再显示"
     },
     {
+      "from": "description:\"Log in to Command Code\"",
+      "to": "description:\"登录 Command Code\""
+    },
+    {
+      "from": "title:\"Run the project's run script\"",
+      "to": "title:\"运行项目的运行脚本\""
+    },
+    {
+      "from": "message:\"Could not refresh changes.\"",
+      "to": "message:\"无法刷新变更。\""
+    },
+    {
+      "from": "{label:\"Regular\",value:\"font-normal\"",
+      "to": "{label:\"常规\",value:\"font-normal\""
+    },
+    {
       "from": "No skills found in this repository.",
       "to": "此仓库中未找到技能。"
+    },
+    {
+      "from": "description:\"Review a pull request\"",
+      "to": "description:\"查看拉取请求\""
+    },
+    {
+      "from": "children:\"Binary file (no preview)\"",
+      "to": "children:\"二进制文件（无预览）\""
+    },
+    {
+      "from": "description:\"Create a local commit\"",
+      "to": "description:\"创建本地提交\""
+    },
+    {
+      "from": "{id:\"mcp\",label:\"MCP\",group:\"Agent\"",
+      "to": "{id:\"mcp\",label:\"MCP\",group:\"智能体\""
+    },
+    {
+      "from": "{label:\"Medium\",value:\"font-medium\"",
+      "to": "{label:\"中等\",value:\"font-medium\""
+    },
+    {
+      "from": "{label:\"Semi\",value:\"font-semibold\"",
+      "to": "{label:\"半粗\",value:\"font-semibold\""
+    },
+    {
+      "from": "{label:\"Center\",value:\"text-center\"",
+      "to": "{label:\"居中\",value:\"text-center\""
+    },
+    {
+      "from": "{label:\"Ink\",value:\"text-slate-900\"",
+      "to": "{label:\"墨色\",value:\"text-slate-900\""
+    },
+    {
+      "from": "{label:\"Blue\",value:\"text-blue-600\"",
+      "to": "{label:\"蓝色\",value:\"text-blue-600\""
+    },
+    {
+      "from": "{label:\"Green\",value:\"bg-green-500\"",
+      "to": "{label:\"绿色\",value:\"bg-green-500\""
+    },
+    {
+      "from": "o.jsx(Fl,{label:\"Favorites\",count:n",
+      "to": "o.jsx(Fl,{label:\"收藏\",count:n"
+    },
+    {
+      "from": "title:\"Open DevTools for this page\"",
+      "to": "title:\"为此页面打开开发者工具\""
     },
     {
       "from": "This skill cannot be enabled here.",
@@ -286,6 +1275,42 @@
       "to": "打开 /tree 时默认应用的筛选条件。"
     },
     {
+      "from": "title:\"Don't ask for this project\"",
+      "to": "title:\"不再询问此项目\""
+    },
+    {
+      "from": "downloadDiagram:\"Download diagram\"",
+      "to": "downloadDiagram:\"下载图表\""
+    },
+    {
+      "from": "copyTableAsCsv:\"Copy table as CSV\"",
+      "to": "copyTableAsCsv:\"以 CSV 复制表格\""
+    },
+    {
+      "from": "copyTableAsTsv:\"Copy table as TSV\"",
+      "to": "copyTableAsTsv:\"以 TSV 复制表格\""
+    },
+    {
+      "from": "message: \"No update is ready yet.\"",
+      "to": "message: \"尚无可安装的更新。\""
+    },
+    {
+      "from": "description:\"Copilot subscription\"",
+      "to": "description:\"Copilot 订阅\""
+    },
+    {
+      "from": "children:\"Loading…\"}):l.length===0",
+      "to": "children:\"加载中…\"}):l.length===0"
+    },
+    {
+      "from": "label:\"Back\",disabled:!a.canGoBack",
+      "to": "label:\"后退\",disabled:!a.canGoBack"
+    },
+    {
+      "from": "message:ot.error??\"Rewind failed.\"",
+      "to": "message:ot.error??\"回退失败。\""
+    },
+    {
       "from": "Show panel, plan ready for review",
       "to": "显示面板，计划待评审"
     },
@@ -296,6 +1321,38 @@
     {
       "from": "Editors, diffs, and the terminal.",
       "to": "编辑器、差异与终端。"
+    },
+    {
+      "from": "description:\"Open the plan panel\"",
+      "to": "description:\"打开计划面板\""
+    },
+    {
+      "from": "alt:\"Command Code desktop update\"",
+      "to": "alt:\"Command Code 桌面版更新\""
+    },
+    {
+      "from": "{title:\"Preferences\",children:[d?",
+      "to": "{title:\"偏好设置\",children:[d?"
+    },
+    {
+      "from": "{label:\"Right\",value:\"text-right\"",
+      "to": "{label:\"右对齐\",value:\"text-right\""
+    },
+    {
+      "from": "{label:\"White\",value:\"text-white\"",
+      "to": "{label:\"白色\",value:\"text-white\""
+    },
+    {
+      "from": "{label:\"Red\",value:\"text-red-600\"",
+      "to": "{label:\"红色\",value:\"text-red-600\""
+    },
+    {
+      "from": "{label:\"Blue\",value:\"bg-blue-500\"",
+      "to": "{label:\"蓝色\",value:\"bg-blue-500\""
+    },
+    {
+      "from": "User declined to answer questions",
+      "to": "用户拒绝回答问题"
     },
     {
       "from": "Attach a project to search files",
@@ -316,6 +1373,30 @@
     {
       "from": "Could not stop background agent.",
       "to": "无法停止后台智能体。"
+    },
+    {
+      "from": "eyebrow:\"A CLEAR PLACE TO BEGIN\"",
+      "to": "eyebrow:\"一个清晰的起点\""
+    },
+    {
+      "from": "title:\"Run this project's mods?\"",
+      "to": "title:\"运行此项目的模组？\""
+    },
+    {
+      "from": "viewFullscreen:\"View fullscreen\"",
+      "to": "viewFullscreen:\"全屏查看\""
+    },
+    {
+      "from": "exitFullscreen:\"Exit fullscreen\"",
+      "to": "exitFullscreen:\"退出全屏\""
+    },
+    {
+      "from": "children:\"This page didn't load\"",
+      "to": "children:\"此页面未能加载\""
+    },
+    {
+      "from": "{label:\"Ink\",value:\"bg-gray-900\"",
+      "to": "{label:\"墨色\",value:\"bg-gray-900\""
     },
     {
       "from": "Open the full plan in a preview",
@@ -340,6 +1421,38 @@
     {
       "from": "Superseded by a newer terminal.",
       "to": "已被更新的终端取代。"
+    },
+    {
+      "from": "description:\"Exit Command Code\"",
+      "to": "description:\"退出 Command Code\""
+    },
+    {
+      "from": "children:t?\"Removing…\":\"Remove\"",
+      "to": "children:t?\"正在移除…\":\"移除\""
+    },
+    {
+      "from": "children:n?\"Removing…\":\"Remove\"",
+      "to": "children:n?\"正在移除…\":\"移除\""
+    },
+    {
+      "from": "{label:\"Bold\",value:\"font-bold\"",
+      "to": "{label:\"粗体\",value:\"font-bold\""
+    },
+    {
+      "from": "{label:\"Left\",value:\"text-left\"",
+      "to": "{label:\"左对齐\",value:\"text-left\""
+    },
+    {
+      "from": "{label:\"White\",value:\"bg-white\"",
+      "to": "{label:\"白色\",value:\"bg-white\""
+    },
+    {
+      "from": "{label:\"Red\",value:\"bg-red-500\"",
+      "to": "{label:\"红色\",value:\"bg-red-500\""
+    },
+    {
+      "from": "message: \"Updater unavailable.\"",
+      "to": "message: \"更新程序不可用。\""
     },
     {
       "from": "Search chats, files, commands…",
@@ -368,6 +1481,34 @@
     {
       "from": "On-demand command explanations",
       "to": "按需命令解释"
+    },
+    {
+      "from": "downloadTable:\"Download table\"",
+      "to": "downloadTable:\"下载表格\""
+    },
+    {
+      "from": "downloadImage:\"Download image\"",
+      "to": "downloadImage:\"下载图片\""
+    },
+    {
+      "from": "title: \"Select Project Folder\"",
+      "to": "title: \"选择项目文件夹\""
+    },
+    {
+      "from": "{title:\"Behavior\",children:[o?",
+      "to": "{title:\"行为\",children:[o?"
+    },
+    {
+      "from": "placeholder:\"Paste code#state\"",
+      "to": "placeholder:\"粘贴 code#state\""
+    },
+    {
+      "from": "`${s.org.name} (organization)`",
+      "to": "`${s.org.name}（组织）`"
+    },
+    {
+      "from": "Saved. Live in your dev server",
+      "to": "已保存，已在你的开发服务器生效"
     },
     {
       "from": "No chats match these filters.",
@@ -414,6 +1555,50 @@
       "to": "偏好学习（当前项目）"
     },
     {
+      "from": "Command Code (Alpha) Desktop.",
+      "to": "Command Code（Alpha）桌面版。"
+    },
+    {
+      "from": "description:\"Enter plan mode\"",
+      "to": "description:\"进入计划模式\""
+    },
+    {
+      "from": "confirmLabel:\"Stop and close\"",
+      "to": "confirmLabel:\"停止并关闭\""
+    },
+    {
+      "from": "placeholder:\"Commit message…\"",
+      "to": "placeholder:\"提交信息…\""
+    },
+    {
+      "from": "placeholder:\"Search projects\"",
+      "to": "placeholder:\"搜索项目\""
+    },
+    {
+      "from": "title:\"Discard file changes?\"",
+      "to": "title:\"放弃文件更改？\""
+    },
+    {
+      "from": "children:\"Loading diagram...\"",
+      "to": "children:\"正在加载图表...\""
+    },
+    {
+      "from": "{label:\"Responsive\",glyph:\"S\"",
+      "to": "{label:\"响应式\",glyph:\"S\""
+    },
+    {
+      "from": "o.jsx(cs,{label:\"Environment\"",
+      "to": "o.jsx(cs,{label:\"环境\""
+    },
+    {
+      "from": "children:\"Show empty folders\"",
+      "to": "children:\"显示空文件夹\""
+    },
+    {
+      "from": "children:\"Thinking…\"}):qA(n)]",
+      "to": "children:\"正在思考…\"}):qA(n)]"
+    },
+    {
       "from": "Invalid source project path.",
       "to": "无效的源项目路径。"
     },
@@ -438,6 +1623,38 @@
       "to": "你所在地区不可用"
     },
     {
+      "from": "title:\"Turn on Auto-accept?\"",
+      "to": "title:\"开启自动接受？\""
+    },
+    {
+      "from": "children:\"Ask agent instead\"",
+      "to": "children:\"改为询问智能体\""
+    },
+    {
+      "from": "children:\"No projects match\"",
+      "to": "children:\"没有匹配的项目\""
+    },
+    {
+      "from": "downloadFile:\"Download file\"",
+      "to": "downloadFile:\"下载文件\""
+    },
+    {
+      "from": "children:\"Loading settings…\"",
+      "to": "children:\"正在加载设置…\""
+    },
+    {
+      "from": "children:\"Tool hook output:\"",
+      "to": "children:\"工具钩子输出：\""
+    },
+    {
+      "from": "title: \"Update in Progress\",",
+      "to": "title: \"正在更新\","
+    },
+    {
+      "from": "let d=\"Account unavailable\";",
+      "to": "let d=\"账户不可用\";"
+    },
+    {
       "from": "Answer the agent's question",
       "to": "回答智能体的问题"
     },
@@ -460,6 +1677,30 @@
     {
       "from": "Failed to check diagnostics",
       "to": "检查诊断失败"
+    },
+    {
+      "from": "children:\"Open full output\"",
+      "to": "children:\"查看完整输出\""
+    },
+    {
+      "from": "label:\"Account unavailable\"",
+      "to": "label:\"账户不可用\""
+    },
+    {
+      "from": "label: \"Check for Updates…\"",
+      "to": "label: \"检查更新…\""
+    },
+    {
+      "from": "children:\"Enter an address\"",
+      "to": "children:\"输入网址\""
+    },
+    {
+      "from": "children:[S.scope,\" scope\"]",
+      "to": "children:[S.scope===\"user\"?\"用户\":S.scope===\"project\"?\"项目\":S.scope===\"local\"?\"本地\":S.scope,\" 范围\"]"
+    },
+    {
+      "from": "children:\"Browse skills.sh\"",
+      "to": "children:\"浏览 skills.sh\""
     },
     {
       "from": "Approve the agent's action",
@@ -502,8 +1743,24 @@
       "to": "跳过分支摘要询问"
     },
     {
-      "from": "Match any selected status",
-      "to": "匹配任一选中状态"
+      "from": "children:\"Loading preview\"",
+      "to": "children:\"正在加载预览\""
+    },
+    {
+      "from": "title:\"Reset zoom and pan\"",
+      "to": "title:\"重置缩放与平移\""
+    },
+    {
+      "from": "label: \"Inherit from user\"",
+      "to": "label: \"继承自用户\""
+    },
+    {
+      "from": "o.jsx(cs,{label:\"Activity\"",
+      "to": "o.jsx(cs,{label:\"活动\""
+    },
+    {
+      "from": "Undid the last design edit",
+      "to": "已撤销上一次设计修改"
     },
     {
       "from": "Not included in your plan",
@@ -562,8 +1819,16 @@
       "to": "默认分享 Gist 格式"
     },
     {
-      "from": "Reasoning effort options",
-      "to": "推理强度选项"
+      "from": "{label:\"Review\",glyph:\"R\"",
+      "to": "{label:\"审阅\",glyph:\"R\""
+    },
+    {
+      "from": "children:\"Design actions\"",
+      "to": "children:\"设计操作\""
+    },
+    {
+      "from": "children:\"Show PR status\"",
+      "to": "children:\"显示 PR 状态\""
     },
     {
       "from": "Search or create branch…",
@@ -592,10 +1857,6 @@
     {
       "from": "Invalid install request.",
       "to": "无效的安装请求。"
-    },
-    {
-      "from": "Session cost in composer",
-      "to": "在输入框显示会话费用"
     },
     {
       "from": "Open workbench on launch",
@@ -632,6 +1893,30 @@
     {
       "from": "Sidecar medium not found",
       "to": "未找到 Sidecar 媒体"
+    },
+    {
+      "from": "title:\"Send to Terminal\"",
+      "to": "title:\"发送到终端\""
+    },
+    {
+      "from": "children:\"Pursue a goal\"",
+      "to": "children:\"追求一个目标\""
+    },
+    {
+      "from": "children:\"Dev server at\"",
+      "to": "children:\"开发服务器地址\""
+    },
+    {
+      "from": "children:\"Render anyway\"",
+      "to": "children:\"仍然渲染\""
+    },
+    {
+      "from": "placeholder:\"Playwright\"",
+      "to": "placeholder:\"例如 Playwright\""
+    },
+    {
+      "from": "Could not undo that edit",
+      "to": "无法撤销该修改"
     },
     {
       "from": "Open a project to begin",
@@ -702,12 +1987,32 @@
       "to": "默认权限模式"
     },
     {
-      "from": "Copy working directory",
-      "to": "复制工作目录"
+      "from": "busyLabel:\"Turning on…\"",
+      "to": "busyLabel:\"正在开启…\""
     },
     {
-      "from": "Click again to turn on",
-      "to": "再次点击以开启"
+      "from": "confirmLabel:\"Run mods\"",
+      "to": "confirmLabel:\"运行模组\""
+    },
+    {
+      "from": "label:\"Resize terminal\"",
+      "to": "label:\"调整终端大小\""
+    },
+    {
+      "from": "label:\"Commit and push\"",
+      "to": "label:\"提交并推送\""
+    },
+    {
+      "from": "children:\"Send to chat\"",
+      "to": "children:\"发送到对话\""
+    },
+    {
+      "from": "children:t??\"Thinking…\"",
+      "to": "children:t??\"正在思考…\""
+    },
+    {
+      "from": "Copy working directory",
+      "to": "复制工作目录"
     },
     {
       "from": "Allow for this session",
@@ -750,12 +2055,28 @@
       "to": "后台任务失败"
     },
     {
-      "from": "Update download failed",
-      "to": "更新下载失败"
-    },
-    {
       "from": "Describe. Review. Ship",
       "to": "描述 · 评审 · 交付"
+    },
+    {
+      "from": "confirmLabel:\"Turn on\"",
+      "to": "confirmLabel:\"开启\""
+    },
+    {
+      "from": "children:\"Diff layout\"",
+      "to": "children:\"差异布局\""
+    },
+    {
+      "from": "copyTable:\"Copy table\"",
+      "to": "copyTable:\"复制表格\""
+    },
+    {
+      "from": "{label:\"Fix\",glyph:\"F\"",
+      "to": "{label:\"修复\",glyph:\"F\""
+    },
+    {
+      "from": "Preparing your preview",
+      "to": "正在准备预览"
     },
     {
       "from": "Invalid project path.",
@@ -846,6 +2167,22 @@
       "to": "偏好学习（用户级）"
     },
     {
+      "from": "children:\"Check goal\"",
+      "to": "children:\"查看目标\""
+    },
+    {
+      "from": "children:\"Clear goal\"",
+      "to": "children:\"清除目标\""
+    },
+    {
+      "from": "label:\"The workbench\"",
+      "to": "label:\"工作台\""
+    },
+    {
+      "from": "idleLabel:i=\"Refresh\"",
+      "to": "idleLabel:i=\"刷新\""
+    },
+    {
       "from": "Build without asking",
       "to": "直接执行，无需询问"
     },
@@ -924,6 +2261,34 @@
     {
       "from": "Command explanations",
       "to": "命令解释"
+    },
+    {
+      "from": "label:\"The terminal\"",
+      "to": "label:\"终端\""
+    },
+    {
+      "from": "copyCode:\"Copy Code\"",
+      "to": "copyCode:\"复制代码\""
+    },
+    {
+      "from": "openLink:\"Open link\"",
+      "to": "openLink:\"打开链接\""
+    },
+    {
+      "from": "children:\"Show Code\"",
+      "to": "children:\"显示代码\""
+    },
+    {
+      "from": "label:r=\"Loading...\"",
+      "to": "label:r=\"加载中...\""
+    },
+    {
+      "from": "children:\"Focus tab\"",
+      "to": "children:\"聚焦此标签页\""
+    },
+    {
+      "from": "More browser actions",
+      "to": "更多浏览器操作"
     },
     {
       "from": "Search and commands",
@@ -1022,6 +2387,22 @@
       "to": "目录树默认筛选"
     },
     {
+      "from": "label:\"The sidebar\"",
+      "to": "label:\"侧边栏\""
+    },
+    {
+      "from": "text: \"Interrupted\"",
+      "to": "text: \"已中断\""
+    },
+    {
+      "from": "children:\"Navigate\"",
+      "to": "children:\"导航\""
+    },
+    {
+      "from": "Interrupted by user",
+      "to": "被用户中断"
+    },
+    {
       "from": "Chats and projects",
       "to": "会话与项目"
     },
@@ -1082,6 +2463,22 @@
       "to": "随时可以开始"
     },
     {
+      "from": "label:\"Terminal 1\"",
+      "to": "label:\"终端 1\""
+    },
+    {
+      "from": "`${d} preferences`",
+      "to": "`${d} 条偏好`"
+    },
+    {
+      "from": "text:\"Interrupted\"",
+      "to": "text:\"已中断\""
+    },
+    {
+      "from": "children:\"Discard\"",
+      "to": "children:\"放弃\""
+    },
+    {
       "from": "Organize projects",
       "to": "整理项目"
     },
@@ -1128,10 +2525,6 @@
     {
       "from": "Could not remove.",
       "to": "无法移除。"
-    },
-    {
-      "from": "Turn cost in chat",
-      "to": "在会话中显示单轮费用"
     },
     {
       "from": "Anthropic account",
@@ -1218,6 +2611,38 @@
       "to": "打开拉取请求"
     },
     {
+      "from": "No models match “",
+      "to": "没有匹配 “"
+    },
+    {
+      "from": "idleLabel:\"Retry\"",
+      "to": "idleLabel:\"重试\""
+    },
+    {
+      "from": "label: \"Disabled\"",
+      "to": "label: \"禁用\""
+    },
+    {
+      "from": "unknown:\"Learned\"",
+      "to": "unknown:\"已学习\""
+    },
+    {
+      "from": "children:\"Submit\"",
+      "to": "children:\"提交\""
+    },
+    {
+      "from": "children:\"Remove\"",
+      "to": "children:\"移除\""
+    },
+    {
+      "from": "scope:\"Workbench\"",
+      "to": "scope:\"工作台\""
+    },
+    {
+      "from": "Writing to source",
+      "to": "正在写入源文件"
+    },
+    {
       "from": "Untitled session",
       "to": "未命名会话"
     },
@@ -1238,10 +2663,6 @@
       "to": "请求批准"
     },
     {
-      "from": "No models match “",
-      "to": "没有匹配 “"
-    },
-    {
       "from": "Type your answer",
       "to": "输入你的回答"
     },
@@ -1254,20 +2675,12 @@
       "to": "切换工作台"
     },
     {
-      "from": "Recently updated",
-      "to": "最近更新"
-    },
-    {
       "from": "Ready for review",
       "to": "待评审"
     },
     {
       "from": "Previous 30 days",
       "to": "最近 30 天"
-    },
-    {
-      "from": "Organize sidebar",
-      "to": "整理侧边栏"
     },
     {
       "from": "Mark all as read",
@@ -1366,6 +2779,22 @@
       "to": "没有 “"
     },
     {
+      "from": "label: \"Enabled\"",
+      "to": "label: \"启用\""
+    },
+    {
+      "from": "scope:\"Composer\"",
+      "to": "scope:\"输入框\""
+    },
+    {
+      "from": "title:\"Terminal\"",
+      "to": "title:\"终端\""
+    },
+    {
+      "from": "Path not allowed",
+      "to": "路径不允许"
+    },
+    {
       "from": "No files match.",
       "to": "没有匹配的文件。"
     },
@@ -1458,12 +2887,32 @@
       "to": "后台任务"
     },
     {
-      "from": "Style inspector",
-      "to": "样式检查器"
-    },
-    {
       "from": "No upstream set",
       "to": "未设置上游分支"
+    },
+    {
+      "from": "title:\"Profile\"",
+      "to": "title:\"资料\""
+    },
+    {
+      "from": "copied:\"Copied\"",
+      "to": "copied:\"已复制\""
+    },
+    {
+      "from": "i=\"Suggestions\"",
+      "to": "i=\"建议\""
+    },
+    {
+      "from": "label:\"Command\"",
+      "to": "label:\"命令\""
+    },
+    {
+      "from": "Nothing to undo",
+      "to": "没有可撤销的操作"
+    },
+    {
+      "from": "Command aborted",
+      "to": "命令已中止"
     },
     {
       "from": "Unarchive chat",
@@ -1502,10 +2951,6 @@
       "to": "插入换行"
     },
     {
-      "from": "Ask a question",
-      "to": "提问"
-    },
-    {
       "from": "Attach project",
       "to": "附加项目"
     },
@@ -1516,10 +2961,6 @@
     {
       "from": "Toggle sidebar",
       "to": "切换侧边栏"
-    },
-    {
-      "from": "Oldest updated",
-      "to": "最早更新"
     },
     {
       "from": "Loading plans…",
@@ -1650,6 +3091,30 @@
       "to": "会话标题"
     },
     {
+      "from": "label:\"Commit\"",
+      "to": "label:\"提交\""
+    },
+    {
+      "from": "title:\"Remove\"",
+      "to": "title:\"移除\""
+    },
+    {
+      "from": "scope:\"Global\"",
+      "to": "scope:\"全局\""
+    },
+    {
+      "from": "text: \"Denied\"",
+      "to": "text: \"已拒绝\""
+    },
+    {
+      "from": "title:\"Layout\"",
+      "to": "title:\"布局\""
+    },
+    {
+      "from": "title:\"Skills\"",
+      "to": "title:\"技能\""
+    },
+    {
       "from": "Open a folder",
       "to": "打开文件夹"
     },
@@ -1688,10 +3153,6 @@
     {
       "from": "Refresh plans",
       "to": "刷新计划"
-    },
-    {
-      "from": "Show archived",
-      "to": "显示已归档"
     },
     {
       "from": "Keep refining",
@@ -1798,6 +3259,14 @@
       "to": "圆角半径"
     },
     {
+      "from": "\"Preferences\"",
+      "to": "\"偏好\""
+    },
+    {
+      "from": "Taste learned",
+      "to": "偏好已学习"
+    },
+    {
       "from": "Archive chat",
       "to": "归档会话"
     },
@@ -1886,10 +3355,6 @@
       "to": "输出上限"
     },
     {
-      "from": "Session cost",
-      "to": "会话费用"
-    },
-    {
       "from": "Stop command",
       "to": "停止命令"
     },
@@ -1936,6 +3401,10 @@
     {
       "from": "Image vision",
       "to": "图像视觉"
+    },
+    {
+      "from": "label:\"Push\"",
+      "to": "label:\"推送\""
     },
     {
       "from": "Rename chat",
@@ -2004,10 +3473,6 @@
     {
       "from": "Empty state",
       "to": "空状态"
-    },
-    {
-      "from": "Easter eggs",
-      "to": "彩蛋"
     },
     {
       "from": "Signing in…",
@@ -2088,6 +3553,10 @@
     {
       "from": "Force OAuth",
       "to": "强制 OAuth 登录"
+    },
+    {
+      "from": "Open a page",
+      "to": "打开页面"
     },
     {
       "from": "Unpin chat",
@@ -2234,10 +3703,6 @@
       "to": "无输出"
     },
     {
-      "from": "Close tab",
-      "to": "关闭标签页"
-    },
-    {
       "from": "New chat",
       "to": "新建会话"
     },
@@ -2296,1802 +3761,6 @@
     {
       "from": "API key",
       "to": "API 密钥"
-    },
-    {
-      "from": "Command Code desktop is alpha software and not stable yet. Things can break or change without warning, and you use it at your own risk.",
-      "to": "Command Code 桌面版为 alpha 软件，尚不稳定。功能可能随时变更或出错，请自行承担使用风险。"
-    },
-    {
-      "from": "Render the terminal with WebGL for smooth scrolling under heavy output. Turn off if your graphics driver shows glitches. Applies to new terminals.",
-      "to": "使用 WebGL 渲染终端，重度输出时滚动更流畅。若显卡驱动显示异常请关闭。仅对新终端生效。"
-    },
-    {
-      "from": "Certain typed phrases trigger small visual effects. They are never sent to the model. Turn off to disable all of them.",
-      "to": "某些特定输入会触发小型视觉特效。它们不会发送给模型。关闭可禁用全部特效。"
-    },
-    {
-      "from": "Pause flooding commands until the screen catches up, so heavy output never freezes the app. Applies to new terminals.",
-      "to": "在屏幕跟上输出前暂停大量刷屏的命令，重度输出不会冻结应用。仅对新终端生效。"
-    },
-    {
-      "from": "Learn your coding style from this project only (same setting as /taste).",
-      "to": "仅从当前项目学习你的编码风格（与 /taste 设置相同）。"
-    },
-    {
-      "from": "Text size in every terminal. While a terminal has focus, the zoom shortcuts change this instead of the window.",
-      "to": "所有终端的文本大小。当终端处于焦点时，缩放快捷键将调整此设置而非窗口。"
-    },
-    {
-      "from": "Show the terminal and changes panel when the app starts.",
-      "to": "应用启动时显示终端与变更面板。"
-    },
-    {
-      "from": "Names your sessions after the first exchange.",
-      "to": "根据第一次交流为会话命名。"
-    },
-    {
-      "from": "Describes attached images so a text-only model can read them.",
-      "to": "描述附加的图片，让纯文本模型也能读取。"
-    },
-    {
-      "from": "Summarizes an abandoned branch when you jump away from it.",
-      "to": "当离开未完成分支时，总结该分支的进度。"
-    },
-    {
-      "from": "Summarizes long conversations when context fills up.",
-      "to": "上下文占满时压缩长对话。"
-    },
-    {
-      "from": "Streams live observations during onboarding.",
-      "to": "在引导过程中实时展示观察结果。"
-    },
-    {
-      "from": "Writes the one-line command summaries on permission prompts.",
-      "to": "在权限提示中编写一行命令摘要。"
-    },
-    {
-      "from": "Learns your coding style from your sessions.",
-      "to": "从你的会话中学习你的编码风格。"
-    },
-    {
-      "from": "Command Code (Alpha) Desktop.",
-      "to": "Command Code（Alpha）桌面版。"
-    },
-    {
-      "from": "label:\"Signal\",description:\"A quiet waveform across the workspace.\"",
-      "to": "label:\"声波\",description:\"工作区中一道安静的波形。\""
-    },
-    {
-      "from": "label:\"Beacon\",description:\"A focused light that leads into the task.\"",
-      "to": "label:\"灯塔\",description:\"一束聚焦的光，引导你进入任务。\""
-    },
-    {
-      "from": "label:\"Prism\",description:\"Crossing signals around the starting point.\"",
-      "to": "label:\"棱镜\",description:\"起点周围交叉的信号。\""
-    },
-    {
-      "from": "label:\"Clean\",description:\"No background visual, just a quiet starting screen.\"",
-      "to": "label:\"纯净\",description:\"无背景画面，只有安静的起始界面。\""
-    },
-    {
-      "from": "eyebrow:\"A CLEAR PLACE TO BEGIN\"",
-      "to": "eyebrow:\"一个清晰的起点\""
-    },
-    {
-      "from": "Append the session's live dollar cost to the usage receipt.",
-      "to": "将会话的实时美元费用附加到用量账单中。"
-    },
-    {
-      "from": "Show each response's dollar cost next to its token count.",
-      "to": "在每条回复的 token 数旁显示其美元费用。"
-    },
-    {
-      "from": "children:\"Open full output\"",
-      "to": "children:\"查看完整输出\""
-    },
-    {
-      "from": "children:\"Fix this error\"",
-      "to": "children:\"修复此错误\""
-    },
-    {
-      "from": "title:\"Send to Terminal\"",
-      "to": "title:\"发送到终端\""
-    },
-    {
-      "from": "message:\"Clear the current draft before using this action\"",
-      "to": "message:\"请先清空当前草稿再执行此操作\""
-    },
-    {
-      "from": "message:\"Could not stop the run\"",
-      "to": "message:\"无法停止运行\""
-    },
-    {
-      "from": "message:\"Chat cleared\"",
-      "to": "message:\"会话已清空\""
-    },
-    {
-      "from": "message:\"Could not discard\"",
-      "to": "message:\"无法丢弃更改\""
-    },
-    {
-      "from": "children:\"Pursue a goal\"",
-      "to": "children:\"追求一个目标\""
-    },
-    {
-      "from": "children:\"Check goal\"",
-      "to": "children:\"查看目标\""
-    },
-    {
-      "from": "children:\"Clear goal\"",
-      "to": "children:\"清除目标\""
-    },
-    {
-      "from": "description:\"Most intelligent for complex tasks\"",
-      "to": "description:\"处理复杂任务时最智能\""
-    },
-    {
-      "from": "title:\"Turn on Auto-accept?\"",
-      "to": "title:\"开启自动接受？\""
-    },
-    {
-      "from": "body:\"Auto-accept lets the agent run ordinary edits and commands without asking each time. Risky actions and sensitive files still require approval. It stays on until you switch modes, and resets when you restart the app.\"",
-      "to": "body:\"自动接受模式让智能体无需逐一询问即可执行常规编辑与命令。风险操作与敏感文件仍需你的批准。该模式在你切换模式前持续生效，重启应用后重置。\""
-    },
-    {
-      "from": "confirmLabel:\"Turn on\"",
-      "to": "confirmLabel:\"开启\""
-    },
-    {
-      "from": "busyLabel:\"Turning on…\"",
-      "to": "busyLabel:\"正在开启…\""
-    },
-    {
-      "from": "title:\"Run this project's mods?\"",
-      "to": "title:\"运行此项目的模组？\""
-    },
-    {
-      "from": "body:\"This folder contains mods. Mods are code from the repository and they run on your machine with the same access the app has. Only run them if you trust this project.\"",
-      "to": "body:\"此文件夹包含模组。模组来自仓库中的代码，会在你的机器上以与应用相同的权限运行。只有信任此项目时才应运行它们。\""
-    },
-    {
-      "from": "confirmLabel:\"Run mods\"",
-      "to": "confirmLabel:\"运行模组\""
-    },
-    {
-      "from": "description:\"Manage Command Code memory\"",
-      "to": "description:\"管理 Command Code 记忆\""
-    },
-    {
-      "from": "description:\"Resume a past conversation\"",
-      "to": "description:\"恢复过去的对话\""
-    },
-    {
-      "from": "description:\"Rename the current session\"",
-      "to": "description:\"重命名当前会话\""
-    },
-    {
-      "from": "description:\"Restore to a previous checkpoint\"",
-      "to": "description:\"恢复到之前的检查点\""
-    },
-    {
-      "from": "description:\"Duplicate this conversation into a new chat\"",
-      "to": "description:\"将会话复制到新对话中\""
-    },
-    {
-      "from": "description:\"Show this session’s tokens, cost, and branches\"",
-      "to": "description:\"显示此会话的 token、费用与分支\""
-    },
-    {
-      "from": "description:\"Clear the conversation history\"",
-      "to": "description:\"清空对话历史\""
-    },
-    {
-      "from": "description:\"Share conversation (copy link to clipboard)\"",
-      "to": "description:\"分享对话（复制链接到剪贴板）\""
-    },
-    {
-      "from": "description:\"Stop sharing conversation\"",
-      "to": "description:\"停止分享对话\""
-    },
-    {
-      "from": "description:\"Manage 偏好学习 and usage\"",
-      "to": "description:\"管理偏好学习与用量\""
-    },
-    {
-      "from": "description:\"学习偏好 from sessions with other coding agents\"",
-      "to": "description:\"从与其他编码智能体的会话中学习偏好\""
-    },
-    {
-      "from": "description:\"Show the session todo list\"",
-      "to": "description:\"显示会话待办列表\""
-    },
-    {
-      "from": "description:\"Browse and open agent skills\"",
-      "to": "description:\"浏览并打开智能体技能\""
-    },
-    {
-      "from": "description:\"Manage agent configurations\"",
-      "to": "description:\"管理智能体配置\""
-    },
-    {
-      "from": "description:\"Manage MCP server connections\"",
-      "to": "description:\"管理 MCP 服务器连接\""
-    },
-    {
-      "from": "description:\"Switch between Command Code models\"",
-      "to": "description:\"切换 Command Code 模型\""
-    },
-    {
-      "from": "description:\"Compact the conversation history\"",
-      "to": "description:\"压缩对话历史\""
-    },
-    {
-      "from": "description:\"Select a compact mode to compact sessions\"",
-      "to": "description:\"选择压缩模式以压缩会话\""
-    },
-    {
-      "from": "description:\"Show context window usage and breakdown\"",
-      "to": "description:\"显示上下文窗口用量与明细\""
-    },
-    {
-      "from": "description:\"Connect IDE to share your open file and selected lines\"",
-      "to": "description:\"连接 IDE 以共享打开的文件与选中行\""
-    },
-    {
-      "from": "description:\"Log in to Command Code\"",
-      "to": "description:\"登录 Command Code\""
-    },
-    {
-      "from": "description:\"退出登录 of Command Code\"",
-      "to": "description:\"退出登录 Command Code\""
-    },
-    {
-      "from": "description:\"Open Command Code courses in your browser\"",
-      "to": "description:\"在浏览器中打开 Command Code 课程\""
-    },
-    {
-      "from": "description:\"Share feedback or report bugs\"",
-      "to": "description:\"分享反馈或报告问题\""
-    },
-    {
-      "from": "description:\"Enter plan mode\"",
-      "to": "description:\"进入计划模式\""
-    },
-    {
-      "from": "description:\"Show or switch the permission mode\"",
-      "to": "description:\"查看或切换权限模式\""
-    },
-    {
-      "from": "description:\"Switch to default mode (prompt before edits/commands)\"",
-      "to": "description:\"切换到默认模式（编辑/命令前询问）\""
-    },
-    {
-      "from": "description:\"Switch to auto-accept mode (accept edits automatically)\"",
-      "to": "description:\"切换到自动接受模式（自动接受编辑）\""
-    },
-    {
-      "from": "description:\"Switch to plan mode (read-only, no side effects)\"",
-      "to": "description:\"切换到计划模式（只读，无副作用）\""
-    },
-    {
-      "from": "description:\"Open the plan panel\"",
-      "to": "description:\"打开计划面板\""
-    },
-    {
-      "from": "description:\"Review this session's latest plan\"",
-      "to": "description:\"查看此会话的最新计划\""
-    },
-    {
-      "from": "description:\"Review a pull request\"",
-      "to": "description:\"查看拉取请求\""
-    },
-    {
-      "from": "description:\"Fetch all PR comments for current branch\"",
-      "to": "description:\"获取当前分支的全部 PR 评论\""
-    },
-    {
-      "from": "description:\"Manage additional directory scope\"",
-      "to": "description:\"管理附加目录范围\""
-    },
-    {
-      "from": "description:\"Show comprehensive environment status\"",
-      "to": "description:\"显示完整的环境状态\""
-    },
-    {
-      "from": "description:\"Display credits, plan, and usage metrics\"",
-      "to": "description:\"显示额度、套餐与用量指标\""
-    },
-    {
-      "from": "description:\"Display help information\"",
-      "to": "description:\"显示帮助信息\""
-    },
-    {
-      "from": "description:\"Exit Command Code\"",
-      "to": "description:\"退出 Command Code\""
-    },
-    {
-      "from": "description:\"Open or start a chat before running a mod command\"",
-      "to": "description:\"先打开或开始一个会话，再运行模组命令\""
-    },
-    {
-      "from": "title:\"Profile\"",
-      "to": "title:\"资料\""
-    },
-    {
-      "from": "idleLabel:\"Retry\"",
-      "to": "idleLabel:\"重试\""
-    },
-    {
-      "from": "label:\"Account unavailable\"",
-      "to": "label:\"账户不可用\""
-    },
-    {
-      "from": "label:\"Tokens\"",
-      "to": "label:\"Tokens\""
-    },
-    {
-      "from": "description:\"5-hour and weekly caps apply on plans that have them.\"",
-      "to": "description:\"5 小时与每周上限适用于支持这些限制的套餐。\""
-    },
-    {
-      "from": "label:\"Terminal 1\"",
-      "to": "label:\"终端 1\""
-    },
-    {
-      "from": "confirmLabel:\"Stop and close\"",
-      "to": "confirmLabel:\"停止并关闭\""
-    },
-    {
-      "from": "title:\"Run the project's setup script\"",
-      "to": "title:\"运行项目的设置脚本\""
-    },
-    {
-      "from": "title:\"Run the project's run script\"",
-      "to": "title:\"运行项目的运行脚本\""
-    },
-    {
-      "from": "aria-label:\"Terminal panel\"",
-      "to": "aria-label:\"终端面板\""
-    },
-    {
-      "from": "label:\"Resize terminal\"",
-      "to": "label:\"调整终端大小\""
-    },
-    {
-      "from": "children:\"Ask agent instead\"",
-      "to": "children:\"改为询问智能体\""
-    },
-    {
-      "from": "children:\"Dev server at\"",
-      "to": "children:\"开发服务器地址\""
-    },
-    {
-      "from": "label:\"The sidebar\"",
-      "to": "label:\"侧边栏\""
-    },
-    {
-      "from": "label:\"The terminal\"",
-      "to": "label:\"终端\""
-    },
-    {
-      "from": "label:\"The workbench\"",
-      "to": "label:\"工作台\""
-    },
-    {
-      "from": "children:\"Diff layout\"",
-      "to": "children:\"差异布局\""
-    },
-    {
-      "from": "title:\"Changed by the agent in its last run\"",
-      "to": "title:\"上次运行时由智能体更改\""
-    },
-    {
-      "from": "children:\"Render anyway\"",
-      "to": "children:\"仍然渲染\""
-    },
-    {
-      "from": "placeholder:\"Commit message…\"",
-      "to": "placeholder:\"提交信息…\""
-    },
-    {
-      "from": "label:\"Commit and push\"",
-      "to": "label:\"提交并推送\""
-    },
-    {
-      "from": "label:\"Push\"",
-      "to": "label:\"推送\""
-    },
-    {
-      "from": "label:\"Commit\"",
-      "to": "label:\"提交\""
-    },
-    {
-      "from": "placeholder:\"Search projects\"",
-      "to": "placeholder:\"搜索项目\""
-    },
-    {
-      "from": "children:\"No projects match\"",
-      "to": "children:\"没有匹配的项目\""
-    },
-    {
-      "from": "title:\"Don't ask for this project\"",
-      "to": "title:\"不再询问此项目\""
-    },
-    {
-      "from": "children:\"Loading preview\"",
-      "to": "children:\"正在加载预览\""
-    },
-    {
-      "from": "title:\"Switch project\"",
-      "to": "title:\"切换项目\""
-    },
-    {
-      "from": "children:\"Allow for session\"",
-      "to": "children:\"允许本次会话使用\""
-    },
-    {
-      "from": "copyCode:\"Copy Code\"",
-      "to": "copyCode:\"复制代码\""
-    },
-    {
-      "from": "downloadFile:\"Download file\"",
-      "to": "downloadFile:\"下载文件\""
-    },
-    {
-      "from": "downloadDiagram:\"Download diagram\"",
-      "to": "downloadDiagram:\"下载图表\""
-    },
-    {
-      "from": "downloadDiagramAsSvg:\"Download diagram as SVG\"",
-      "to": "downloadDiagramAsSvg:\"将图表下载为 SVG\""
-    },
-    {
-      "from": "downloadDiagramAsPng:\"Download diagram as PNG\"",
-      "to": "downloadDiagramAsPng:\"将图表下载为 PNG\""
-    },
-    {
-      "from": "downloadDiagramAsMmd:\"Download diagram as MMD\"",
-      "to": "downloadDiagramAsMmd:\"将图表下载为 MMD\""
-    },
-    {
-      "from": "viewFullscreen:\"View fullscreen\"",
-      "to": "viewFullscreen:\"全屏查看\""
-    },
-    {
-      "from": "exitFullscreen:\"Exit fullscreen\"",
-      "to": "exitFullscreen:\"退出全屏\""
-    },
-    {
-      "from": "copyTable:\"Copy table\"",
-      "to": "copyTable:\"复制表格\""
-    },
-    {
-      "from": "copyTableAsMarkdown:\"Copy table as Markdown\"",
-      "to": "copyTableAsMarkdown:\"以 Markdown 复制表格\""
-    },
-    {
-      "from": "copyTableAsCsv:\"Copy table as CSV\"",
-      "to": "copyTableAsCsv:\"以 CSV 复制表格\""
-    },
-    {
-      "from": "copyTableAsTsv:\"Copy table as TSV\"",
-      "to": "copyTableAsTsv:\"以 TSV 复制表格\""
-    },
-    {
-      "from": "downloadTable:\"Download table\"",
-      "to": "downloadTable:\"下载表格\""
-    },
-    {
-      "from": "downloadTableAsCsv:\"Download table as CSV\"",
-      "to": "downloadTableAsCsv:\"将表格下载为 CSV\""
-    },
-    {
-      "from": "downloadTableAsMarkdown:\"Download table as Markdown\"",
-      "to": "downloadTableAsMarkdown:\"将表格下载为 Markdown\""
-    },
-    {
-      "from": "imageNotAvailable:\"Image not available\"",
-      "to": "imageNotAvailable:\"图片不可用\""
-    },
-    {
-      "from": "downloadImage:\"Download image\"",
-      "to": "downloadImage:\"下载图片\""
-    },
-    {
-      "from": "openExternalLink:\"Open external link?\"",
-      "to": "openExternalLink:\"打开外部链接？\""
-    },
-    {
-      "from": "copied:\"Copied\"",
-      "to": "copied:\"已复制\""
-    },
-    {
-      "from": "openLink:\"Open link\"",
-      "to": "openLink:\"打开链接\""
-    },
-    {
-      "from": "children:\"Show Code\"",
-      "to": "children:\"显示代码\""
-    },
-    {
-      "from": "title:\"Reset zoom and pan\"",
-      "to": "title:\"重置缩放与平移\""
-    },
-    {
-      "from": "description:\"How aggressively long chats are compacted. The model that runs compaction is the 上下文压缩 row in Config.\"",
-      "to": "description:\"长对话被压缩的激进程度。执行压缩的模型是 Config 中的“上下文压缩”一行。\""
-    },
-    {
-      "from": "description:\"The Allow button carries a menu with scope choices, like allowing a tool for the whole session. Turn off for a plain Allow button.\"",
-      "to": "description:\"允许按钮带有一个包含范围选项的菜单，例如允许某个工具在整个会话中使用。关闭后“允许”按钮将不再带菜单。\""
-    },
-    {
-      "from": "description: \"Auto-compact aggressiveness when context fills up (same setting as /compact-mode).\"",
-      "to": "description: \"上下文占满时自动压缩的激进程度（与 /compact-mode 设置相同）。\""
-    },
-    {
-      "from": "children:\"Browser sign-in did not complete. Paste the API 密钥 shown in your browser to finish.\"",
-      "to": "children:\"浏览器登录未完成。请粘贴浏览器中显示的 API 密钥以完成登录。\""
-    },
-    {
-      "from": "children:\"Uses the same account as the Command Code CLI and studio.\"",
-      "to": "children:\"使用与 Command Code CLI 和工作室相同的账户。\""
-    },
-    {
-      "from": "children:\"This page didn't load\"",
-      "to": "children:\"此页面未能加载\""
-    },
-    {
-      "from": "children:\"Fetch a GitHub 仓库 and pick the skills to install.\"",
-      "to": "children:\"获取 GitHub 仓库并选择要安装的技能。\""
-    },
-    {
-      "from": "children:\"No project found: toggles are saved to your user settings.\"",
-      "to": "children:\"未找到项目：开关将保存到你的用户设置中。\""
-    },
-    {
-      "from": "children:\"Run Claude models directly through your own Anthropic subscription (Pro/Max) instead of the Command Code gateway. Internal and development builds only.\"",
-      "to": "children:\"直接通过你自己的 Anthropic 订阅（Pro/Max）运行 Claude 模型，而不是使用 Command Code 网关。仅限内部与开发版本。\""
-    },
-    {
-      "from": "description:\"ChatGPT Pro/Plus subscription\"",
-      "to": "description:\"ChatGPT Pro/Plus 订阅\""
-    },
-    {
-      "from": "message:\"We couldn't reach the server. Check your internet connection and try again.\"",
-      "to": "message:\"无法连接到服务器。请检查网络连接后重试。\""
-    },
-    {
-      "from": "message:\"Your Anthropic sign-in is no longer valid. Open Settings and use the Claude section to re-authenticate or sign out.\"",
-      "to": "message:\"你的 Anthropic 登录已失效。请打开设置，使用 Claude 区域重新认证或退出登录。\""
-    },
-    {
-      "from": "message:\"Your account is out of credits or needs a billing update. Add credits to keep going.\"",
-      "to": "message:\"你的账户额度已用完，或需要更新计费信息。请充值后继续使用。\""
-    },
-    {
-      "from": "message:\"You've sent requests too quickly. Wait a few seconds and try again.\"",
-      "to": "message:\"请求发送过于频繁。请稍等几秒后重试。\""
-    },
-    {
-      "from": "message:\"The service is temporarily overloaded. Give it a moment, then retry.\"",
-      "to": "message:\"服务暂时过载。请稍候片刻再重试。\""
-    },
-    {
-      "from": "message:\"This chat reached the model's context limit. Start a new chat or remove some history.\"",
-      "to": "message:\"此会话已达到模型的上下文上限。请新开会话或清理部分历史。\""
-    },
-    {
-      "from": "message:\"The selected model has no vision support. Switch to a vision-capable model to send images.\"",
-      "to": "message:\"当前模型不支持图像识别。请切换到支持视觉的模型以发送图片。\""
-    },
-    {
-      "from": "message:\"The model declined this request under its content policy. Rephrase and try again.\"",
-      "to": "message:\"模型依据内容策略拒绝了此请求。请换一种说法重试。\""
-    },
-    {
-      "from": "message:\"This model or service is not available in your region right now.\"",
-      "to": "message:\"此模型或服务当前在你所在地区不可用。\""
-    },
-    {
-      "from": "message:\"The selected model isn't available right now. Pick another from the model menu.\"",
-      "to": "message:\"所选模型当前不可用。请从模型菜单中选择其他模型。\""
-    },
-    {
-      "from": "message:\"An MCP server returned an error or isn't responding. Check its setup in Settings.\"",
-      "to": "message:\"某个 MCP 服务器返回错误或未响应。请在设置中检查其配置。\""
-    },
-    {
-      "from": "message:\"Your disk is full. Free up some space and try again.\"",
-      "to": "message:\"磁盘已满。请释放一些空间后重试。\""
-    },
-    {
-      "from": "message:\"Couldn't start the agent CLI. Check the CLI path is correct in Settings.\"",
-      "to": "message:\"无法启动智能体 CLI。请在设置中确认 CLI 路径是否正确。\""
-    },
-    {
-      "from": "message:\"The request was rejected as invalid. This is usually a transient glitch; try again.\"",
-      "to": "message:\"请求被判定为无效而被拒绝。这通常是暂时性故障，请重试。\""
-    },
-    {
-      "from": "message:\"The service hit an error on its end. Give it a moment, then try again.\"",
-      "to": "message:\"服务端出错。请稍候片刻再重试。\""
-    },
-    {
-      "from": "message:\"The agent stopped unexpectedly. 重试, or check the logs if it keeps happening.\"",
-      "to": "message:\"智能体意外停止。请重试；若反复出现，请检查日志。\""
-    },
-    {
-      "from": "children:\"Learning this project's taste, takes a few minutes\"",
-      "to": "children:\"正在学习此项目的偏好，大约需要几分钟\""
-    },
-    {
-      "from": "message:\"Could not refresh changes.\"",
-      "to": "message:\"无法刷新变更。\""
-    },
-    {
-      "from": "description:\"They are still changed on disk.\"",
-      "to": "description:\"这些更改仍保留在磁盘上。\""
-    },
-    {
-      "from": "title:\"Discard file changes?\"",
-      "to": "title:\"放弃文件更改？\""
-    },
-    {
-      "from": "message:\"Your permission choice did not reach the engine. Please try again.\"",
-      "to": "message:\"你的权限选择未送达引擎。请重试。\""
-    },
-    {
-      "from": "message:\"Your answer did not reach the engine. Please answer again.\"",
-      "to": "message:\"你的回答未送达引擎。请重新回答。\""
-    },
-    {
-      "from": "label: \"Check for Updates…\"",
-      "to": "label: \"检查更新…\""
-    },
-    {
-      "from": "message: \"No update is ready yet.\"",
-      "to": "message: \"尚无可安装的更新。\""
-    },
-    {
-      "from": "message: \"The update is being installed. The app will restart shortly.\"",
-      "to": "message: \"更新正在安装。应用即将重启。\""
-    },
-    {
-      "from": "title: \"Select Project Folder\"",
-      "to": "title: \"选择项目文件夹\""
-    },
-    {
-      "from": "message: \"Sign-out ran but could not be verified. If you still appear signed in, try again.\"",
-      "to": "message: \"退出登录已执行但无法确认。如果仍显示已登录，请重试。\""
-    },
-    {
-      "from": "description: \"The default main-loop model. A long-lived host may also apply the change to its current session.\"",
-      "to": "description: \"主循环使用的默认模型。常驻宿主也可能将更改应用到当前会话。\""
-    },
-    {
-      "from": "description: \"Use the provider default reasoning level\"",
-      "to": "description: \"使用服务商默认的推理强度\""
-    },
-    {
-      "from": "description: \"Allow this command\",\n    scope: void 0",
-      "to": "description: \"允许此命令\",\n    scope: void 0"
-    },
-    {
-      "from": "description: \"Allow this tool call\",\n    scope: void 0",
-      "to": "description: \"允许此工具调用\",\n    scope: void 0"
-    },
-    {
-      "from": "message: \"Login to synthesize your taste profile\"",
-      "to": "message: \"登录以综合你的偏好画像\""
-    },
-    {
-      "from": "children:\"Loading diagram...\"",
-      "to": "children:\"正在加载图表...\""
-    },
-    {
-      "from": "alt:\"Command Code desktop update\"",
-      "to": "alt:\"Command Code 桌面版更新\""
-    },
-    {
-      "from": "description:\"Command Code was updated. See the newest desktop features and fixes.\"",
-      "to": "description:\"Command Code 已更新。查看最新的桌面版功能与修复。\""
-    },
-    {
-      "from": "children:\"The app hit an unexpected error. Reloading usually fixes it, your chats are saved.\"",
-      "to": "children:\"应用遇到了意外错误。重新加载通常可以解决，你的会话已保存。\""
-    },
-    {
-      "from": "message:\"Your chats could not be saved to disk. Recent changes may be lost if the app closes.\"",
-      "to": "message:\"会话无法保存到磁盘。如果应用关闭，最近的更改可能会丢失。\""
-    },
-    {
-      "from": "title:\"Your Taste, Learned & Applied\"",
-      "to": "title:\"你的偏好：已被学习并应用\""
-    },
-    {
-      "from": "body:\"Just describe what you want. It reads your code, edits across files, and waits for your review before anything ships.\"",
-      "to": "body:\"只需描述你想要的结果。它会阅读你的代码、跨文件编辑，并在任何改动落地前等待你的评审。\""
-    },
-    {
-      "from": "body:\"Go from idea to done without leaving the app. Every change is yours to approve. When you're ready, Commit saves your work straight to git.\"",
-      "to": "body:\"无需离开应用即可从想法到完成。每一次更改都由你批准。准备好后，Commit 会将你的工作直接保存到 git。\""
-    },
-    {
-      "from": "body:\"As you code, it learns your patterns, tools, and conventions, then starts applying them automatically. Check Settings > Taste to see what it has learned.\"",
-      "to": "body:\"在你编码时，它会学习你的模式、工具与约定，然后自动应用它们。可在 设置 → 偏好 中查看它学到了什么。\""
-    },
-    {
-      "from": "body:\"Taste is learned per project. Open one to see what the agent has picked up.\"",
-      "to": "body:\"偏好按项目分别学习。打开一个项目即可查看智能体学到了什么。\""
-    },
-    {
-      "from": "children:\"Skills are instructions the agent reads and follows. Only install from repositories you trust.\"",
-      "to": "children:\"技能是智能体阅读并遵循的说明。只从你信任的仓库安装。\""
-    },
-    {
-      "from": "body:\"As you work, the agent records the preferences it picks up and they show up here. Or learn this project's taste from your past coding sessions right now.\"",
-      "to": "body:\"工作时，智能体会记录它捕捉到的偏好并显示在这里。也可以现在就从这个项目过去的编码会话中学习偏好。\""
-    },
-    {
-      "from": "description:\"Copilot subscription\"",
-      "to": "description:\"Copilot 订阅\""
-    },
-    {
-      "from": "children:\"Binary file (no preview)\"",
-      "to": "children:\"二进制文件（无预览）\""
-    },
-    {
-      "from": "children:\"Click a file link in chat or pick a file from the tree\"",
-      "to": "children:\"点击会话中的文件链接，或从文件树中选择文件\""
-    },
-    {
-      "from": "description:\"Create a local commit\"",
-      "to": "description:\"创建本地提交\""
-    },
-    {
-      "from": "title:\"Rewind to before this message?\"",
-      "to": "title:\"回退到这条消息之前？\""
-    },
-    {
-      "from": "body:\"Files and chat return to that point. The prompt goes back into the composer.\"",
-      "to": "body:\"文件与会话将回到该时间点。提示内容会回到输入框中。\""
-    },
-    {
-      "from": "error:\"Workspace selection superseded.\"",
-      "to": "error:\"工作区选择已被新操作取代。\""
-    },
-    {
-      "from": "children:\"Commands saved for this project.\"",
-      "to": "children:\"已为此项目保存命令。\""
-    },
-    {
-      "from": "message:\"That image is too large to attach.\"",
-      "to": "message:\"该图片过大，无法附加。\""
-    },
-    {
-      "from": "children:\"Revising the plan. It will reopen when the next version is ready.\"",
-      "to": "children:\"正在修订计划。新版本就绪后会自动重新打开。\""
-    },
-    {
-      "from": "message:\"A file is locked or read-only, or the app lacks permission to write it.\"",
-      "to": "message:\"文件被锁定或是只读，或应用缺少写入权限。\""
-    },
-    {
-      "from": "children:\"All modified, deleted, and untracked files will be staged and committed.\"",
-      "to": "children:\"所有已修改、已删除和未跟踪的文件都将被暂存并提交。\""
-    },
-    {
-      "from": "message:\"A git operation could not complete. Check the repository state and try again.\"",
-      "to": "message:\"Git 操作未能完成。请检查仓库状态后重试。\""
-    },
-    {
-      "from": "message:\"Images attached to this draft were released to free memory. Re-attach them before sending.\"",
-      "to": "message:\"附加到此草稿的图片已被释放以节省内存。发送前请重新附加。\""
-    },
-    {
-      "from": "description:\"Initialize AGENTS.md for this project\"",
-      "to": "description:\"为此项目初始化 AGENTS.md\""
-    },
-    {
-      "from": "text:\"Look at this repo and tell me the right setup and run commands for it. Reply with just the two commands.\"",
-      "to": "text:\"查看这个仓库，告诉我正确的设置和运行命令。只需回复这两条命令。\""
-    },
-    {
-      "from": "children:\"Command Code works inside a project folder so files, tools, and terminal commands stay in the right place.\"",
-      "to": "children:\"Command Code 在项目文件夹内工作，这样文件、工具和终端命令都会保持在正确的位置。\""
-    },
-    {
-      "from": "Let a text-only model read attached images by describing them with the vision model",
-      "to": "让纯文本模型也能读取附加图片——由视觉模型描述图片内容"
-    },
-    {
-      "from": "label: \"Enabled\"",
-      "to": "label: \"启用\""
-    },
-    {
-      "from": "label: \"Disabled\"",
-      "to": "label: \"禁用\""
-    },
-    {
-      "from": "label: \"Inherit from user\"",
-      "to": "label: \"继承自用户\""
-    },
-    {
-      "from": "id: \"theme\",\n    label: \"Theme\",\n    description: \"Terminal color theme (same setting as /theme). Auto automatically detects your terminal background and uses light or dark to match.\"",
-      "to": "id: \"theme\",\n    label: \"主题\",\n    description: \"终端配色主题（与 /theme 设置相同）。自动模式会检测你的终端背景，并自动使用浅色或深色以匹配。\""
-    },
-    {
-      "from": "\" the agent has learned from your sessions in this project. These shape how it writes code for you. Remove any that no longer fit.\"",
-      "to": "\"是智能体从本项目会话中学到的。它们会影响智能体为你编写代码的方式。删除不再适用的条目。\""
-    },
-    {
-      "from": "`${d} preferences`",
-      "to": "`${d} 条偏好`"
-    },
-    {
-      "from": "\"Preferences\"",
-      "to": "\"偏好\""
-    },
-    {
-      "from": "{title:\"Terminal\",children:[s.jsx(F,{label:\"字号\"",
-      "to": "{title:\"终端\",children:[s.jsx(F,{label:\"字号\""
-    },
-    {
-      "from": "{title:\"Layout\",children:s.jsx(F,{label:\"启动时打开工作台\"",
-      "to": "{title:\"布局\",children:s.jsx(F,{label:\"启动时打开工作台\""
-    },
-    {
-      "from": "{title:\"Preferences\",children:[d?",
-      "to": "{title:\"偏好设置\",children:[d?"
-    },
-    {
-      "from": "{title:\"Behavior\",children:[o?",
-      "to": "{title:\"行为\",children:[o?"
-    },
-    {
-      "from": "{title:\"Configuration\",children:s.jsx(\"div\"",
-      "to": "{title:\"配置\",children:s.jsx(\"div\""
-    },
-    {
-      "from": "{title:\"Application\",children:[s.jsx(Dv,{})",
-      "to": "{title:\"应用\",children:[s.jsx(Dv,{})"
-    },
-    {
-      "from": "{title:\"Skills\",children:[s.jsx(F,{label:\"安装技能\"",
-      "to": "{title:\"技能\",children:[s.jsx(F,{label:\"安装技能\""
-    },
-    {
-      "from": "title:\"Profile\",action:s.jsx(Fi,{refreshing:o,refresh:r,idleLabel:\"重试\"",
-      "to": "title:\"资料\",action:s.jsx(Fi,{refreshing:o,refresh:r,idleLabel:\"重试\""
-    },
-    {
-      "from": "{id:\"general\",label:\"General\",group:\"Workspace\"",
-      "to": "{id:\"general\",label:\"通用\",group:\"工作区\""
-    },
-    {
-      "from": "{id:\"appearance\",label:\"Appearance\",group:\"Workspace\"",
-      "to": "{id:\"appearance\",label:\"外观\",group:\"工作区\""
-    },
-    {
-      "from": "{id:\"shortcuts\",label:\"Shortcuts\",group:\"Workspace\"",
-      "to": "{id:\"shortcuts\",label:\"快捷键\",group:\"工作区\""
-    },
-    {
-      "from": "{id:\"agent\",label:\"Agent\",group:\"Agent\"",
-      "to": "{id:\"agent\",label:\"智能体\",group:\"智能体\""
-    },
-    {
-      "from": "{id:\"config\",label:\"Config\",group:\"Agent\"",
-      "to": "{id:\"config\",label:\"配置\",group:\"智能体\""
-    },
-    {
-      "from": "{id:\"taste\",label:\"Taste\",group:\"Agent\"",
-      "to": "{id:\"taste\",label:\"偏好\",group:\"智能体\""
-    },
-    {
-      "from": "{id:\"skills\",label:\"Skills\",group:\"Agent\"",
-      "to": "{id:\"skills\",label:\"技能\",group:\"智能体\""
-    },
-    {
-      "from": "{id:\"mcp\",label:\"MCP\",group:\"Agent\"",
-      "to": "{id:\"mcp\",label:\"MCP\",group:\"智能体\""
-    },
-    {
-      "from": "{id:\"account\",label:\"账户\",group:\"Account\"",
-      "to": "{id:\"account\",label:\"账户\",group:\"账户\""
-    },
-    {
-      "from": "{id:\"claude\",label:\"Claude\",group:\"Agent\"",
-      "to": "{id:\"claude\",label:\"Claude\",group:\"智能体\""
-    },
-    {
-      "from": "Ev=[\"General\",\"Sharing\",\"Taste\",\"功能模型\"]",
-      "to": "Ev=[\"通用\",\"分享\",\"偏好\",\"功能模型\"]"
-    },
-    {
-      "from": "label:\"Accent\",description:\"跟随当前主题。\"",
-      "to": "label:\"强调色\",description:\"跟随当前主题。\""
-    },
-    {
-      "from": "label:\"Background\",children:s.jsx(At,{hex:r.background})",
-      "to": "label:\"背景色\",children:s.jsx(At,{hex:r.background})"
-    },
-    {
-      "from": "label:\"Foreground\",children:s.jsx(At,{hex:r.foreground})",
-      "to": "label:\"前景色\",children:s.jsx(At,{hex:r.foreground})"
-    },
-    {
-      "from": "label:\"Version\",description:\"Command Code（Alpha）桌面版。\"",
-      "to": "label:\"版本\",description:\"Command Code（Alpha）桌面版。\""
-    },
-    {
-      "from": "label:\"Tokens\",value:d?Sm(d.totalTokens):\"不可用\"",
-      "to": "label:\"令牌\",value:d?Sm(d.totalTokens):\"不可用\""
-    },
-    {
-      "from": "children:[\"~\",e.estimatedTokens,\" tokens\"]",
-      "to": "children:[\"约 \",e.estimatedTokens,\" 个令牌\"]"
-    },
-    {
-      "from": "unknown:\"Learned\"",
-      "to": "unknown:\"已学习\""
-    },
-    {
-      "from": "children:\"Name\"}),s.jsx(we,{id:V,name:\"mcp-server-name\"",
-      "to": "children:\"名称\"}),s.jsx(we,{id:V,name:\"mcp-server-name\""
-    },
-    {
-      "from": "children:\"Command\"}),s.jsx(we,{id:D,name:\"mcp-server-command\"",
-      "to": "children:\"命令\"}),s.jsx(we,{id:D,name:\"mcp-server-command\""
-    },
-    {
-      "from": "placeholder:\"Playwright\"",
-      "to": "placeholder:\"例如 Playwright\""
-    },
-    {
-      "from": "children:\"Submit\"",
-      "to": "children:\"提交\""
-    },
-    {
-      "from": "children:t?\"Removing…\":\"Remove\"",
-      "to": "children:t?\"正在移除…\":\"移除\""
-    },
-    {
-      "from": "children:n?\"Removing…\":\"Remove\"",
-      "to": "children:n?\"正在移除…\":\"移除\""
-    },
-    {
-      "from": "children:\"Remove\"",
-      "to": "children:\"移除\""
-    },
-    {
-      "from": "title:\"Remove\"",
-      "to": "title:\"移除\""
-    },
-    {
-      "from": "S||r.kind===\"confirm\"?\"Back\":\"Cancel\"",
-      "to": "S||r.kind===\"confirm\"?\"返回\":\"取消\""
-    },
-    {
-      "from": "children:\"Cancel\"}),s.jsx(\"button\",{type:\"button\",onClick:o,disable",
-      "to": "children:\"取消\"}),s.jsx(\"button\",{type:\"button\",onClick:o,disable"
-    },
-    {
-      "from": "children:\"Cancel\"})]}):s.jsx(\"button\"",
-      "to": "children:\"取消\"})]}):s.jsx(\"button\""
-    },
-    {
-      "from": "children:\"Loading…\"}),o&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\"",
-      "to": "children:\"加载中…\"}),o&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\""
-    },
-    {
-      "from": "children:\"Loading…\"}),a&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\",role:\"alert\"",
-      "to": "children:\"加载中…\"}),a&&s.jsx(\"div\",{className:\"px-4 py-3.5 text-[12px] text-danger\",role:\"alert\""
-    },
-    {
-      "from": "children:\"Loading…\"}):l.length===0",
-      "to": "children:\"加载中…\"}):l.length===0"
-    },
-    {
-      "from": "title:\"Refresh\",className:\"flex h-7 w-7 shrink-0",
-      "to": "title:\"刷新\",className:\"flex h-7 w-7 shrink-0"
-    },
-    {
-      "from": "idleLabel:i=\"Refresh\"",
-      "to": "idleLabel:i=\"刷新\""
-    },
-    {
-      "from": "placeholder:\"Paste code#state\"",
-      "to": "placeholder:\"粘贴 code#state\""
-    },
-    {
-      "from": "scope:\"Global\"",
-      "to": "scope:\"全局\""
-    },
-    {
-      "from": "scope:\"Workbench\"",
-      "to": "scope:\"工作台\""
-    },
-    {
-      "from": "scope:\"Composer\"",
-      "to": "scope:\"输入框\""
-    },
-    {
-      "from": "e.defaultDisplayValue??(a&&e.displayValue?e.displayValue:\"Default\")",
-      "to": "e.defaultDisplayValue??(a&&e.displayValue?e.displayValue:\"默认\")"
-    },
-    {
-      "from": "n<=0?{key:\"today\",label:\"Today\"}:n===1?{key:\"yesterday\",label:\"Yesterday\"}:n<7?{key:\"week\",label:\"最近 7 天\"}:n<30?{key:\"month\",label:\"最近 30 天\"}:{key:\"older\",label:\"Older\"}",
-      "to": "n<=0?{key:\"today\",label:\"今天\"}:n===1?{key:\"yesterday\",label:\"昨天\"}:n<7?{key:\"week\",label:\"最近 7 天\"}:n<30?{key:\"month\",label:\"最近 30 天\"}:{key:\"older\",label:\"更早\"}"
-    },
-    {
-      "from": "Nf=[{value:\"project\",label:\"Project\",icon:Br},{value:\"updated\",label:\"Updated\",icon:Wc},{value:\"status\",label:\"Status\",icon:gp}]",
-      "to": "Nf=[{value:\"project\",label:\"项目\",icon:Br},{value:\"updated\",label:\"更新时间\",icon:Wc},{value:\"status\",label:\"状态\",icon:gp}]"
-    },
-    {
-      "from": "{value:\"updated-desc\",label:\"最近更新\"},{value:\"updated-asc\",label:\"最早更新\"},{value:\"name\",label:\"Name\"}",
-      "to": "{value:\"updated-desc\",label:\"最近更新\"},{value:\"updated-asc\",label:\"最早更新\"},{value:\"name\",label:\"名称\"}"
-    },
-    {
-      "from": "n.push({key:\"pushed\",label:\"Pushed\",tone:\"muted\"})",
-      "to": "n.push({key:\"pushed\",label:\"已推送\",tone:\"muted\"})"
-    },
-    {
-      "from": "o.jsx(xc,{label:\"Projects\",action:",
-      "to": "o.jsx(xc,{label:\"项目\",action:"
-    },
-    {
-      "from": "o.jsx(kS,{icon:Or,label:\"Search\",shortcut:Gt(\"Mod+K\")",
-      "to": "o.jsx(kS,{icon:Or,label:\"搜索\",shortcut:Gt(\"Mod+K\")"
-    },
-    {
-      "from": "o.jsx(If,{label:\"Pinned\",threads:U,showCount:!1",
-      "to": "o.jsx(If,{label:\"置顶\",threads:U,showCount:!1"
-    },
-    {
-      "from": "children:\"History\"}),o.jsx(\"span\",{className:xd,children:e.length}",
-      "to": "children:\"历史记录\"}),o.jsx(\"span\",{className:xd,children:e.length}"
-    },
-    {
-      "from": "jx={changes:{label:\"Changes\",icon:ga},source:{label:\"Files\",icon:rr},plan:{label:\"Plan\",icon:In},browser:{label:\"Browser\",icon:cr},output:{label:\"Output\",icon:ni}}",
-      "to": "jx={changes:{label:\"变更\",icon:ga},source:{label:\"文件\",icon:rr},plan:{label:\"计划\",icon:In},browser:{label:\"浏览器\",icon:cr},output:{label:\"输出\",icon:ni}}"
-    },
-    {
-      "from": "Kn.Group,{heading:\"Files\",children:d.map",
-      "to": "Kn.Group,{heading:\"文件\",children:d.map"
-    },
-    {
-      "from": "confirmLabel:\"Rewind\",busy:bn,busyLabel:\"Rewinding…\"",
-      "to": "confirmLabel:\"回退\",busy:bn,busyLabel:\"正在回退…\""
-    },
-    {
-      "from": "message:Ze.error??\"Rewind failed.\"",
-      "to": "message:Ze.error??\"回退失败。\""
-    },
-    {
-      "from": "message:Ze instanceof Error?Ze.message:\"Rewind failed.\"",
-      "to": "message:Ze instanceof Error?Ze.message:\"回退失败。\""
-    },
-    {
-      "from": "children:\"Restart\"}),o.jsx(\"button\",{type:\"button\",onClick:()=>Q(Ee.id)",
-      "to": "children:\"重启\"}),o.jsx(\"button\",{type:\"button\",onClick:()=>Q(Ee.id)"
-    },
-    {
-      "from": "s?\"正在下载更新\":a?\"Restarting…\":\"重启以更新\"",
-      "to": "s?\"正在下载更新\":a?\"正在重启…\":\"重启以更新\""
-    },
-    {
-      "from": "i=\"Suggestions\"",
-      "to": "i=\"建议\""
-    },
-    {
-      "from": "label:r=\"Loading...\"",
-      "to": "label:r=\"加载中...\""
-    },
-    {
-      "from": "children:\"Focus tab\"})]})]}):null]}),U&&e?",
-      "to": "children:\"聚焦此标签页\"})]})]}):null]}),U&&e?"
-    },
-    {
-      "from": "children:\"Open preview\"}):null,Ee.status===\"running\"",
-      "to": "children:\"打开预览\"}):null,Ee.status===\"running\""
-    },
-    {
-      "from": "children:[o.jsx(\"span\",{className:\"shrink-0\",children:\"Open preview\"})",
-      "to": "children:[o.jsx(\"span\",{className:\"shrink-0\",children:\"打开预览\"})"
-    },
-    {
-      "from": "children:\"Review\"}),o.jsx(\"button\",{type:\"button\",\"aria-label\":\"关闭变更摘要\"",
-      "to": "children:\"审阅\"}),o.jsx(\"button\",{type:\"button\",\"aria-label\":\"关闭变更摘要\""
-    },
-    {
-      "from": "o.jsx(ld,{className:\"sr-only\",children:\"Settings\"})",
-      "to": "o.jsx(ld,{className:\"sr-only\",children:\"设置\"})"
-    },
-    {
-      "from": "children:\"Loading settings…\"",
-      "to": "children:\"正在加载设置…\""
-    },
-    {
-      "from": "text:\"Interrupted\"",
-      "to": "text:\"已中断\""
-    },
-    {
-      "from": "label:\"Command\"",
-      "to": "label:\"命令\""
-    },
-    {
-      "from": "\"aria-label\":\"跳至最新\",title:\"Jump to latest\"",
-      "to": "\"aria-label\":\"跳至最新\",title:\"跳至最新\""
-    },
-    {
-      "from": "children:\"Learned\"}),o.jsx(ed,{className:\"min-w-0 flex-1 truncate text-ink-muted\",text:e}",
-      "to": "children:\"已学习\"}),o.jsx(ed,{className:\"min-w-0 flex-1 truncate text-ink-muted\",text:e}"
-    },
-    {
-      "from": "children:\"Tool hook output:\"",
-      "to": "children:\"工具钩子输出：\""
-    },
-    {
-      "from": "content:\"The plan content was not attached. You can still accept or keep refining.\"",
-      "to": "content:\"计划内容未附加。你仍可接受或继续完善。\""
-    },
-    {
-      "from": "case\"search\":return\"Matches\";case\"glob\":case\"files\":return\"Files\";case\"list\":return\"Directory\";case\"web\":return\"网页结果\";case\"tasks\":return\"任务详情\";case\"schedule\":return\"Schedule\";default:return\"Details\"",
-      "to": "case\"search\":return\"匹配项\";case\"glob\":case\"files\":return\"文件\";case\"list\":return\"目录\";case\"web\":return\"网页结果\";case\"tasks\":return\"任务详情\";case\"schedule\":return\"计划\";default:return\"详情\""
-    },
-    {
-      "from": "pe({title:\"Plan\",content:\"计划内容未附加",
-      "to": "pe({title:\"计划\",content:\"计划内容未附加"
-    },
-    {
-      "from": "children:\"Cancel\"}),o.jsx(\"button\",{ref:f,type:\"button\",onClick:l,disabled:s,className:X(\"rounded-md px-3 py-1.5",
-      "to": "children:\"取消\"}),o.jsx(\"button\",{ref:f,type:\"button\",onClick:l,disabled:s,className:X(\"rounded-md px-3 py-1.5"
-    },
-    {
-      "from": "children:\"Cancel\"}),o.jsx(wi,{type:\"button\",size:\"sm\",onClick:D,children:\"保存评论\"",
-      "to": "children:\"取消\"}),o.jsx(wi,{type:\"button\",size:\"sm\",onClick:D,children:\"保存评论\""
-    },
-    {
-      "from": "children:\"Cancel\"}),o.jsx(\"button\",{type:\"button\",disabled:d,onClick:()=>void b(s),className:\"rounded-md bg-danger",
-      "to": "children:\"取消\"}),o.jsx(\"button\",{type:\"button\",disabled:d,onClick:()=>void b(s),className:\"rounded-md bg-danger"
-    },
-    {
-      "from": "children:\"Cancel\"}),o.jsx(\"button\",{type:\"button\",onClick:()=>n({setup:r.trim()||void 0,run:a.trim()||void 0})",
-      "to": "children:\"取消\"}),o.jsx(\"button\",{type:\"button\",onClick:()=>n({setup:r.trim()||void 0,run:a.trim()||void 0})"
-    },
-    {
-      "from": "fA=\"Yes, exit\"",
-      "to": "fA=\"是，退出\""
-    },
-    {
-      "from": "{label:\"Regular\",value:\"font-normal\"",
-      "to": "{label:\"常规\",value:\"font-normal\""
-    },
-    {
-      "from": "{label:\"Medium\",value:\"font-medium\"",
-      "to": "{label:\"中等\",value:\"font-medium\""
-    },
-    {
-      "from": "{label:\"Semi\",value:\"font-semibold\"",
-      "to": "{label:\"半粗\",value:\"font-semibold\""
-    },
-    {
-      "from": "{label:\"Bold\",value:\"font-bold\"",
-      "to": "{label:\"粗体\",value:\"font-bold\""
-    },
-    {
-      "from": "{label:\"Left\",value:\"text-left\"",
-      "to": "{label:\"左对齐\",value:\"text-left\""
-    },
-    {
-      "from": "{label:\"Center\",value:\"text-center\"",
-      "to": "{label:\"居中\",value:\"text-center\""
-    },
-    {
-      "from": "{label:\"Right\",value:\"text-right\"",
-      "to": "{label:\"右对齐\",value:\"text-right\""
-    },
-    {
-      "from": "{label:\"Ink\",value:\"text-slate-900\"",
-      "to": "{label:\"墨色\",value:\"text-slate-900\""
-    },
-    {
-      "from": "{label:\"White\",value:\"text-white\"",
-      "to": "{label:\"白色\",value:\"text-white\""
-    },
-    {
-      "from": "{label:\"Blue\",value:\"text-blue-600\"",
-      "to": "{label:\"蓝色\",value:\"text-blue-600\""
-    },
-    {
-      "from": "{label:\"Violet\",value:\"text-violet-600\"",
-      "to": "{label:\"紫色\",value:\"text-violet-600\""
-    },
-    {
-      "from": "{label:\"Red\",value:\"text-red-600\"",
-      "to": "{label:\"红色\",value:\"text-red-600\""
-    },
-    {
-      "from": "{label:\"Green\",value:\"text-green-600\"",
-      "to": "{label:\"绿色\",value:\"text-green-600\""
-    },
-    {
-      "from": "{label:\"Ink\",value:\"bg-gray-900\"",
-      "to": "{label:\"墨色\",value:\"bg-gray-900\""
-    },
-    {
-      "from": "{label:\"White\",value:\"bg-white\"",
-      "to": "{label:\"白色\",value:\"bg-white\""
-    },
-    {
-      "from": "{label:\"Blue\",value:\"bg-blue-500\"",
-      "to": "{label:\"蓝色\",value:\"bg-blue-500\""
-    },
-    {
-      "from": "{label:\"Violet\",value:\"bg-violet-500\"",
-      "to": "{label:\"紫色\",value:\"bg-violet-500\""
-    },
-    {
-      "from": "{label:\"Red\",value:\"bg-red-500\"",
-      "to": "{label:\"红色\",value:\"bg-red-500\""
-    },
-    {
-      "from": "{label:\"Green\",value:\"bg-green-500\"",
-      "to": "{label:\"绿色\",value:\"bg-green-500\""
-    },
-    {
-      "from": "te,{label:\"Layout\",children:[e.jsx(D,{label:\"Size\"",
-      "to": "te,{label:\"布局\",children:[e.jsx(D,{label:\"尺寸\""
-    },
-    {
-      "from": "te,{label:\"Text\",children:[e.jsx(D,{label:\"Size\"",
-      "to": "te,{label:\"文本\",children:[e.jsx(D,{label:\"字号\""
-    },
-    {
-      "from": "te,{label:\"Color\",children:[e.jsx(pe,{label:\"Text\"",
-      "to": "te,{label:\"颜色\",children:[e.jsx(pe,{label:\"文本\""
-    },
-    {
-      "from": "te,{label:\"Appearance\",children:[e.jsx(D,{label:\"Radius\"",
-      "to": "te,{label:\"外观\",children:[e.jsx(D,{label:\"圆角\""
-    },
-    {
-      "from": "D,{label:\"Padding\",children:e.jsx(Q,{options:He,family:\"p\",ariaLabel:\"Padding\"",
-      "to": "D,{label:\"内边距\",children:e.jsx(Q,{options:He,family:\"p\",ariaLabel:\"内边距\""
-    },
-    {
-      "from": "D,{label:\"Margin\",children:e.jsx(Q,{options:We,family:\"m\",ariaLabel:\"Margin\"",
-      "to": "D,{label:\"外边距\",children:e.jsx(Q,{options:We,family:\"m\",ariaLabel:\"外边距\""
-    },
-    {
-      "from": "D,{label:\"Weight\",children:e.jsx(re,{options:Ue,family:\"font-weight\"",
-      "to": "D,{label:\"字重\",children:e.jsx(re,{options:Ue,family:\"font-weight\""
-    },
-    {
-      "from": "D,{label:\"Align\",children:e.jsx(re,{options:Xe,family:\"text-align\"",
-      "to": "D,{label:\"对齐\",children:e.jsx(re,{options:Xe,family:\"text-align\""
-    },
-    {
-      "from": "D,{label:\"Shadow\",children:e.jsx(re,{options:Ye,family:\"shadow\"",
-      "to": "D,{label:\"阴影\",children:e.jsx(re,{options:Ye,family:\"shadow\""
-    },
-    {
-      "from": "D,{label:\"Opacity\",children:e.jsx(Q,{options:Je,family:\"opacity\",ariaLabel:\"Opacity\"",
-      "to": "D,{label:\"不透明度\",children:e.jsx(Q,{options:Je,family:\"opacity\",ariaLabel:\"不透明度\""
-    },
-    {
-      "from": "{label:\"Fix\",glyph:\"F\"",
-      "to": "{label:\"修复\",glyph:\"F\""
-    },
-    {
-      "from": "{label:\"Review\",glyph:\"R\"",
-      "to": "{label:\"审阅\",glyph:\"R\""
-    },
-    {
-      "from": "{label:\"Responsive\",glyph:\"S\"",
-      "to": "{label:\"响应式\",glyph:\"S\""
-    },
-    {
-      "from": "children:\"Send to chat\"",
-      "to": "children:\"发送到对话\""
-    },
-    {
-      "from": "children:\"Discard\"",
-      "to": "children:\"放弃\""
-    },
-    {
-      "from": "children:\"Design actions\"",
-      "to": "children:\"设计操作\""
-    },
-    {
-      "from": "children:n?\"A detected local server will open here when it is ready.\":\"Enter an address to preview your app or inspect a page without leaving the workspace.\"",
-      "to": "children:n?\"检测到的本地服务器就绪后将在此处打开。\":\"输入网址即可预览应用或在工作区内检查页面。\""
-    },
-    {
-      "from": "children:\"Enter an address\"",
-      "to": "children:\"输入网址\""
-    },
-    {
-      "from": "oe,{icon:ke,label:\"Forward\"",
-      "to": "oe,{icon:ke,label:\"前进\""
-    },
-    {
-      "from": "oe,{icon:ge,label:\"Reload\"",
-      "to": "oe,{icon:ge,label:\"重新加载\""
-    },
-    {
-      "from": "oe,{icon:ut,label:\"Back\"",
-      "to": "oe,{icon:ut,label:\"后退\""
-    },
-    {
-      "from": "label:\"Back\",disabled:!a.canGoBack",
-      "to": "label:\"后退\",disabled:!a.canGoBack"
-    },
-    {
-      "from": "label: \"Settings\",\\n        accelerator: \"CmdOrCtrl+,\"",
-      "to": "label: \"设置\",\\n        accelerator: \"CmdOrCtrl+,\""
-    },
-    {
-      "from": "label: \"New Window\",\\n        accelerator: \"CmdOrCtrl+Shift+N\"",
-      "to": "label: \"新建窗口\",\\n        accelerator: \"CmdOrCtrl+Shift+N\""
-    },
-    {
-      "from": "label: \"Open Project\",\\n        accelerator: \"CmdOrCtrl+O\"",
-      "to": "label: \"打开项目\",\\n        accelerator: \"CmdOrCtrl+O\""
-    },
-    {
-      "from": "label: \"Archive Chat\",\\n        accelerator: \"CmdOrCtrl+Shift+A\"",
-      "to": "label: \"归档会话\",\\n        accelerator: \"CmdOrCtrl+Shift+A\""
-    },
-    {
-      "from": "label: \"Close Window\",\\n        role: \"close\"",
-      "to": "label: \"关闭窗口\",\\n        role: \"close\""
-    },
-    {
-      "from": "label: \"Reset Zoom\",\\n        accelerator: \"CmdOrCtrl+0\"",
-      "to": "label: \"重置缩放\",\\n        accelerator: \"CmdOrCtrl+0\""
-    },
-    {
-      "from": "label: \"Zoom In\",\\n        accelerator: \"CmdOrCtrl+Plus\"",
-      "to": "label: \"放大\",\\n        accelerator: \"CmdOrCtrl+Plus\""
-    },
-    {
-      "from": "label: \"Zoom Out\",\\n        accelerator: \"CmdOrCtrl+-\"",
-      "to": "label: \"缩小\",\\n        accelerator: \"CmdOrCtrl+-\""
-    },
-    {
-      "from": "label: \"Join Command Code Discord\",\\n        click",
-      "to": "label: \"加入 Command Code Discord\",\\n        click"
-    },
-    {
-      "from": "label: \"Paste and Match Style\",\\n        role: \"pasteAndMatchStyle\"",
-      "to": "label: \"粘贴并匹配样式\",\\n        role: \"pasteAndMatchStyle\""
-    },
-    {
-      "from": "label: \"Select All\",\\n        role: \"selectAll\"",
-      "to": "label: \"全选\",\\n        role: \"selectAll\""
-    },
-    {
-      "from": "label: \"Copy Link Address\",\\n        click",
-      "to": "label: \"复制链接地址\",\\n        click"
-    },
-    {
-      "from": "label: \"Window\",\\n    submenu: isMac",
-      "to": "label: \"窗口\",\\n    submenu: isMac"
-    },
-    {
-      "from": "title: \"Updates Disabled\",\\n      message: \"Automatic updates are not available in this build.\"",
-      "to": "title: \"更新已禁用\",\\n      message: \"此版本不支持自动更新。\""
-    },
-    {
-      "from": "title: \"Update Error\",\\n      message: \"Update check failed.\"",
-      "to": "title: \"更新错误\",\\n      message: \"检查更新失败。\""
-    },
-    {
-      "from": "title: \"Update in Progress\",",
-      "to": "title: \"正在更新\","
-    },
-    {
-      "from": "title: \"Update Ready\",\\n      message: result.message",
-      "to": "title: \"更新就绪\",\\n      message: result.message"
-    },
-    {
-      "from": "message: \"Update install is already in progress.\"",
-      "to": "message: \"更新安装已在进行中。\""
-    },
-    {
-      "from": "message: \"Update restart timed out. Check for updates and try again.\"",
-      "to": "message: \"更新重启超时。请检查更新后重试。\""
-    },
-    {
-      "from": "message: \"Updater unavailable.\"",
-      "to": "message: \"更新程序不可用。\""
-    },
-    {
-      "from": "title: \"New project\",\\n      buttonLabel: \"Create\",\\n      nameFieldLabel: \"Project name:\"",
-      "to": "title: \"新建项目\",\\n      buttonLabel: \"创建\",\\n      nameFieldLabel: \"项目名称：\""
-    },
-    {
-      "from": "text: \"Denied\"",
-      "to": "text: \"已拒绝\""
-    },
-    {
-      "from": "text: \"Interrupted\"",
-      "to": "text: \"已中断\""
-    },
-    {
-      "from": "text: \"The connection did not recover after sleep, so this run was stopped. Send again to continue.\"",
-      "to": "text: \"休眠后连接未能恢复，本次运行已停止。请再次发送以继续。\""
-    },
-    {
-      "from": "label: \"Not now\",\\n        description: \"Skips image reading. You'll get a heads-up when you attach an image this model can't read.\"",
-      "to": "label: \"暂不\",\\n        description: \"跳过图片读取。当你附加此模型无法读取的图片时会收到提示。\""
-    },
-    {
-      "from": "header: input.inPlanMode ? \"Exit Plan\" : \"Plan Review\"",
-      "to": "header: input.inPlanMode ? \"退出计划\" : \"计划评审\""
-    },
-    {
-      "from": "question: \"Enter plan mode for read-only exploration and planning?\",\\n                header: \"Plan Mode\",",
-      "to": "question: \"进入计划模式进行只读探索与规划？\",\\n                header: \"计划模式\","
-    },
-    {
-      "from": "label: \"No, stay in current mode\",\\n                    description: \"Continue without entering plan mode\"",
-      "to": "label: \"否，保持当前模式\",\\n                    description: \"不进入计划模式，继续当前模式\""
-    },
-    {
-      "from": "label: \"Yes\",\\n    value: \"yes\",\\n    description: \"Allow this edit\",\\n    scope: void 0",
-      "to": "label: \"是\",\\n    value: \"yes\",\\n    description: \"允许此编辑\",\\n    scope: void 0"
-    },
-    {
-      "from": "label: \"Yes, allow all edits this session [shift+tab]\",\\n    value: \"yes-session\",\\n    description: \"自动接受编辑 for this session\",\\n    scope: \"session\"",
-      "to": "label: \"是，本次会话允许所有编辑 [shift+tab]\",\\n    value: \"yes-session\",\\n    description: \"本次会话自动接受编辑\",\\n    scope: \"session\""
-    },
-    {
-      "from": "label: \"Yes\",\\n  value: \"yes\",\\n  description: \"Allow this action\",\\n  scope: void 0",
-      "to": "label: \"是\",\\n  value: \"yes\",\\n  description: \"允许此操作\",\\n  scope: void 0"
-    },
-    {
-      "from": "value: \"Off on BYOK\",\\n        defaultDisplay: \"Off on BYOK\"",
-      "to": "value: \"BYOK 下关闭\",\\n        defaultDisplay: \"BYOK 下关闭\""
-    },
-    {
-      "from": "title: `余额不足 - $${i.toFixed(2)} left. Open usage.`",
-      "to": "title: `余额不足 - 剩余 $${i.toFixed(2)}。打开用量页面。`"
-    },
-    {
-      "from": "title:s?`Downloading version ${r.version}`:`重启以更新到版本 ${r.version}`",
-      "to": "title:s?`正在下载版本 ${r.version}`:`重启以更新到版本 ${r.version}`"
-    },
-    {
-      "from": "\"创建计划 in 计划模式 and it will stay available here.\"",
-      "to": "\"在计划模式中创建计划，它会一直保留在这里。\""
-    },
-    {
-      "from": "invalid_key: \"Invalid API 密钥. Please check and try again.\"",
-      "to": "invalid_key: \"API 密钥无效。请检查后重试。\""
-    },
-    {
-      "from": "network_error: \"Could not reach server. 检查你的网络连接 and try again.\"",
-      "to": "network_error: \"无法连接到服务器。请检查你的网络连接后重试。\""
-    },
-    {
-      "from": "server_error: \"服务器错误. Please try again later.\"",
-      "to": "server_error: \"服务器错误。请稍后重试。\""
-    },
-    {
-      "from": "network: \"Network error reaching Command Code. 检查你的网络连接.\"",
-      "to": "network: \"连接 Command Code 时出现网络错误。请检查你的网络连接。\""
-    },
-    {
-      "from": "title:\"打开开发者工具 for this page\"",
-      "to": "title:\"为此页面打开开发者工具\""
-    },
-    {
-      "from": "children:[S.scope,\" scope\"]",
-      "to": "children:[S.scope===\"user\"?\"用户\":S.scope===\"project\"?\"项目\":S.scope===\"local\"?\"本地\":S.scope,\" 范围\"]"
-    },
-    {
-      "from": "Learning timed out. 重试 with /learn-taste",
-      "to": "学习超时。请用 /learn-taste 重试"
-    },
-    {
-      "from": "function wm(e){return e?.planId?e.planId.split(/[-_]/).filter(Boolean).map(t=>t.charAt(0).toUpperCase()+t.slice(1)).join(\" \"):\"Free\"}",
-      "to": "function wm(e){const L={free:\"免费套餐\",pro:\"Pro 套餐\",plus:\"Plus 套餐\",max:\"Max 套餐\",premium:\"Premium 套餐\",contributor:\"Contributor 套餐\",beta:\"Beta 套餐\"};if(!e?.planId)return\"免费套餐\";const p=String(e.planId).toLowerCase();return L[p]??(p.charAt(0).toUpperCase()+p.slice(1)+\" 套餐\")}"
-    },
-    {
-      "from": "function eS(e){if(!e?.planId)return\"免费套餐\";const t=e.planId;return`${t.charAt(0).toUpperCase()}${t.slice(1)} plan`}",
-      "to": "function eS(e){const L={free:\"免费\",pro:\"Pro\",plus:\"Plus\",max:\"Max\",premium:\"Premium\",contributor:\"Contributor\",beta:\"Beta\"};if(!e?.planId)return\"免费套餐\";const p=String(e.planId).toLowerCase();return(L[p]??p.charAt(0).toUpperCase()+p.slice(1))+\" 套餐\"}"
-    },
-    {
-      "from": "`renews ${Em(l.currentPeriodEnd)}`",
-      "to": "`续期于 ${Em(l.currentPeriodEnd)}`"
-    },
-    {
-      "from": "`${s.org.name} (organization)`",
-      "to": "`${s.org.name}（组织）`"
-    },
-    {
-      "from": "let d=\"Account unavailable\";",
-      "to": "let d=\"账户不可用\";"
-    },
-    {
-      "from": "g=c.name||c.userName||c.email?.split(\"@\")[0]||\"Account\"",
-      "to": "g=c.name||c.userName||c.email?.split(\"@\")[0]||\"账户\""
-    },
-    {
-      "from": "a=s?.name||s?.userName||s?.email?.split(\"@\")[0]||\"Account\"",
-      "to": "a=s?.name||s?.userName||s?.email?.split(\"@\")[0]||\"账户\""
-    },
-    {
-      "from": "o.jsx(Yn.Group,{heading:\"Commands\",children:m.map",
-      "to": "o.jsx(Yn.Group,{heading:\"命令\",children:m.map"
-    },
-    {
-      "from": "children:\"Navigate\"",
-      "to": "children:\"导航\""
-    },
-    {
-      "from": "o.jsx(tc,{title:\"Terminal\",keybind:s??\"\"",
-      "to": "o.jsx(tc,{title:\"终端\",keybind:s??\"\""
-    },
-    {
-      "from": "children:\"Terminal\"}),o.jsx(\"span\",{className:qp,children:Ht(\"Mod+J\")}",
-      "to": "children:\"终端\"}),o.jsx(\"span\",{className:qp,children:Ht(\"Mod+J\")}"
-    },
-    {
-      "from": "label:\"Terminal\",description:\"Opens as a drawer under the chat\"",
-      "to": "label:\"终端\",description:\"在聊天下方以抽屉形式打开\""
-    },
-    {
-      "from": "e.archived?{key:\"archived\",label:\"Archived\"}:t?.[e.id]===\"attention\"?{key:\"attention\",label:\"需要关注\"}:t?.[e.id]===\"running\"?{key:\"running\",label:\"Running\"}:e.unread?{key:\"unread\",label:\"Unread\"}:e.pinned?{key:\"pinned\",label:\"Pinned\"}:{key:\"other\",label:\"Other\"}",
-      "to": "e.archived?{key:\"archived\",label:\"已归档\"}:t?.[e.id]===\"attention\"?{key:\"attention\",label:\"需要关注\"}:t?.[e.id]===\"running\"?{key:\"running\",label:\"运行中\"}:e.unread?{key:\"unread\",label:\"未读\"}:e.pinned?{key:\"pinned\",label:\"置顶\"}:{key:\"other\",label:\"其他\"}"
-    },
-    {
-      "from": "ME=[{value:\"running\",label:\"Running\",icon:cr}",
-      "to": "ME=[{value:\"running\",label:\"运行中\",icon:cr}"
-    },
-    {
-      "from": "o.jsx(cs,{label:\"Environment\"",
-      "to": "o.jsx(cs,{label:\"环境\""
-    },
-    {
-      "from": "o.jsx(cs,{label:\"Activity\"",
-      "to": "o.jsx(cs,{label:\"活动\""
-    },
-    {
-      "from": "children:\"Show empty folders\"",
-      "to": "children:\"显示空文件夹\""
-    },
-    {
-      "from": "children:\"Show PR status\"",
-      "to": "children:\"显示 PR 状态\""
-    },
-    {
-      "from": "_d,{variant:\"seam\",label:\"Resize sidebar\",tooltip:\"Drag to resize sidebar\"",
-      "to": "_d,{variant:\"seam\",label:\"调整侧边栏大小\",tooltip:\"拖动以调整侧边栏大小\""
-    },
-    {
-      "from": "o.jsx(bi,{icon:qr,label:\"Customize\",onClick:()=>m(\"agent\")",
-      "to": "o.jsx(bi,{icon:qr,label:\"自定义\",onClick:()=>m(\"agent\")"
-    },
-    {
-      "from": "o.jsx(Fl,{label:\"Favorites\",count:n",
-      "to": "o.jsx(Fl,{label:\"收藏\",count:n"
-    },
-    {
-      "from": "o.jsx(Fl,{label:\"Other vendors\",count:s",
-      "to": "o.jsx(Fl,{label:\"其他供应商\",count:s"
-    },
-    {
-      "from": "children:\"No starred models\"}),o.jsx(\"p\",{className:\"text-[11px] text-ink-subtle\",children:\"Star a model in any vendor to keep it here.\"",
-      "to": "children:\"暂无收藏模型\"}),o.jsx(\"p\",{className:\"text-[11px] text-ink-subtle\",children:\"收藏任意供应商的模型即可固定在此处。\""
-    },
-    {
-      "from": "description:\"Applies edits and safe commands; still asks before risky ones\"",
-      "to": "description:\"自动应用编辑与安全命令，风险操作前仍会询问\""
-    },
-    {
-      "from": "message:ot.error??\"Rewind failed.\"",
-      "to": "message:ot.error??\"回退失败。\""
-    },
-    {
-      "from": "message:ot instanceof Error?ot.message:\"Rewind failed.\"",
-      "to": "message:ot instanceof Error?ot.message:\"回退失败。\""
-    },
-    {
-      "from": "\"aria-label\":\"Jump to latest\",title:\"Jump to latest\"",
-      "to": "\"aria-label\":\"跳至最新\",title:\"跳至最新\""
-    },
-    {
-      "from": "confirmLabel:\"Rewind\",busy:kn,busyLabel:\"Rewinding…\"",
-      "to": "confirmLabel:\"回退\",busy:kn,busyLabel:\"正在回退…\""
-    },
-    {
-      "from": "title:\"Could not discard\",description:b.error??w.path",
-      "to": "title:\"无法放弃更改\",description:b.error??w.path"
-    },
-    {
-      "from": "title:\"Could not stop the run\",description:String(ie)",
-      "to": "title:\"无法停止运行\",description:String(ie)"
-    },
-    {
-      "from": "title:\"New terminal\",\"aria-label\":\"New terminal\"",
-      "to": "title:\"新建终端\",\"aria-label\":\"新建终端\""
-    },
-    {
-      "from": "title:\"Configure scripts\",\"aria-label\":\"Configure terminal scripts\"",
-      "to": "title:\"配置脚本\",\"aria-label\":\"配置终端脚本\""
-    },
-    {
-      "from": "children:\"Focus tab\"",
-      "to": "children:\"聚焦此标签页\""
-    },
-    {
-      "from": "children:\"Open preview\"}):null,Ke.status===\"running\"",
-      "to": "children:\"打开预览\"}):null,Ke.status===\"running\""
-    },
-    {
-      "from": "title:\"Open in app\",\"aria-label\":\"Open in app\"",
-      "to": "title:\"在应用中打开\",\"aria-label\":\"在应用中打开\""
-    },
-    {
-      "from": "{value:\"unified\",label:\"Inline\",Icon:Vv},{value:\"split\",label:\"Side by side\",Icon:Gv}",
-      "to": "{value:\"unified\",label:\"内联\",Icon:Vv},{value:\"split\",label:\"并排\",Icon:Gv}"
-    },
-    {
-      "from": "confirmLabel:\"Discard changes\",busy:m,busyLabel:\"Discarding…\"",
-      "to": "confirmLabel:\"放弃更改\",busy:m,busyLabel:\"正在放弃…\""
-    },
-    {
-      "from": "title:\"Open a view\",\"aria-label\":\"Open a view\"",
-      "to": "title:\"打开视图\",\"aria-label\":\"打开视图\""
-    },
-    {
-      "from": "children:\"Open a view\"}),o.jsx(\"p\",{className:\"mt-0.5 text-label text-ink-subtle\",children:\"Views open as tabs and stay until you close them.\"",
-      "to": "children:\"打开视图\"}),o.jsx(\"p\",{className:\"mt-0.5 text-label text-ink-subtle\",children:\"视图以标签页形式打开，在你关闭前一直保留。\""
-    },
-    {
-      "from": "e===\"refining\"?{description:\"Being refined\"}:{}",
-      "to": "e===\"refining\"?{description:\"正在完善\"}:{}"
-    },
-    {
-      "from": "children:[o.jsx(Gb,{className:Lo}),\"Settings\"]",
-      "to": "children:[o.jsx(Gb,{className:Lo}),\"设置\"]"
-    },
-    {
-      "from": "o.jsx(Ld,{className:\"sr-only\",children:\"Settings\"})",
-      "to": "o.jsx(Ld,{className:\"sr-only\",children:\"设置\"})"
-    },
-    {
-      "from": "children:t??\"Thinking…\"",
-      "to": "children:t??\"正在思考…\""
-    },
-    {
-      "from": "children:\"Thinking…\"}):qA(n)]",
-      "to": "children:\"正在思考…\"}):qA(n)]"
-    },
-    {
-      "from": "children:\"HTTP URL\"}),s.jsx(Ee,{id:T,name:\"mcp-server-url\"",
-      "to": "children:\"HTTP 地址\"}),s.jsx(Ee,{id:T,name:\"mcp-server-url\""
-    },
-    {
-      "from": "children:\"Browse skills.sh\"",
-      "to": "children:\"浏览 skills.sh\""
-    },
-    {
-      "from": "s.jsxs(Q,{title:\"Terminal\",children:[s.jsx(J,{label:\"字号\"",
-      "to": "s.jsxs(Q,{title:\"终端\",children:[s.jsx(J,{label:\"字号\""
-    },
-    {
-      "from": "s.jsxs(Q,{title:\"Behavior\",children:[o?s.jsxs(\"div\"",
-      "to": "s.jsxs(Q,{title:\"行为\",children:[o?s.jsxs(\"div\""
-    },
-    {
-      "from": "s.jsxs(Q,{title:\"Application\",children:[s.jsx(xh,{})",
-      "to": "s.jsxs(Q,{title:\"应用\",children:[s.jsx(xh,{})"
-    },
-    {
-      "from": "s.jsxs(Q,{title:\"Preferences\",children:[d?s.jsxs(\"div\"",
-      "to": "s.jsxs(Q,{title:\"偏好设置\",children:[d?s.jsxs(\"div\""
-    },
-    {
-      "from": "description:\"Show the side panel when the app starts.\"",
-      "to": "description:\"应用启动时显示侧边面板。\""
-    },
-    {
-      "from": "children:[s.jsx(Ie,{label:\"Identity\",value:\"Loading…\"}),s.jsx(Ie,{label:\"Plan\",value:\"Loading…\"})]",
-      "to": "children:[s.jsx(Ie,{label:\"身份\",value:\"加载中…\"}),s.jsx(Ie,{label:\"套餐\",value:\"加载中…\"})]"
-    },
-    {
-      "from": "s.jsx(J,{label:\"Background\",children:s.jsx(Rt,{hex:r.background})})",
-      "to": "s.jsx(J,{label:\"背景色\",children:s.jsx(Rt,{hex:r.background})})"
-    },
-    {
-      "from": "s.jsx(J,{label:\"Foreground\",children:s.jsx(Rt,{hex:r.foreground})})",
-      "to": "s.jsx(J,{label:\"前景色\",children:s.jsx(Rt,{hex:r.foreground})})"
-    },
-    {
-      "from": "children:\"Connected\"}),s.jsx(\"button\",{type:\"button\",onClick:p,disabled:i",
-      "to": "children:\"已连接\"}),s.jsx(\"button\",{type:\"button\",onClick:p,disabled:i"
-    },
-    {
-      "from": "children:\"Re-authenticate\"}),s.jsx(\"button\",{type:\"button\",onClick:g,disabled:i",
-      "to": "children:\"重新认证\"}),s.jsx(\"button\",{type:\"button\",onClick:g,disabled:i"
-    },
-    {
-      "from": "label:\"Archive current chat\",keys:\"Mod+Shift+A\"",
-      "to": "label:\"归档当前会话\",keys:\"Mod+Shift+A\""
-    },
-    {
-      "from": "label:\"Interrupt the run (nothing selected)\",keys:\"Mod+C\"",
-      "to": "label:\"中断当前运行（未选中内容）\",keys:\"Mod+C\""
-    },
-    {
-      "from": "const message = \"Update restart timed out. Check for updates and try again.\"",
-      "to": "const message = \"更新重启超时。请检查更新后重试。\""
-    },
-    {
-      "from": "title: \"Updates Disabled\",\n      message: \"Automatic updates are not available in this build.\"",
-      "to": "title: \"更新已禁用\",\n      message: \"此版本不支持自动更新。\""
-    },
-    {
-      "from": "title: \"Update Error\",\n      message: \"Update check failed.\"",
-      "to": "title: \"更新错误\",\n      message: \"检查更新失败。\""
-    },
-    {
-      "from": "title: \"No Updates\",\n      message: \"You're up to date.\"",
-      "to": "title: \"无更新\",\n      message: \"你已是最新版本。\""
-    },
-    {
-      "from": "label: \"Command Code on GitHub\",\n        click",
-      "to": "label: \"GitHub 上的 Command Code\",\n        click"
-    },
-    {
-      "from": "label: \"Join Command Code Discord\",\n        click",
-      "to": "label: \"加入 Command Code Discord\",\n        click"
-    },
-    {
-      "from": "label: \"Paste and Match Style\",\n        role: \"pasteAndMatchStyle\"",
-      "to": "label: \"粘贴并匹配样式\",\n        role: \"pasteAndMatchStyle\""
-    },
-    {
-      "from": "body: \"Command Code will notify you when a run finishes in the background.\"",
-      "to": "body: \"后台运行完成时 Command Code 会通知你。\""
-    },
-    {
-      "from": "title: \"Update Ready\",\n      message: result.message",
-      "to": "title: \"更新就绪\",\n      message: result.message"
-    },
-    {
-      "from": "title: \"New project\",\n      buttonLabel: \"Create\",\n      nameFieldLabel: \"Project name:\",",
-      "to": "title: \"新建项目\",\n      buttonLabel: \"创建\",\n      nameFieldLabel: \"项目名称：\","
-    },
-    {
-      "from": "var CONFIRM_YES_LABEL = \"Yes\";\nvar CONFIRM_NO_LABEL = \"No\";",
-      "to": "var CONFIRM_YES_LABEL = \"是\";\nvar CONFIRM_NO_LABEL = \"否\";"
-    },
-    {
-      "from": "label: \"Yes\",\n  value: \"yes\",\n  description: \"Allow this action\",\n  scope: void 0",
-      "to": "label: \"是\",\n  value: \"yes\",\n  description: \"允许此操作\",\n  scope: void 0"
-    },
-    {
-      "from": "label: \"Yes\",\n    value: \"yes\",\n    description: \"Allow this edit\",\n    scope: void 0",
-      "to": "label: \"是\",\n    value: \"yes\",\n    description: \"允许此编辑\",\n    scope: void 0"
-    },
-    {
-      "from": "params.answer.startsWith(\"Yes, auto-accept\") ? \"auto-accept\" : params.answer.startsWith(\"Yes, exit\") ? \"default\" : null",
-      "to": "params.answer.startsWith(\"是，自动接受\") || params.answer.startsWith(\"Yes, auto-accept\") ? \"auto-accept\" : params.answer.startsWith(\"是，退出\") || params.answer.startsWith(\"Yes, exit\") ? \"default\" : null"
-    },
-    {
-      "from": "return params.answer.startsWith(\"Yes\") ? \"plan\" : null;",
-      "to": "return params.answer.startsWith(\"是\") || params.answer.startsWith(\"Yes\") ? \"plan\" : null;"
-    },
-    {
-      "from": "return (result.answers[0]?.selectedOptions[0] ?? \"\").startsWith(\"Yes\");",
-      "to": "return (result.answers[0]?.selectedOptions[0] ?? \"\").startsWith(\"是\") || (result.answers[0]?.selectedOptions[0] ?? \"\").startsWith(\"Yes\");"
     }
   ]
 }
