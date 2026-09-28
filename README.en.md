@@ -1,8 +1,16 @@
 # Command Code Chinese Localization Tool
 
+> **[简体中文](README.md) · English**
+
+> [!WARNING]
+> **DISCONTINUED / NO LONGER MAINTAINED**
+> The official Command Code desktop app now ships **built-in Simplified Chinese** — this tool is no longer needed.
+> Just switch the language in the app's settings. This repository is kept for historical reference and **will not be updated**.
+> If you are still on an older build without Chinese support, the tool can still localize that version.
+
 Localize the **Command Code desktop app** UI from English to Simplified Chinese (cross-platform: Windows / macOS / Linux).
 
-> Dictionary with 1499 entries, covering renderer UI screens + main process + the harness config package (adapted for v0.1.35).
+> Dictionary with 1499 entries, covering renderer UI screens + main process + the harness config package (last supported version: v0.1.35).
 > The tool only modifies files inside the installation directory — **automatic backups, one-click restore**.
 
 ## Quick Start
